@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ADHD Screening Singapore | Nightingale Pediatrics</title>
+<meta name="description" content="Professional ADHD screening for children in Singapore. Computerized neuropsychological testing and clinical review.">
+<link rel="canonical" href="https://nightingalepediatrics.com/screening" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Child ADHD Screening Service",
+  "description": "Screening for ADHD markers using digital neuropsychological tests and clinical analysis.",
+  "provider": {
+    "@type": "MedicalClinic",
+    "name": "Nightingale Pediatrics",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "10 Sinaran Drive, #10-27, Novena Medical Center",
+      "addressLocality": "Singapore",
+      "postalCode": "307506",
+      "addressCountry": "SG"
+    }
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@300..700&display=swap" rel="stylesheet">
+
+<style>
+
+  #screening-page {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  #screening-page *,
+  #screening-page *::before,
+  #screening-page *::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- Design tokens (shared with Nightingale Pediatrics / Bonfire AI) ---------- */
+  #screening-page {
+    --sand:#FAF9F6;
+    --sand-deep:#F2EEE4;
+    --sage:#4F6B4F;
+    --sage-dark:#3B5240;
+    --sage-light:#E8EFE3;
+    --terracotta:#C97B5A;
+    --charcoal:#2C3539;
+    --charcoal-soft:#48545A;
+    --line:#E5E0D3;
+    --white:#FFFFFF;
+    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    --sans: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --max-w: 1160px;
+
+    background: var(--sand);
+    color: var(--charcoal);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  #screening-page img{ max-width:100%; display:block; }
+  #screening-page a{ text-decoration:none; color:inherit; }
+  #screening-page h1, #screening-page h2, #screening-page h3, #screening-page h4{
+    font-family: var(--serif);
+    font-weight: 400;
+    color: var(--charcoal);
+    letter-spacing: -0.01em;
+  }
+  #screening-page p{ line-height:1.65; }
+  #screening-page :focus-visible{ outline:2px solid var(--sage-dark); outline-offset:3px; }
+
+  .sc-wrap{ width:100%; max-width:var(--max-w); margin:0 auto; padding:0 5%; position:relative; z-index:2; }
+  .sc-section{ position:relative; padding:96px 0; }
+
+  /* ---------- Top bar ---------- */
+  .sc-topbar{ background:var(--sand); border-bottom:1px solid var(--line); }
+  .sc-topbar-inner{ max-width:var(--max-w); margin:0 auto; padding:18px 5%; display:flex; align-items:center; }
+  .sc-logo{ height:38px; width:auto; }
+
+  /* ---------- Ambient blobs ---------- */
+  .sc-blob{ position:absolute; z-index:0; pointer-events:none; opacity:0.9; }
+  @media (prefers-reduced-motion: no-preference){
+    .sc-blob-drift{ animation:sc-drift 28s ease-in-out infinite alternate; }
+  }
+  @keyframes sc-drift{
+    0%{ transform:translate(0,0) scale(1) rotate(0deg); }
+    100%{ transform:translate(14px,-16px) scale(1.04) rotate(3deg); }
+  }
+
+  /* ---------- Hero ---------- */
+  .sc-hero{ padding:88px 0 92px; overflow:hidden; }
+  .sc-hero .sc-wrap{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:60px; align-items:center; }
+
+  .sc-eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--sage-dark); font-weight:500; margin-bottom:18px;
+  }
+
+  .sc-h1{ font-size:clamp(2.3rem, 4.2vw, 3.6rem); line-height:1.1; margin:0 0 22px 0; }
+  .sc-sub{ font-size:1.14rem; color:var(--charcoal-soft); margin:0 0 34px 0; max-width:520px; }
+
+  .sc-btn-row{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-bottom:22px; }
+
+  .sc-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:16px 32px;
+    background:var(--sage); color:var(--white) !important;
+    font-family:var(--sans); font-weight:500; font-size:1rem;
+    border-radius:100px; border:1px solid var(--sage);
+    cursor:pointer;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    box-shadow:0 6px 20px rgba(79,107,79,0.22);
+  }
+  .sc-btn:hover{ background:var(--sage-dark); border-color:var(--sage-dark); transform:translateY(-2px); box-shadow:0 10px 26px rgba(79,107,79,0.28); }
+  .sc-btn-ghost{
+    background:transparent; color:var(--sage-dark) !important;
+    border:1px solid var(--sage-dark); box-shadow:none;
+  }
+  .sc-btn-ghost:hover{ background:var(--sage-light); transform:none; box-shadow:none; }
+  .sc-btn-white{ background:var(--white); color:var(--sage-dark) !important; border-color:var(--white); box-shadow:0 10px 26px rgba(0,0,0,0.15); }
+  .sc-btn-white:hover{ background:var(--sand); }
+
+  .sc-disclaimer{
+    font-size:0.88rem; color:var(--charcoal-soft); font-style:italic;
+    background:var(--sand-deep); border:1px solid var(--line);
+    padding:12px 16px; border-radius:12px; display:inline-block; max-width:520px;
+  }
+  .sc-disclaimer strong{ color:var(--charcoal); font-style:normal; }
+
+  .sc-hero-visual{ position:relative; display:flex; justify-content:center; }
+  .sc-hero-blob{ position:absolute; inset:-6%; z-index:0; }
+  .sc-hero-photo{
+    position:relative; z-index:1;
+    width:100%; max-width:460px;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:44% 56% 60% 40% / 52% 46% 54% 48%;
+    background:var(--white);
+    border:1px solid var(--line);
+    box-shadow:0 22px 48px rgba(44,53,57,0.12);
+  }
+
+  /* ---------- Section headers ---------- */
+  .sc-head{ max-width:720px; margin:0 auto 52px auto; text-align:center; }
+  .sc-head h2{ font-size:clamp(1.8rem, 2.6vw, 2.5rem); margin-bottom:14px; }
+  .sc-head p{ color:var(--charcoal-soft); font-size:1.08rem; margin:0; }
+
+  /* ---------- Pricing ---------- */
+  .sc-pricing{ background:var(--sand-deep); }
+  .sc-pricing-grid{ display:flex; justify-content:center; }
+  .sc-price-card{
+    position:relative;
+    background:var(--sage);
+    color:var(--white);
+    border-radius:24px;
+    padding:44px 40px;
+    max-width:460px;
+    width:100%;
+    box-shadow:0 26px 60px rgba(59,82,64,0.25);
+  }
+  .sc-popular{
+    position:absolute; top:24px; right:24px;
+    background:var(--terracotta); color:var(--white);
+    font-size:0.72rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase;
+    padding:6px 14px; border-radius:100px;
+  }
+  .sc-package-name{
+    font-family:var(--sans); font-weight:600; letter-spacing:0.06em; text-transform:uppercase;
+    font-size:0.86rem; color:var(--sage-light); margin-bottom:14px;
+  }
+  .sc-price{ font-family:var(--serif); font-size:2.8rem; color:var(--white); margin:0 0 18px 0; line-height:1; display:block; }
+  .sc-price-card > p{ color:rgba(255,255,255,0.88); margin-bottom:8px; }
+
+  .sc-plan-detail{ margin-bottom:20px; }
+  .sc-plan-detail-title{ font-weight:600; display:block; margin-bottom:5px; color:var(--terracotta); font-size:0.92rem; }
+  .sc-plan-detail-desc{ display:block; font-size:0.85rem; color:rgba(255,255,255,0.7); margin-top:6px; line-height:1.5; }
+  .sc-price-card p, .sc-price-card div{ font-size:0.94rem; color:rgba(255,255,255,0.9); }
+
+  .sc-price-note{
+    font-size:0.85rem; font-style:italic; text-align:center;
+    color:rgba(255,255,255,0.75); margin:18px 0;
+  }
+
+  .sc-pricing-footer{
+    text-align:center; margin-top:28px; font-size:0.88rem;
+    color:var(--charcoal-soft); font-style:italic; max-width:640px; margin-left:auto; margin-right:auto;
+  }
+
+  /* ---------- Team ---------- */
+  .sc-clinician-grid{ display:flex; justify-content:center; gap:40px; flex-wrap:wrap; }
+  .sc-clinician{ max-width:280px; text-align:center; }
+  .sc-clinician-photo-wrap{ position:relative; display:flex; justify-content:center; margin-bottom:18px; }
+  .sc-clinician-blob{ position:absolute; inset:0; z-index:0; }
+  .sc-clinician-photo{
+    position:relative; z-index:1;
+    width:78%; aspect-ratio:1/1; object-fit:cover;
+    border-radius:42% 58% 61% 39% / 51% 44% 56% 49%;
+    background:var(--white); border:1px solid var(--line);
+  }
+  .sc-clinician-name{ font-size:1.14rem; margin-bottom:4px; }
+  .sc-clinician-role{ font-size:0.86rem; font-style:italic; color:var(--sage-dark); margin-bottom:12px; }
+  .sc-clinician-desc{ font-size:0.94rem; color:var(--charcoal-soft); margin-bottom:16px; }
+
+  /* ---------- FAQ ---------- */
+  .sc-faq{ background:var(--sand); }
+  .sc-faq-list{ max-width:760px; margin:0 auto; }
+  details.sc-faq-item{
+    background:var(--white); border:1px solid var(--line); border-radius:16px;
+    padding:22px 26px; margin-bottom:14px;
+  }
+  details.sc-faq-item summary{
+    font-family:var(--serif); font-size:1.08rem; color:var(--charcoal);
+    cursor:pointer; list-style:none;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  details.sc-faq-item summary::-webkit-details-marker{ display:none; }
+  details.sc-faq-item summary::after{
+    content:"+"; font-family:var(--sans); font-size:1.3rem; color:var(--sage-dark);
+    flex-shrink:0; transition:transform .2s ease;
+  }
+  details.sc-faq-item[open] summary::after{ transform:rotate(45deg); }
+  details.sc-faq-item p{ margin-top:14px; margin-bottom:0; color:var(--charcoal-soft); font-size:0.96rem; }
+
+  /* ---------- Final CTA ---------- */
+  .sc-cta{ background:var(--sage); color:var(--white); text-align:center; overflow:hidden; }
+  .sc-cta h2{ color:var(--white); font-size:clamp(1.8rem, 2.6vw, 2.6rem); margin-bottom:16px; }
+  .sc-cta p{ color:rgba(255,255,255,0.88); font-size:1.06rem; margin-bottom:32px; }
+
+  /* ---------- Reveal on scroll ---------- */
+  .sc-reveal{ opacity:0; transform:translateY(16px); transition:opacity .8s ease, transform .8s ease; }
+  .sc-reveal.in-view{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    .sc-reveal{ opacity:1; transform:none; transition:none; }
+    .sc-blob-drift{ animation:none; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    .sc-hero .sc-wrap{ grid-template-columns:1fr; text-align:center; }
+    .sc-sub{ margin-left:auto; margin-right:auto; }
+    .sc-btn-row{ justify-content:center; }
+    .sc-hero-visual{ order:-1; margin-bottom:8px; }
+  }
+  @media (max-width:560px){
+    .sc-hero{ padding:56px 0 64px; }
+    .sc-section{ padding:64px 0; }
+    .sc-btn{ width:100%; }
+    .sc-price-card{ padding:34px 26px; }
+  }
+
+</style>
+</head>
+<body>
+
+<div id="screening-page">
+
+  <header class="sc-topbar">
+    <div class="sc-topbar-inner">
+      <a href="https://nightingalepediatrics.com/">
+        <img class="sc-logo" src="https://www.image2url.com/r2/default/images/1783666412458-814dcc7c-9b49-4bca-8e9e-0c12884b623c.png" alt="Nightingale Pediatrics">
+      </a>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="sc-section sc-hero">
+    <svg class="sc-blob sc-blob-drift" style="top:-60px; left:-110px; width:360px; height:360px;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#E8EFE3" d="M52,-58C66,-46,74,-25,75,-3C76,19,70,42,55,56C40,70,17,76,-6,79C-29,82,-53,81,-66,67C-79,53,-81,25,-78,0C-75,-25,-67,-49,-51,-62C-35,-75,-11,-77,10,-77C31,-77,38,-70,52,-58Z" transform="translate(100 100)"/>
+    </svg>
+
+    <div class="sc-wrap">
+      <div class="sc-reveal in-view">
+        <span class="sc-eyebrow">Attention &amp; Behavioral Screening</span>
+        <h1 class="sc-h1">Is It ADHD or Anxiety?</h1>
+        <p class="sc-sub">Gather clinical data about your child's social, behavioral, executive functioning, and everyday life skills.</p>
+
+        <div class="sc-btn-row">
+          <a href="#pricing" class="sc-btn">View Screening Plans</a>
+          <a href="#team" class="sc-btn sc-btn-ghost">Meet The Team</a>
+        </div>
+
+        <p class="sc-disclaimer"><strong>This is not a diagnostic service.</strong> Our screeners only identify risks and do not diagnose any condition.</p>
+      </div>
+
+      <div class="sc-hero-visual sc-reveal in-view">
+        <svg class="sc-hero-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#C97B5A" fill-opacity="0.22" d="M46,-52C58,-42,64,-23,66,-3C68,16,66,35,54,48C42,61,21,69,-2,71C-25,73,-50,69,-63,54C-76,39,-77,14,-73,-9C-69,-32,-60,-53,-45,-63C-29,-73,-15,-72,3,-75C21,-78,34,-62,46,-52Z" transform="translate(100 100)"/>
+        </svg>
+        <img class="sc-hero-photo" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/friend2.png" alt="Child doing neuropsychological screening game" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRICING ================= -->
+  <section id="pricing" class="sc-section sc-pricing">
+    <div class="sc-wrap">
+      <div class="sc-head sc-reveal">
+        <h2>Choose Your Screening Pathway</h2>
+        <p>Most families start here to understand the <strong>risk factors</strong> behind their children's behavior before committing to a diagnostic assessment.</p>
+      </div>
+
+      <div class="sc-pricing-grid sc-reveal">
+        <div class="sc-price-card">
+          <div class="sc-popular">Popular</div>
+
+          <div class="sc-package-name">Comprehensive</div>
+          <span class="sc-price">S$499</span>
+          <p>A complete screening of your child's behavioral, emotional, and executive functioning profile.</p>
+
+          <div class="sc-plan-detail">
+            <span class="sc-plan-detail-title">Clinical Team</span>
+            Managed by our Clinical Associates and supervised by Senior Consultants.
+          </div>
+
+          <div class="sc-plan-detail">
+            <span class="sc-plan-detail-title">Data Collection</span>
+            Administration of two digital questionnaires (social/emotional and adaptive skills).<br><br>
+            A 15-minute remote attention and executive functioning assessment.
+            <span class="sc-plan-detail-desc">Conducted at home while an examiner oversees the computerized administration via video.</span>
+          </div>
+
+          <div class="sc-plan-detail">
+            <span class="sc-plan-detail-title">Deliverable</span>
+            Our clinical team analyzes data and curates a clinical report.
+          </div>
+
+          <div class="sc-plan-detail">
+            <span class="sc-plan-detail-title">Review</span>
+            Confidential 15-minute video feedback appointment with our clinical team.
+            <span class="sc-plan-detail-desc">Includes a structured clinical report with findings on risk factors only - no diagnosis or recommendations will be made.</span>
+          </div>
+
+          <p class="sc-price-note">Note: You will book the remote assessment appointment first, followed by the feedback appointment.</p>
+
+          <a href="https://nightingale.intakeq.com/booking?packageId=f8c7c1b4-5b6d-4731-bbf9-1b9fd6755654" target="_blank" rel="noopener noreferrer" class="sc-btn sc-btn-white" style="width:100%;">Select Comprehensive</a>
+        </div>
+      </div>
+
+      <p class="sc-pricing-footer">*Inclusive of GST. <strong>This is not a diagnostic service.</strong> Our reports are not diagnostic reports and do not provide exam accommodations.</p>
+    </div>
+  </section>
+
+  <!-- ================= TEAM ================= -->
+  <section id="team" class="sc-section sc-section-white" style="background:var(--white);">
+    <div class="sc-wrap">
+      <div class="sc-head sc-reveal">
+        <h2>Supervised By Senior Psychologists</h2>
+        <p>Screenings are conducted by our Clinical Team under the supervision of experienced clinical and school psychologists.</p>
+      </div>
+
+      <div class="sc-clinician-grid sc-reveal">
+        <div class="sc-clinician">
+          <div class="sc-clinician-photo-wrap">
+            <svg class="sc-clinician-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#E8EFE3" d="M48,-55C61,-45,69,-27,71,-8C73,10,70,29,59,44C48,59,29,70,8,73C-13,76,-38,71,-53,57C-68,43,-73,20,-72,-3C-71,-26,-64,-49,-49,-60C-34,-71,-11,-70,7,-73C25,-76,35,-65,48,-55Z" transform="translate(100 100)"/>
+            </svg>
+            <img class="sc-clinician-photo" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/Clinician%20Photos/amy.png" alt="Dr. Amy Reale" loading="lazy">
+          </div>
+          <h3 class="sc-clinician-name">Dr. Amy Reale</h3>
+          <div class="sc-clinician-role">Chief Clinical Officer</div>
+          <p class="sc-clinician-desc">Trained in the US as a clinical and school psychologist with over 24 years of experience across 3 continents.</p>
+          <a href="https://nightingalepediatrics.com/amy-reale" class="sc-btn sc-btn-ghost" style="padding:11px 24px; font-size:0.9rem;" target="_blank" rel="noopener noreferrer">About Dr. Amy</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="sc-section sc-faq">
+    <div class="sc-wrap">
+      <div class="sc-head sc-reveal">
+        <h2>Questions About ADHD Screening</h2>
+      </div>
+
+      <div class="sc-faq-list sc-reveal">
+        <details class="sc-faq-item">
+          <summary>Is this a full ADHD Diagnosis?</summary>
+          <p>No. This is a <strong>clinical screening service</strong>. It identifies if your child presents with factors that might warrant a full diagnostic assessment. Families often use the screening report for initial school discussions.</p>
+        </details>
+
+        <details class="sc-faq-item">
+          <summary>How does the "Computerized Neuropsychological Test" work?</summary>
+          <p>It's a standardized tool administered remotely on a computer. It measures reaction time, sustained attention, and impulse control with built-in visual and auditory distractors. The child demonstrates attention and executive functioning skills in real time to simulate other environments, like a school classroom.</p>
+        </details>
+
+        <details class="sc-faq-item">
+          <summary>What happens after the report?</summary>
+          <p>If attention factors are indicated, we can explore <strong>Parent Coaching</strong> to build skills for your child, or a full diagnostic test if you require exam accommodations or want a formal diagnosis.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA ================= -->
+  <section class="sc-section sc-cta">
+    <svg class="sc-blob" style="bottom:-140px; right:-100px; width:420px; height:420px; opacity:0.18;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#FFFFFF" d="M50,-56C64,-45,72,-25,73,-4C74,17,68,38,54,52C40,66,19,74,-3,77C-25,80,-49,78,-63,64C-77,50,-81,24,-79,0C-77,-24,-70,-48,-54,-60C-38,-72,-13,-72,7,-75C27,-78,36,-67,50,-56Z" transform="translate(100 100)"/>
+    </svg>
+    <div class="sc-wrap" style="max-width:640px;">
+      <div class="sc-reveal">
+        <h2>Start With an Intake.</h2>
+        <p>Have more questions before deciding to screen? Book an intake call with us.</p>
+        <a href="https://calendly.com/meeting-with-nightingale/concierge" target="_blank" rel="noopener noreferrer" class="sc-btn sc-btn-white">Book Intake Call</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  (function(){
+    var revealEls = document.querySelectorAll('.sc-reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); }
+        });
+      }, { threshold:0.12 });
+      revealEls.forEach(function(el){ io.observe(el); });
+    } else {
+      revealEls.forEach(function(el){ el.classList.add('in-view'); });
+    }
+  })();
+</script>
+
+</body>
+</html>
