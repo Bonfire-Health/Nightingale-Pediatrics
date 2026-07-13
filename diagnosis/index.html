@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neuropsychological Assessments & Diagnosis | Nightingale Pediatrics</title>
+<meta name="description" content="Clinical assessments for IQ, ADHD, Autism, and Learning Disorders. We provide clinical reports for school placement and exam accommodations.">
+<link rel="canonical" href="https://nightingalepediatrics.com/diagnostics" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Psycho-Educational & Neurodevelopmental Diagnostics",
+  "description": "Diagnostic testing for IQ, ADHD, Autism, and Academic Functioning using Wechsler Scales, WIAT-4, and ADOS-2 protocols.",
+  "provider": {
+    "@type": "MedicalClinic",
+    "name": "Nightingale Pediatrics",
+    "image": "https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/nightingale%20official%20icon%20(1).svg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Singapore",
+      "addressCountry": "SG"
+    }
+  },
+  "medicalSpecialty": ["Pediatric Psychology", "Educational Psychology", "Neuropsychology"],
+  "availableService": [
+    { "@type": "MedicalTest", "name": "Intellectual Functioning (Wechsler)" },
+    { "@type": "MedicalTest", "name": "Academic Functioning Assessment (WIAT-4)" },
+    { "@type": "MedicalTest", "name": "ADHD Abbreviated Assessment" },
+    { "@type": "MedicalTest", "name": "Comprehensive Neurodevelopmental Diagnostic" }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@300..700&display=swap" rel="stylesheet">
+
+<style>
+
+  #tx-page {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  #tx-page *,
+  #tx-page *::before,
+  #tx-page *::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- Design tokens (shared with Nightingale Pediatrics / Bonfire AI) ---------- */
+  #tx-page {
+    --sand:#FAF9F6;
+    --sand-deep:#F2EEE4;
+    --sage:#4F6B4F;
+    --sage-dark:#3B5240;
+    --sage-light:#E8EFE3;
+    --terracotta:#C97B5A;
+    --charcoal:#2C3539;
+    --charcoal-soft:#48545A;
+    --line:#E5E0D3;
+    --white:#FFFFFF;
+    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    --sans: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --max-w: 1180px;
+
+    background: var(--sand);
+    color: var(--charcoal);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  #tx-page img{ max-width:100%; display:block; }
+  #tx-page a{ text-decoration:none; color:inherit; }
+  #tx-page h1, #tx-page h2, #tx-page h3, #tx-page h4{
+    font-family: var(--serif);
+    font-weight: 400;
+    color: var(--charcoal);
+    letter-spacing: -0.01em;
+  }
+  #tx-page p{ line-height:1.65; }
+  #tx-page :focus-visible{ outline:2px solid var(--sage-dark); outline-offset:3px; }
+
+  .tx-wrap{ width:100%; max-width:var(--max-w); margin:0 auto; padding:0 5%; position:relative; z-index:2; }
+  .tx-section{ position:relative; padding:96px 0; }
+
+  /* ---------- Top bar ---------- */
+  .tx-topbar{ background:var(--sand); border-bottom:1px solid var(--line); }
+  .tx-topbar-inner{ max-width:var(--max-w); margin:0 auto; padding:18px 5%; display:flex; align-items:center; }
+  .tx-logo{ height:38px; width:auto; }
+
+  /* ---------- Buttons ---------- */
+  .tx-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:16px 32px;
+    font-family:var(--sans); font-weight:500; font-size:1rem;
+    border-radius:100px; cursor:pointer;
+    transition:all .25s ease;
+  }
+  .tx-btn-white{ background:var(--white); color:var(--sage-dark) !important; border:1px solid var(--white); box-shadow:0 10px 26px rgba(0,0,0,0.15); }
+  .tx-btn-white:hover{ transform:translateY(-2px); box-shadow:0 14px 30px rgba(0,0,0,0.2); }
+  .tx-btn-outline-white{ background:transparent; color:var(--white) !important; border:1px solid rgba(255,255,255,0.7); }
+  .tx-btn-outline-white:hover{ background:rgba(255,255,255,0.12); transform:translateY(-2px); }
+  .tx-btn-sage{ background:var(--sage); color:var(--white) !important; border:1px solid var(--sage); box-shadow:0 6px 20px rgba(79,107,79,0.22); }
+  .tx-btn-sage:hover{ background:var(--sage-dark); border-color:var(--sage-dark); transform:translateY(-2px); }
+  .tx-btn-outline-sage{ background:transparent; color:var(--sage-dark) !important; border:1px solid var(--sage-dark); }
+  .tx-btn-outline-sage:hover{ background:var(--sage-light); }
+
+  /* ---------- Ambient blobs ---------- */
+  .tx-blob{ position:absolute; z-index:0; pointer-events:none; opacity:0.9; }
+  @media (prefers-reduced-motion: no-preference){
+    .tx-blob-drift{ animation:tx-drift 28s ease-in-out infinite alternate; }
+  }
+  @keyframes tx-drift{
+    0%{ transform:translate(0,0) scale(1) rotate(0deg); }
+    100%{ transform:translate(14px,-16px) scale(1.04) rotate(3deg); }
+  }
+
+  /* ---------- Hero ---------- */
+  .tx-hero{ background:var(--sage); color:var(--white); padding:100px 0; text-align:center; overflow:hidden; position:relative; }
+  .tx-eyebrow{
+    display:inline-block; font-weight:500; text-transform:uppercase; letter-spacing:0.08em;
+    font-size:0.84rem; color:rgba(255,255,255,0.82); margin-bottom:18px;
+  }
+  .tx-hero h1{ color:var(--white); font-size:clamp(2.2rem, 4vw, 3.4rem); max-width:820px; margin:0 auto 22px; line-height:1.12; }
+  .tx-hero p{ font-size:1.14rem; max-width:680px; margin:0 auto 38px; color:rgba(255,255,255,0.92); }
+  .tx-hero-btns{ display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+
+  /* ---------- Trust bar ---------- */
+  .tx-trust-bar{ background:var(--sand-deep); padding:26px 5%; border-bottom:1px solid var(--line); text-align:center; }
+  .tx-trust-grid{ display:flex; justify-content:center; gap:30px; flex-wrap:wrap; max-width:var(--max-w); margin:0 auto; }
+  .tx-trust-item{ display:flex; align-items:center; gap:9px; font-weight:500; color:var(--sage-dark); font-size:0.9rem; white-space:nowrap; }
+  .tx-trust-icon{ color:var(--terracotta); font-size:1.1rem; }
+
+  /* ---------- Section headers ---------- */
+  .tx-head{ text-align:center; max-width:720px; margin:0 auto 50px auto; }
+  .tx-head-left{ text-align:left; max-width:600px; margin-bottom:44px; }
+  .tx-head h2, .tx-head-left h2{ font-size:clamp(1.8rem, 2.6vw, 2.4rem); margin-bottom:14px; }
+  .tx-head p, .tx-head-left p{ color:var(--charcoal-soft); font-size:1.06rem; margin:0; }
+
+  /* ---------- Batteries (assessment cards + sticky visual) ---------- */
+  .tx-batteries{ background:var(--sand); }
+  .tx-batteries-layout{ display:flex; align-items:flex-start; gap:56px; }
+  .tx-batteries-left{ flex:1; min-width:0; }
+  .tx-battery-grid{ display:grid; grid-template-columns:1fr; gap:22px; }
+
+  .tx-battery-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    box-shadow:0 8px 26px rgba(44,53,57,0.04);
+    padding:28px 30px;
+    border-radius:16px;
+    position:relative;
+    overflow:hidden;
+    display:flex; flex-direction:column;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .tx-battery-card::before{
+    content:''; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--terracotta);
+  }
+  .tx-battery-card:hover{ transform:translateY(-3px); box-shadow:0 16px 36px rgba(44,53,57,0.08); }
+  .tx-battery-title{ font-size:1.22rem; margin:0 0 10px 0; }
+  .tx-battery-desc{ font-size:0.94rem; color:var(--charcoal-soft); margin-bottom:18px; flex-grow:1; }
+  .tx-battery-desc strong{ color:var(--charcoal); }
+  .tx-battery-desc em{ color:var(--charcoal-soft); }
+
+  .tx-tool-list{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; }
+  .tx-tool-badge{
+    font-size:0.72rem; font-weight:600; color:var(--charcoal-soft);
+    background:var(--sand-deep); padding:5px 11px; border-radius:6px; border:1px solid var(--line);
+  }
+  .tx-tool-badge.tx-price{ border-color:var(--terracotta); color:var(--sage-dark); background:#fdf3ee; }
+
+  .tx-battery-btn{
+    display:block; text-align:center; background:transparent;
+    border:1px solid var(--sage-dark); color:var(--sage-dark) !important;
+    padding:11px; border-radius:100px; font-weight:500; font-size:0.9rem;
+    transition:.25s; margin-top:auto;
+  }
+  .tx-battery-btn:hover{ background:var(--sage-light); }
+
+  /* ---------- Sticky blob visual ---------- */
+  .tx-blob-visual{
+    flex:0 0 40%;
+    display:flex; justify-content:center; align-items:center;
+    height:560px;
+    position:sticky; top:100px;
+  }
+  .tx-glass-blob{
+    position:relative;
+    background:rgba(255,255,255,0.35);
+    border:1px solid rgba(255,255,255,0.5);
+    box-shadow:0 10px 34px rgba(79,107,79,0.14);
+    border-radius:45% 55% 70% 30% / 30% 50% 70% 50%;
+    overflow:hidden;
+    width:100%; max-width:400px; height:400px;
+    margin:auto;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .tx-glass-blob{ animation:tx-blob-pulse 8s infinite alternate ease-in-out; }
+  }
+  @keyframes tx-blob-pulse{
+    0%{ border-radius:45% 55% 70% 30% / 30% 50% 70% 50%; }
+    100%{ border-radius:60% 40% 30% 70% / 50% 30% 50% 60%; }
+  }
+  .tx-blob-img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+  /* ---------- Process ---------- */
+  .tx-process{ background:var(--white); }
+  .tx-process-step{ display:flex; gap:28px; max-width:880px; margin:0 auto 38px; align-items:flex-start; }
+  .tx-step-num{
+    font-size:2.6rem; font-family:var(--serif); color:var(--terracotta);
+    opacity:0.8; line-height:1; min-width:64px; text-align:center;
+  }
+  .tx-process-step h3{ font-size:1.2rem; margin-bottom:8px; }
+  .tx-process-step p{ color:var(--charcoal-soft); font-size:0.98rem; margin:0; }
+
+  .tx-disclaimer{
+    max-width:880px; margin:44px auto 0; padding:24px 28px;
+    background:var(--sand-deep); border-left:3px solid var(--sage-dark);
+    border-radius:0 12px 12px 0; font-size:0.9rem; color:var(--charcoal-soft);
+  }
+  .tx-disclaimer strong{ color:var(--charcoal); }
+
+  /* ---------- FAQ ---------- */
+  .tx-faq{ background:var(--sand-deep); }
+  .tx-faq-list{ max-width:760px; margin:0 auto; }
+  details.tx-faq-item{
+    background:var(--white); border:1px solid var(--line); border-radius:16px;
+    padding:22px 26px; margin-bottom:14px;
+  }
+  details.tx-faq-item summary{
+    font-family:var(--serif); font-size:1.06rem; color:var(--charcoal);
+    cursor:pointer; list-style:none;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  details.tx-faq-item summary::-webkit-details-marker{ display:none; }
+  details.tx-faq-item summary::after{
+    content:"+"; font-family:var(--sans); font-size:1.3rem; color:var(--sage-dark);
+    flex-shrink:0; transition:transform .2s ease;
+  }
+  details.tx-faq-item[open] summary::after{ transform:rotate(45deg); }
+  details.tx-faq-item p{ margin-top:14px; margin-bottom:0; color:var(--charcoal-soft); font-size:0.95rem; }
+  details.tx-faq-item p strong{ color:var(--charcoal); }
+  details.tx-faq-item p em{ color:var(--charcoal-soft); }
+
+  /* ---------- Reveal on scroll ---------- */
+  .tx-reveal{ opacity:0; transform:translateY(16px); transition:opacity .8s ease, transform .8s ease; }
+  .tx-reveal.in-view{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    .tx-reveal{ opacity:1; transform:none; transition:none; }
+    .tx-blob-drift{ animation:none; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:960px){
+    .tx-hero h1{ font-size:2.2rem; }
+    .tx-process-step{ flex-direction:column; gap:10px; }
+    .tx-step-num{ text-align:left; }
+    .tx-trust-grid{ gap:14px 26px; }
+    .tx-batteries-layout{ flex-direction:column; gap:40px; }
+    .tx-head-left{ text-align:center; margin:0 auto 40px; }
+    .tx-blob-visual{ display:none; }
+  }
+  @media (max-width:560px){
+    .tx-section{ padding:64px 0; }
+    .tx-hero{ padding:64px 0; }
+    .tx-btn{ width:100%; }
+  }
+
+</style>
+</head>
+<body>
+
+<div id="tx-page">
+
+  <header class="tx-topbar">
+    <div class="tx-topbar-inner">
+      <a href="https://nightingalepediatrics.com/">
+        <img class="tx-logo" src="https://www.image2url.com/r2/default/images/1783666412458-814dcc7c-9b49-4bca-8e9e-0c12884b623c.png" alt="Nightingale Pediatrics">
+      </a>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="tx-hero">
+    <svg class="tx-blob tx-blob-drift" style="top:-60px; right:-110px; width:360px; height:360px; opacity:0.14;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#FFFFFF" d="M52,-58C66,-46,74,-25,75,-3C76,19,70,42,55,56C40,70,17,76,-6,79C-29,82,-53,81,-66,67C-79,53,-81,25,-78,0C-75,-25,-67,-49,-51,-62C-35,-75,-11,-77,10,-77C31,-77,38,-70,52,-58Z" transform="translate(100 100)"/>
+    </svg>
+    <div class="tx-wrap tx-reveal in-view">
+      <span class="tx-eyebrow">Valid for MOE &amp; International Schools</span>
+      <h1>Clinical Clarity, From Anywhere.</h1>
+      <p>We provide full psycho-educational and neurodevelopmental diagnostics. All new diagnostic cases will require an initial consultation to ensure we assess the right areas.</p>
+      <div class="tx-hero-btns">
+        <a href="#batteries" class="tx-btn tx-btn-white">View Assessment Options</a>
+        <a href="https://nightingale.intakeq.com/booking?serviceId=7625afe1-92b4-41d5-beaa-a0d90aa9180b" class="tx-btn tx-btn-outline-white">Book Required Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRUST BAR ================= -->
+  <div class="tx-trust-bar">
+    <div class="tx-trust-grid">
+      <div class="tx-trust-item"><span class="tx-trust-icon">★</span> Led by Senior Consultants</div>
+      <div class="tx-trust-item"><span class="tx-trust-icon">✓</span> Standardized Tests</div>
+      <div class="tx-trust-item"><span class="tx-trust-icon">🔒</span> Secure Tele-Health</div>
+      <div class="tx-trust-item"><span class="tx-trust-icon">🏆</span> DSM-5 Criteria</div>
+    </div>
+  </div>
+
+  <!-- ================= BATTERIES ================= -->
+  <section id="batteries" class="tx-section tx-batteries">
+    <div class="tx-wrap">
+      <div class="tx-batteries-layout">
+
+        <div class="tx-batteries-left">
+          <div class="tx-head-left tx-reveal">
+            <h2>Psychological &amp; Diagnostic Assessments</h2>
+            <p>We use standardized, multi-modal psychometric tests to formulate clinical diagnoses. Pricing includes the testing sessions, consultations with other allied health providers, review of records, questionnaires, direct testing sessions, full psychological report, feedback session, and school observation if deemed necessary. The initial consultation is charged separately.</p>
+          </div>
+
+          <div class="tx-battery-grid tx-reveal">
+
+            <div class="tx-battery-card">
+              <h3 class="tx-battery-title">1. Cognitive Functioning</h3>
+              <p class="tx-battery-desc">Measures verbal capabilities, reasoning, spatial organisation, short term memory and processing speed, all of which create a full-scale intelligence quotient score (IQ). Used for understanding learning potential, cognitive strengths and weaknesses, and school or programme applications.</p>
+              <div class="tx-tool-list">
+                <span class="tx-tool-badge">Wechsler Scales</span>
+                <span class="tx-tool-badge">WPPSI/WISC/WAIS</span>
+                <span class="tx-tool-badge tx-price">&gt;2 Hours Testing Time</span>
+              </div>
+              <a href="https://nightingalepediatrics.com/academic-assessment" class="tx-battery-btn">Learn More</a>
+            </div>
+
+            <div class="tx-battery-card">
+              <h3 class="tx-battery-title">2. Academic Functioning</h3>
+              <p class="tx-battery-desc">Compares cognitive functioning (IQ) with academic performance to identify strengths and weaknesses.</p>
+              <div class="tx-tool-list">
+                <span class="tx-tool-badge">Wechsler Scales</span>
+                <span class="tx-tool-badge">WIAT-4</span>
+                <span class="tx-tool-badge tx-price">&gt;3 Hours Testing Time</span>
+              </div>
+              <a href="https://nightingalepediatrics.com/academic-assessment" class="tx-battery-btn">Learn More</a>
+            </div>
+
+            <div class="tx-battery-card">
+              <h3 class="tx-battery-title">3. ADHD &amp; Executive Function (Abbreviated)</h3>
+              <p class="tx-battery-desc">A targeted assessment to identify most cases of ADHD. Clinical interview, records review, multi-informant ADHD diagnostic rating scales, social-emotional and adaptive questionnaires, and direct assessment of attention and executive functioning accounting for distracting environments. <em>Note: If cognitive/academic testing is required, this moves to the Comprehensive category.</em></p>
+              <div class="tx-tool-list">
+                <span class="tx-tool-badge">Conners 4</span>
+                <span class="tx-tool-badge">BASC-3</span>
+                <span class="tx-tool-badge">Vineland-3</span>
+                <span class="tx-tool-badge">BRIEF-2</span>
+                <span class="tx-tool-badge tx-price">&gt;2 Hours Testing Time</span>
+              </div>
+              <a href="https://nightingalepediatrics.com/neurodevelopmental-assessment" class="tx-battery-btn">Learn More</a>
+            </div>
+
+            <div class="tx-battery-card">
+              <h3 class="tx-battery-title">4. Comprehensive Neurodevelopmental Diagnostic</h3>
+              <p class="tx-battery-desc">Full evaluation for complex presentations or multiple DSM-5 Neurodevelopmental Disorders, including: <strong>Autism Spectrum Disorder (ASD)</strong>, <strong>Specific Learning Disorder</strong> (Dyslexia, Dyscalculia, Dysgraphia), <strong>Developmental Coordination Disorder</strong> (Dyspraxia), and <strong>Language Disorders</strong>.</p>
+              <div class="tx-tool-list">
+                <span class="tx-tool-badge">Full Multi-Modal Battery</span>
+                <span class="tx-tool-badge tx-price">&gt;4 Hours Testing Time</span>
+              </div>
+              <a href="https://nightingalepediatrics.com/neurodevelopmental-assessment" class="tx-battery-btn">Learn More</a>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="tx-blob-visual">
+          <div class="tx-glass-blob">
+            <img class="tx-blob-img" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/teleassessment.svg" alt="Tele-Assessment Illustration">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROCESS ================= -->
+  <section class="tx-section tx-process">
+    <div class="tx-wrap">
+      <div class="tx-head tx-reveal">
+        <h2>The Diagnostic Process</h2>
+        <p>A clinical pathway structured for review by schools and medical boards.</p>
+      </div>
+
+      <div class="tx-process-step tx-reveal">
+        <div class="tx-step-num">1</div>
+        <div>
+          <h3>Initial Consultation (Required)</h3>
+          <p>Every case begins with a 1-hour session with a Senior Consultant (S$330) to review developmental history and confirm the correct testing roadmap for your child.</p>
+        </div>
+      </div>
+
+      <div class="tx-process-step tx-reveal">
+        <div class="tx-step-num">2</div>
+        <div>
+          <h3>Clinical Testing &amp; Data</h3>
+          <p>Standardized testing is conducted via secure video or in-clinic. We also collect multi-source data from parents and teachers using digital questionnaires.</p>
+        </div>
+      </div>
+
+      <div class="tx-process-step tx-reveal">
+        <div class="tx-step-num">3</div>
+        <div>
+          <h3>Report &amp; Feedback</h3>
+          <p>You receive a full clinical report detailing findings and a "School Action Plan." A feedback session is included in the assessment fee to explain the results.</p>
+        </div>
+      </div>
+
+      <div class="tx-disclaimer tx-reveal">
+        <strong>Important Clinical Protocol:</strong> Written consent is sought prior to the commencement of any diagnostic assessment to gather and share information from other sources. If consent is not granted, this might impact our capacity to provide a formal diagnosis, although confidentiality will be strictly maintained. The final clinical report is the property of the parent/guardian and will not be shared with schools or third parties unless explicitly requested by you.
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="tx-section tx-faq">
+    <div class="tx-wrap">
+      <div class="tx-head tx-reveal">
+        <h2>Common Questions</h2>
+      </div>
+
+      <div class="tx-faq-list tx-reveal">
+        <details class="tx-faq-item">
+          <summary>Why is the Initial Consultation charged separately?</summary>
+          <p>The consultation is a standalone clinical service to review history and determine medical necessity. Not every child requires a full battery, and this session ensures your child only undergoes the necessary testing.</p>
+        </details>
+
+        <details class="tx-faq-item">
+          <summary>Do I need a "Screener" or a "Diagnosis"?</summary>
+          <p>A <strong>Screener</strong> indicates <em>risk</em>. A <strong>Diagnostic Assessment</strong> provides a formal clinical diagnosis. If you need exam accommodations (like extra time) or school placement support, schools typically require a full diagnostic report.</p>
+        </details>
+
+        <details class="tx-faq-item">
+          <summary>Is this accepted by International Schools?</summary>
+          <p>Yes. We have experience offering services to a variety of international schools with varying curriculums and pedagogies (American, British, International Baccalaureate, etc.), and work closely with their learning support and pastoral care teams to provide relevant and appropriate recommendations.</p>
+        </details>
+
+        <details class="tx-faq-item">
+          <summary>Can this be done online?</summary>
+          <p>For children aged 7+, most components (ADHD testing, neurodiversity testing, clinical interviews) can be conducted online. For Autism, we will provide a clear testing roadmap during the initial consultation session. All remote assessments use appropriate tools, trained facilitators, and relevant and secure software that maintain strict professional standards.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  (function(){
+    var revealEls = document.querySelectorAll('.tx-reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); }
+        });
+      }, { threshold:0.12 });
+      revealEls.forEach(function(el){ io.observe(el); });
+    } else {
+      revealEls.forEach(function(el){ el.classList.add('in-view'); });
+    }
+  })();
+</script>
+
+</body>
+</html>
