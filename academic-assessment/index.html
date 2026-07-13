@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IQ Test Singapore (WISC-V) & School Readiness | MOE Accepted</title>
+<meta name="description" content="Private IQ testing (WISC-V) and Dyslexia assessment in Singapore. Our reports are accepted by MOE for Mother Tongue Exemption and International School admissions.">
+<meta name="keywords" content="IQ Test Singapore, WISC-V Assessment Singapore, Dyslexia Test Singapore, MOE Mother Tongue Exemption, Gifted Education Programme GEP, Academic Testing Singapore">
+<link rel="canonical" href="https://nightingalepediatrics.com/assessments/iq-school-readiness" />
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Child IQ & School Readiness Assessment",
+    "provider": {
+      "@type": "MedicalClinic",
+      "name": "Nightingale Pediatrics",
+      "image": "https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/nightingale%20official%20icon%20(1).svg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "10 Sinaran Drive, #10-27, Novena Medical Center",
+        "addressLocality": "Singapore",
+        "postalCode": "307506",
+        "addressCountry": "SG"
+      },
+      "priceRange": "$1000 - $1500 SGD"
+    },
+    "serviceType": "Psycho-Educational Assessment",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Singapore"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "IQ Testing Packages",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Cognitive Profiling (WISC-V IQ Test)"
+          },
+          "price": "1000",
+          "priceCurrency": "SGD",
+          "description": "Standardized IQ testing for school admission and giftedness screening."
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Academic Functioning (IQ + WIAT-4)"
+          },
+          "price": "1500",
+          "priceCurrency": "SGD",
+          "description": "Diagnostic testing for learning disorders and exam access arrangements."
+        }
+      ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this report accepted for MOE Mother Tongue exemption?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. To apply for Mother Tongue Language (MTL) exemption, MOE typically requires a formal diagnosis of a specific learning disorder (like Dyslexia). Our 'Academic Functioning' battery (IQ + WIAT-4) provides the necessary discrepancy analysis required for this application."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between GEP screening and a private IQ test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The GEP (Gifted Education Programme) screening is a standardized exam administered by MOE in schools. A private IQ test (WISC-V) is a clinical assessment that provides a detailed cognitive profile. While a private test cannot 'get you into' the GEP directly, it is often used by parents to understand their child's potential or to support appeals/DSA applications."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do international schools require this for admission?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Many international schools in Singapore (e.g., UWC, SAS, Tanglin) require a cognitive profile (WISC-V) as part of their admissions process to ensure the child can cope with the curriculum pace. We are familiar with these requirements and produce reports specifically for school placement."
+        }
+      }
+    ]
+  }
+]
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@300..700&display=swap" rel="stylesheet">
+
+<style>
+
+  #iq-page {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  #iq-page *,
+  #iq-page *::before,
+  #iq-page *::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- Design tokens (shared with Nightingale Pediatrics / Bonfire AI) ---------- */
+  #iq-page {
+    --sand:#FAF9F6;
+    --sand-deep:#F2EEE4;
+    --sage:#4F6B4F;
+    --sage-dark:#3B5240;
+    --sage-light:#E8EFE3;
+    --terracotta:#C97B5A;
+    --charcoal:#2C3539;
+    --charcoal-soft:#48545A;
+    --line:#E5E0D3;
+    --white:#FFFFFF;
+    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    --sans: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --max-w: 1140px;
+
+    background: var(--sand);
+    color: var(--charcoal);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  #iq-page img{ max-width:100%; display:block; }
+  #iq-page a{ text-decoration:none; color:inherit; }
+  #iq-page h1, #iq-page h2, #iq-page h3, #iq-page h4{
+    font-family: var(--serif);
+    font-weight: 400;
+    color: var(--charcoal);
+    letter-spacing: -0.01em;
+  }
+  #iq-page p{ line-height:1.65; }
+  #iq-page :focus-visible{ outline:2px solid var(--sage-dark); outline-offset:3px; }
+
+  .iq-wrap{ width:100%; max-width:var(--max-w); margin:0 auto; padding:0 5%; position:relative; z-index:2; }
+  .iq-section{ position:relative; padding:88px 0; }
+
+  /* ---------- Top bar ---------- */
+  .iq-topbar{ background:var(--sand); border-bottom:1px solid var(--line); }
+  .iq-topbar-inner{ max-width:var(--max-w); margin:0 auto; padding:18px 5%; display:flex; align-items:center; }
+  .iq-logo{ height:38px; width:auto; }
+
+  /* ---------- Breadcrumb ---------- */
+  .iq-breadcrumb{
+    padding:14px 5%;
+    font-size:0.82rem;
+    color:var(--charcoal-soft);
+    background:var(--sand);
+    border-bottom:1px solid var(--line);
+  }
+  .iq-breadcrumb-inner{ max-width:var(--max-w); margin:0 auto; }
+  .iq-breadcrumb a{ color:var(--charcoal-soft); transition:color .2s ease; }
+  .iq-breadcrumb a:hover{ color:var(--sage-dark); }
+  .iq-breadcrumb-current{ color:var(--sage-dark); font-weight:500; }
+
+  /* ---------- Hero ---------- */
+  .iq-hero{ padding:96px 0 88px; text-align:center; overflow:hidden; position:relative; }
+  .iq-eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--sage-dark); font-weight:500; margin-bottom:18px;
+  }
+  .iq-hero h1{ font-size:clamp(2.2rem, 4vw, 3.4rem); max-width:800px; margin:0 auto 24px; line-height:1.1; }
+  .iq-hero p{ font-size:1.14rem; max-width:660px; margin:0 auto; color:var(--charcoal-soft); }
+  .iq-hero p strong{ color:var(--charcoal); font-weight:500; }
+
+  /* ---------- Section headers ---------- */
+  .iq-head{ text-align:center; max-width:720px; margin:0 auto 50px auto; }
+  .iq-head h2{ font-size:clamp(1.7rem, 2.4vw, 2.3rem); margin-bottom:12px; }
+  .iq-head p{ color:var(--charcoal-soft); font-size:1.05rem; margin:0; }
+
+  /* ---------- Packages ---------- */
+  .iq-packages{ background:var(--sand-deep); }
+  .iq-packages-grid{ display:grid; grid-template-columns:1fr 1fr; gap:36px; max-width:980px; margin:0 auto; align-items:start; }
+
+  .iq-pkg-card{
+    border:1px solid var(--line); border-radius:20px; padding:40px 36px 44px;
+    background:var(--white); display:flex; flex-direction:column; height:100%;
+    position:relative;
+  }
+  .iq-pkg-card.iq-highlight{
+    border:2px solid var(--sage);
+    box-shadow:0 22px 50px rgba(79,107,79,0.14);
+  }
+  .iq-badge-gold{
+    position:absolute; top:-15px; left:50%; transform:translateX(-50%);
+    background:var(--sage); color:var(--white) !important;
+    padding:7px 16px; border-radius:100px; font-size:0.72rem; font-weight:600;
+    text-transform:uppercase; letter-spacing:0.04em; white-space:nowrap;
+    box-shadow:0 4px 12px rgba(0,0,0,0.12);
+  }
+
+  .iq-pkg-title{ font-size:1.4rem; margin:8px 0 8px; }
+  .iq-pkg-price{ font-family:var(--serif); font-size:2.2rem; color:var(--terracotta); margin-bottom:18px; display:block; }
+  .iq-pkg-desc{ font-size:0.94rem; color:var(--charcoal-soft); margin-bottom:26px; min-height:44px; }
+
+  .iq-checklist{ list-style:none; padding:0; margin-bottom:34px; flex-grow:1; }
+  .iq-checklist li{ margin-bottom:12px; padding-left:26px; position:relative; font-size:0.92rem; color:var(--charcoal-soft); }
+  .iq-checklist li::before{
+    content:'✓'; position:absolute; left:0; color:var(--sage-dark); font-weight:bold;
+  }
+  .iq-checklist li strong{ color:var(--charcoal); }
+
+  .iq-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    width:100%; padding:15px 24px;
+    font-family:var(--sans); font-weight:500; font-size:0.98rem;
+    border-radius:100px; text-align:center; cursor:pointer;
+    transition:all .25s ease;
+  }
+  .iq-btn-outline{ border:1px solid var(--sage-dark); color:var(--sage-dark) !important; background:transparent; }
+  .iq-btn-outline:hover{ background:var(--sage-light); }
+  .iq-btn-solid{ background:var(--sage); color:var(--white) !important; border:1px solid var(--sage); box-shadow:0 6px 20px rgba(79,107,79,0.22); }
+  .iq-btn-solid:hover{ background:var(--sage-dark); border-color:var(--sage-dark); transform:translateY(-2px); }
+
+  /* ---------- Consultants ---------- */
+  .iq-consultants{ background:var(--white); }
+  .iq-consultants-grid{ display:flex; justify-content:center; gap:36px; flex-wrap:wrap; }
+  .iq-consultant{ background:var(--sand-deep); border:1px solid var(--line); border-radius:20px; padding:0 0 26px; text-align:center; width:100%; max-width:300px; }
+  .iq-consultant-photo-wrap{ position:relative; display:flex; justify-content:center; padding-top:32px; margin-bottom:16px; }
+  .iq-consultant-blob{ position:absolute; top:14px; left:0; right:0; margin:auto; width:130px; height:130px; z-index:0; }
+  .iq-consultant-img{
+    position:relative; z-index:1;
+    width:112px; height:112px; border-radius:50%; object-fit:cover;
+    border:3px solid var(--white); box-shadow:0 8px 20px rgba(44,53,57,0.12);
+  }
+  .iq-consultant-name{ font-size:1.2rem; margin-bottom:4px; }
+  .iq-consultant-role{ font-size:0.78rem; color:var(--sage-dark); font-weight:600; text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:14px; }
+  .iq-consultant-bio{ font-size:0.9rem; color:var(--charcoal-soft); padding:0 22px; margin:0; }
+
+  /* ---------- FAQ ---------- */
+  .iq-faq{ background:var(--sand); }
+  .iq-faq-list{ max-width:760px; margin:0 auto; }
+  details.iq-faq-item{
+    background:var(--white); border:1px solid var(--line); border-radius:16px;
+    padding:22px 26px; margin-bottom:14px; transition:border-color .2s ease;
+  }
+  details.iq-faq-item:hover{ border-color:var(--sage); }
+  details.iq-faq-item summary{
+    font-family:var(--serif); font-size:1.06rem; color:var(--charcoal);
+    cursor:pointer; list-style:none;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  details.iq-faq-item summary::-webkit-details-marker{ display:none; }
+  details.iq-faq-item summary::after{
+    content:"+"; font-family:var(--sans); font-size:1.3rem; color:var(--sage-dark);
+    flex-shrink:0; transition:transform .2s ease;
+  }
+  details.iq-faq-item[open] summary::after{ transform:rotate(45deg); }
+  details.iq-faq-item p{ margin-top:14px; margin-bottom:0; color:var(--charcoal-soft); font-size:0.95rem; }
+
+  /* ---------- Reveal on scroll ---------- */
+  .iq-reveal{ opacity:0; transform:translateY(16px); transition:opacity .8s ease, transform .8s ease; }
+  .iq-reveal.in-view{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){ .iq-reveal{ opacity:1; transform:none; transition:none; } }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:800px){
+    .iq-packages-grid{ grid-template-columns:1fr; gap:52px; }
+    .iq-pkg-card.iq-highlight{ transform:none; }
+  }
+  @media (max-width:560px){
+    .iq-section{ padding:60px 0; }
+    .iq-hero{ padding:56px 0 60px; }
+  }
+
+</style>
+</head>
+<body>
+
+<div id="iq-page">
+
+  <header class="iq-topbar">
+    <div class="iq-topbar-inner">
+      <a href="https://nightingalepediatrics.com/">
+        <img class="iq-logo" src="https://www.image2url.com/r2/default/images/1783666412458-814dcc7c-9b49-4bca-8e9e-0c12884b623c.png" alt="Nightingale Pediatrics">
+      </a>
+    </div>
+  </header>
+
+  <nav class="iq-breadcrumb">
+    <div class="iq-breadcrumb-inner">
+      <a href="/">Home</a> /
+      <a href="/diagnosis">Diagnosis</a> /
+      <span class="iq-breadcrumb-current">Academic Assessment</span>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <section class="iq-hero">
+    <svg class="iq-blob" style="position:absolute; top:-70px; right:-110px; width:340px; height:340px; opacity:0.7; z-index:0;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#E8EFE3" d="M52,-58C66,-46,74,-25,75,-3C76,19,70,42,55,56C40,70,17,76,-6,79C-29,82,-53,81,-66,67C-79,53,-81,25,-78,0C-75,-25,-67,-49,-51,-62C-35,-75,-11,-77,10,-77C31,-77,38,-70,52,-58Z" transform="translate(100 100)"/>
+    </svg>
+    <div class="iq-wrap" style="position:relative; z-index:2;">
+      <div class="iq-reveal in-view">
+        <span class="iq-eyebrow" style="justify-content:center; display:flex;">Academic Assessment Singapore</span>
+        <h1>IQ Testing &amp; School Placement.</h1>
+        <p>Whether you need a <strong>WISC-V assessment</strong> for international school admission or a clinical report for <strong>MOE exam accommodations</strong>, we provide the clinical documentation you need.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PACKAGES ================= -->
+  <section class="iq-section iq-packages">
+    <div class="iq-wrap">
+      <div class="iq-packages-grid">
+
+        <div class="iq-pkg-card iq-reveal">
+          <h3 class="iq-pkg-title">Cognitive Profiling</h3>
+          <span class="iq-pkg-price">S$2,000</span>
+          <p class="iq-pkg-desc">Ideal for <strong>Gifted Education (GEP)</strong> screening or general intellectual mapping.</p>
+
+          <ul class="iq-checklist">
+            <li><strong>Tool:</strong> <strong>WISC-V</strong> (Children) or WAIS-IV (Adults)</li>
+            <li><strong>Time:</strong> ~2 Hours Clinical Testing</li>
+            <li><strong>Report:</strong> Full IQ Score &amp; Cognitive Domain Analysis</li>
+            <li><strong>Outcome:</strong> Valid for private school admissions</li>
+            <li>1-Hour Parent Feedback Session</li>
+          </ul>
+
+          <a href="https://nightingale.intakeq.com/booking?serviceId=7625afe1-92b4-41d5-beaa-a0d90aa9180b" class="iq-btn iq-btn-outline">Book IQ Test</a>
+        </div>
+
+        <div class="iq-pkg-card iq-highlight iq-reveal">
+          <div class="iq-badge-gold">Required For School Exemptions</div>
+          <h3 class="iq-pkg-title">Academic Functioning</h3>
+          <span class="iq-pkg-price">S$3,000</span>
+          <p class="iq-pkg-desc">Combines IQ with academic achievement testing to identify learning gaps.</p>
+
+          <ul class="iq-checklist">
+            <li><strong>Tools:</strong> WISC-V <strong>+ WIAT-4</strong> (Achievement)</li>
+            <li><strong>Time:</strong> ~3-4 Hours Clinical Testing</li>
+            <li><strong>Report:</strong> Discrepancy Analysis (Potential vs. Performance)</li>
+            <li><strong>Valid For:</strong> <strong>MOE Mother Tongue Exemption</strong></li>
+            <li><strong>Valid For:</strong> <strong>PSLE/IB Access Arrangements</strong> (Extra Time)</li>
+            <li>1-Hour Parent Feedback &amp; School Action Plan</li>
+          </ul>
+
+          <a href="https://nightingale.intakeq.com/booking?serviceId=7625afe1-92b4-41d5-beaa-a0d90aa9180b" class="iq-btn iq-btn-solid">Book Academic Test</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONSULTANTS ================= -->
+  <section class="iq-section iq-consultants">
+    <div class="iq-wrap">
+      <div class="iq-head iq-reveal">
+        <h2>Meet Our Clinical Team</h2>
+        <p>Your assessment will be conducted by our senior psychologists, ensuring professional care.</p>
+      </div>
+
+      <div class="iq-consultants-grid iq-reveal">
+        <div class="iq-consultant">
+          <div class="iq-consultant-photo-wrap">
+            <svg class="iq-consultant-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#E8EFE3" d="M48,-55C61,-45,69,-27,71,-8C73,10,70,29,59,44C48,59,29,70,8,73C-13,76,-38,71,-53,57C-68,43,-73,20,-72,-3C-71,-26,-64,-49,-49,-60C-34,-71,-11,-70,7,-73C25,-76,35,-65,48,-55Z" transform="translate(100 100)"/>
+            </svg>
+            <img class="iq-consultant-img" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/Clinician%20Photos/clare.png" alt="Dr. Clare Ong">
+          </div>
+          <h3 class="iq-consultant-name">Dr. Clare Ong</h3>
+          <span class="iq-consultant-role">Senior Consultant Psychologist</span>
+          <p class="iq-consultant-bio">34 years experience. Established the psychology division at MOE/NIE. Specializing in assessments.</p>
+        </div>
+
+        <div class="iq-consultant">
+          <div class="iq-consultant-photo-wrap">
+            <svg class="iq-consultant-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#C97B5A" fill-opacity="0.22" d="M46,-52C58,-42,64,-23,66,-3C68,16,66,35,54,48C42,61,21,69,-2,71C-25,73,-50,69,-63,54C-76,39,-77,14,-73,-9C-69,-32,-60,-53,-45,-63C-29,-73,-15,-72,3,-75C21,-78,34,-62,46,-52Z" transform="translate(100 100)"/>
+            </svg>
+            <img class="iq-consultant-img" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/Clinician%20Photos/belinda.png" alt="Dr. Belinda Teo">
+          </div>
+          <h3 class="iq-consultant-name">Dr. Belinda Teo</h3>
+          <span class="iq-consultant-role">Senior Consultant Psychologist</span>
+          <p class="iq-consultant-bio">24 years experience. Registered SG psychologist specializing in ADHD, autism, and IQ assessments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="iq-section iq-faq">
+    <div class="iq-wrap">
+      <div class="iq-head iq-reveal">
+        <h2>Common Questions</h2>
+        <p>Answers about School Placement &amp; Exemptions.</p>
+      </div>
+
+      <div class="iq-faq-list iq-reveal">
+        <details class="iq-faq-item">
+          <summary>Is this report accepted for MOE Mother Tongue exemption?</summary>
+          <p>Yes. To apply for Mother Tongue Language (MTL) exemption, MOE typically requires a formal diagnosis of a specific learning disorder (like Dyslexia). Our <strong>Academic Functioning</strong> battery (IQ + WIAT-4) provides the necessary discrepancy analysis required for this application.</p>
+        </details>
+
+        <details class="iq-faq-item">
+          <summary>What is the difference between GEP screening and a private IQ test?</summary>
+          <p>The GEP (Gifted Education Programme) screening is a standardized exam administered by MOE in schools. A private IQ test (WISC-V) is a clinical assessment that provides a detailed cognitive profile. While a private test cannot "get you into" the GEP directly, it is often used by parents to understand their child's potential or to support appeals/DSA applications.</p>
+        </details>
+
+        <details class="iq-faq-item">
+          <summary>Do international schools require this for admission?</summary>
+          <p>Many major international schools in Singapore (e.g., UWC, SAS, Tanglin) require a cognitive profile (WISC-V) as part of their admissions process to ensure the child can cope with the curriculum pace. We are familiar with these requirements and produce reports specifically for school placement.</p>
+        </details>
+
+        <details class="iq-faq-item">
+          <summary>How long is the report valid for?</summary>
+          <p>Most schools and exam boards require psycho-educational reports to be conducted within the last <strong>2 to 3 years</strong> to be considered valid for access arrangements.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  (function(){
+    var revealEls = document.querySelectorAll('.iq-reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); }
+        });
+      }, { threshold:0.12 });
+      revealEls.forEach(function(el){ io.observe(el); });
+    } else {
+      revealEls.forEach(function(el){ el.classList.add('in-view'); });
+    }
+  })();
+</script>
+
+</body>
+</html>
