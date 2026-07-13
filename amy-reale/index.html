@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Amy Reale | Clinical & School Psychologist</title>
+<meta name="description" content="Dr. Amy Reale, Chief Clinical Officer at Nightingale Pediatrics — Clinical & School Psychologist (USA/SG) specializing in neurodevelopmental assessment and family mental health.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@300..700&display=swap" rel="stylesheet">
+
+<style>
+
+  #amy-page {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  #amy-page *,
+  #amy-page *::before,
+  #amy-page *::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- Design tokens (shared with Nightingale Pediatrics / Bonfire AI) ---------- */
+  #amy-page {
+    --sand:#FAF9F6;
+    --sand-deep:#F2EEE4;
+    --sage:#4F6B4F;
+    --sage-dark:#3B5240;
+    --sage-light:#E8EFE3;
+    --terracotta:#C97B5A;
+    --charcoal:#2C3539;
+    --charcoal-soft:#48545A;
+    --line:#E5E0D3;
+    --white:#FFFFFF;
+    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    --sans: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --max-w: 1120px;
+
+    background: var(--sand);
+    color: var(--charcoal);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  #amy-page img{ max-width:100%; display:block; }
+  #amy-page a{ text-decoration:none; color:inherit; }
+  #amy-page h1, #amy-page h2, #amy-page h3, #amy-page h4{
+    font-family: var(--serif);
+    font-weight: 400;
+    color: var(--charcoal);
+    letter-spacing: -0.01em;
+  }
+  #amy-page :focus-visible{ outline: 2px solid var(--sage-dark); outline-offset: 3px; }
+
+  .ap-wrap{ width:100%; max-width:var(--max-w); margin:0 auto; padding:0 5%; position:relative; }
+  .ap-section{ position:relative; padding:70px 0; }
+
+  /* ---------- Top bar ---------- */
+  .ap-topbar{ background:var(--sand); border-bottom:1px solid var(--line); }
+  .ap-topbar .ap-wrap{ display:flex; align-items:center; padding:16px 5%; }
+  .ap-back{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.86rem; font-weight:500; color:var(--sage-dark);
+  }
+  .ap-back svg{ width:15px; height:15px; }
+
+  /* ---------- Ambient blobs ---------- */
+  .ap-blob{ position:absolute; z-index:0; pointer-events:none; opacity:0.9; }
+  @media (prefers-reduced-motion: no-preference){
+    .ap-blob-drift{ animation:ap-drift 28s ease-in-out infinite alternate; }
+  }
+  @keyframes ap-drift{
+    0%{ transform:translate(0,0) scale(1) rotate(0deg); }
+    100%{ transform:translate(14px,-16px) scale(1.04) rotate(3deg); }
+  }
+
+  /* ---------- Hero / profile ---------- */
+  .ap-hero{ padding:80px 0 84px; overflow:hidden; }
+  .ap-profile-grid{
+    display:grid;
+    grid-template-columns: 0.82fr 1.18fr;
+    gap:64px;
+    align-items:start;
+    position:relative; z-index:2;
+  }
+
+  .ap-photo-wrap{ position:relative; }
+  .ap-photo-blob{ position:absolute; inset:-6%; z-index:0; }
+  .ap-photo-frame{
+    position:relative; z-index:1;
+    width:100%;
+    aspect-ratio: 4/5;
+    object-fit:cover;
+    border-radius: 46% 54% 58% 42% / 52% 46% 54% 48%;
+    background:var(--white);
+    border:1px solid var(--line);
+    box-shadow: 0 20px 46px rgba(44,53,57,0.12);
+  }
+
+  .ap-cred-list{ list-style:none; margin:32px 0 0; padding:0; }
+  .ap-cred-list li{
+    display:flex; align-items:flex-start; gap:10px;
+    font-size:0.92rem; color:var(--charcoal-soft);
+    padding-bottom:12px; margin-bottom:12px;
+    border-bottom:1px solid var(--line);
+  }
+  .ap-cred-list li:last-child{ border-bottom:none; margin-bottom:0; padding-bottom:0; }
+  .ap-cred-icon{ color:var(--terracotta); flex-shrink:0; line-height:1.5; }
+
+  .ap-role-tag{
+    display:block;
+    font-size:0.82rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--sage-dark);
+    font-weight:500;
+    margin-bottom:16px;
+  }
+
+  .ap-name-row{
+    display:flex; align-items:center; flex-wrap:wrap; gap:16px;
+    margin-bottom:10px;
+  }
+  .ap-name{ font-size:clamp(2.2rem, 4.2vw, 3.4rem); line-height:1.08; margin:0; }
+
+  .ap-badge{
+    display:inline-flex; align-items:center; gap:7px;
+    background:var(--sage-light);
+    color:var(--sage-dark);
+    padding:7px 15px;
+    border-radius:100px;
+    border:1px solid rgba(79,107,79,0.25);
+    font-size:0.8rem; font-weight:500;
+    text-transform:uppercase; letter-spacing:0.04em;
+  }
+  .ap-badge svg{ width:14px; height:14px; color:var(--terracotta); flex-shrink:0; }
+
+  .ap-subtitle{
+    font-family:var(--sans); font-weight:400;
+    font-size:1.14rem; color:var(--charcoal-soft);
+    margin:0 0 34px 0;
+  }
+
+  .ap-bio p{ font-size:1.03rem; color:var(--charcoal-soft); margin:0 0 18px 0; }
+
+  .ap-quote{
+    margin:32px 0;
+    padding:26px 30px;
+    border-left:3px solid var(--sage);
+    background:var(--sand-deep);
+    border-radius:0 14px 14px 0;
+    font-family:var(--serif);
+    font-size:1.14rem;
+    font-style:italic;
+    color:var(--sage-dark);
+  }
+
+  .ap-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:16px 34px;
+    background:var(--sage); color:var(--white) !important;
+    font-family:var(--sans); font-weight:500; font-size:1rem;
+    border-radius:100px; border:1px solid var(--sage);
+    cursor:pointer;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    box-shadow:0 6px 20px rgba(79,107,79,0.22);
+  }
+  .ap-btn:hover{ background:var(--sage-dark); border-color:var(--sage-dark); transform:translateY(-2px); box-shadow:0 10px 26px rgba(79,107,79,0.28); }
+  .ap-availability{ margin-top:16px; font-size:0.88rem; color:var(--charcoal-soft); }
+
+  /* ---------- Core competencies (dark sage section) ---------- */
+  .ap-expertise{ background:var(--sage); color:var(--white); overflow:hidden; }
+  .ap-expertise-head{ text-align:center; max-width:680px; margin:0 auto 52px auto; position:relative; z-index:2; }
+  .ap-expertise-head h2{ color:var(--white); font-size:clamp(1.8rem, 2.6vw, 2.5rem); margin-bottom:16px; }
+  .ap-expertise-head p{ color:rgba(255,255,255,0.86); font-size:1.08rem; margin:0; }
+
+  .ap-cap-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:20px;
+    position:relative; z-index:2;
+  }
+  .ap-cap-card{
+    display:flex; align-items:center; gap:14px;
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:14px;
+    padding:20px 22px;
+    transition:background .25s ease, border-color .25s ease;
+  }
+  .ap-cap-card:hover{ background:rgba(255,255,255,0.12); border-color:var(--terracotta); }
+  .ap-cap-dot{ width:8px; height:8px; border-radius:50%; background:var(--terracotta); flex-shrink:0; }
+  .ap-cap-text{ font-size:1rem; font-weight:400; color:var(--white); margin:0; }
+
+  /* ---------- Footer disclaimer ---------- */
+  .ap-footer-note{
+    background:var(--sand);
+    padding:32px 0;
+    text-align:center;
+    border-top:1px solid var(--line);
+  }
+  .ap-footer-note p{ margin:0; font-size:0.84rem; color:var(--charcoal-soft); }
+
+  /* ---------- Reveal on scroll ---------- */
+  .ap-reveal{ opacity:0; transform:translateY(16px); transition:opacity .8s ease, transform .8s ease; }
+  .ap-reveal.in-view{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    .ap-reveal{ opacity:1; transform:none; transition:none; }
+    .ap-blob-drift{ animation:none; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:860px){
+    .ap-profile-grid{ grid-template-columns:1fr; gap:40px; text-align:left; }
+    .ap-photo-wrap{ max-width:400px; margin:0 auto; }
+    .ap-name-row{ justify-content:flex-start; }
+  }
+  @media (max-width:560px){
+    .ap-hero{ padding:52px 0 60px; }
+    .ap-section{ padding:56px 0; }
+    .ap-name{ font-size:2.1rem; }
+    .ap-btn{ width:100%; }
+  }
+
+</style>
+</head>
+<body>
+
+<div id="amy-page">
+
+  <header class="ap-topbar">
+    <div class="ap-wrap">
+      <a href="https://nightingalepediatrics.com/" class="ap-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Nightingale Pediatrics
+      </a>
+    </div>
+  </header>
+
+  <!-- ================= HERO / PROFILE ================= -->
+  <section class="ap-section ap-hero">
+    <svg class="ap-blob ap-blob-drift" style="top:-60px; right:-120px; width:360px; height:360px; opacity:0.6;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#C97B5A" fill-opacity="0.2" d="M46,-52C58,-42,64,-23,66,-3C68,16,66,35,54,48C42,61,21,69,-2,71C-25,73,-50,69,-63,54C-76,39,-77,14,-73,-9C-69,-32,-60,-53,-45,-63C-29,-73,-15,-72,3,-75C21,-78,34,-62,46,-52Z" transform="translate(100 100)"/>
+    </svg>
+
+    <div class="ap-wrap">
+      <div class="ap-profile-grid">
+
+        <div class="ap-reveal in-view">
+          <div class="ap-photo-wrap">
+            <svg class="ap-photo-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#E8EFE3" d="M48,-55C61,-45,69,-27,71,-8C73,10,70,29,59,44C48,59,29,70,8,73C-13,76,-38,71,-53,57C-68,43,-73,20,-72,-3C-71,-26,-64,-49,-49,-60C-34,-71,-11,-70,7,-73C25,-76,35,-65,48,-55Z" transform="translate(100 100)"/>
+            </svg>
+            <img class="ap-photo-frame" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/amy.svg" alt="Dr. Amy Reale">
+          </div>
+
+          <ul class="ap-cred-list">
+            <li><span class="ap-cred-icon">✦</span> Doctor of Psychology (PsyD), Pace University, NY</li>
+            <li><span class="ap-cred-icon">✦</span> M.S.Ed. in School Psychology</li>
+            <li><span class="ap-cred-icon">✦</span> Full Member, American Psychological Association</li>
+            <li><span class="ap-cred-icon">✦</span> Registered Psychologist (Singapore &amp; US Licensed)</li>
+            <li><span class="ap-cred-icon">✦</span> 24+ Years Clinical Experience</li>
+          </ul>
+        </div>
+
+        <div class="ap-reveal in-view">
+          <span class="ap-role-tag">Chief Clinical Officer</span>
+
+          <div class="ap-name-row">
+            <h1 class="ap-name">Dr. Amy Reale</h1>
+            <span class="ap-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              SRP Approved Supervisor
+            </span>
+          </div>
+
+          <h2 class="ap-subtitle">Clinical &amp; School Psychologist (USA/SG)</h2>
+
+          <div class="ap-bio">
+            <p>Dr. Amy is an American clinical and school psychologist trained in New York City, with over 2 decades of experience supporting children, adolescents, parents, and families across Singapore, Spain, and the United States.</p>
+            <p>She specializes in helping neurodivergent families navigate complex systems. She adopts a two-pronged approach: providing children with comprehensive neuropsychological assessments and executive functioning coaching, while equipping parents with practical tools to reduce family stress and sustain their own mental health.</p>
+            <p>Having conducted research in peri-natal mental health, Dr. Amy also has a specialized clinical focus in supporting parents navigating bonding difficulties, using observational methods and attachment research to strengthen the parent-child relationship.</p>
+          </div>
+
+          <div class="ap-quote">
+            "Dr. Amy's approach to diagnostic and psychological assessment is comprehensive. Her style is collaborative and neuro-affirming."
+          </div>
+
+          <a href="https://calendly.com/meeting-with-nightingale/concierge" target="_blank" rel="noopener noreferrer" class="ap-btn">Book Consultation</a>
+          <p class="ap-availability">Available In-person (Novena) &amp; Online.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CORE CLINICAL COMPETENCIES ================= -->
+  <section class="ap-section ap-expertise">
+    <svg class="ap-blob" style="bottom:-120px; left:-100px; width:380px; height:380px; opacity:0.18;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#FFFFFF" d="M50,-56C64,-45,72,-25,73,-4C74,17,68,38,54,52C40,66,19,74,-3,77C-25,80,-49,78,-63,64C-77,50,-81,24,-79,0C-77,-24,-70,-48,-54,-60C-38,-72,-13,-72,7,-75C27,-78,36,-67,50,-56Z" transform="translate(100 100)"/>
+    </svg>
+    <div class="ap-wrap">
+      <div class="ap-expertise-head ap-reveal">
+        <h2>Core Clinical Competencies</h2>
+        <p>Dr. Amy combines clinical rigor with school psychology training to ensure interventions work in the classroom, not just the clinic.</p>
+      </div>
+
+      <div class="ap-cap-grid ap-reveal">
+        <div class="ap-cap-card"><span class="ap-cap-dot"></span><p class="ap-cap-text">Neurodevelopmental Assessment</p></div>
+        <div class="ap-cap-card"><span class="ap-cap-dot"></span><p class="ap-cap-text">Academic Assessment</p></div>
+        <div class="ap-cap-card"><span class="ap-cap-dot"></span><p class="ap-cap-text">Psychological Assessment</p></div>
+        <div class="ap-cap-card"><span class="ap-cap-dot"></span><p class="ap-cap-text">ADHD Testing</p></div>
+        <div class="ap-cap-card"><span class="ap-cap-dot"></span><p class="ap-cap-text">Parent Coaching</p></div>
+        <div class="ap-cap-card"><span class="ap-cap-dot"></span><p class="ap-cap-text">Circle of Security Parenting</p></div>
+        <div class="ap-cap-card"><span class="ap-cap-dot"></span><p class="ap-cap-text">Executive Function Coaching</p></div>
+        <div class="ap-cap-card"><span class="ap-cap-dot"></span><p class="ap-cap-text">Psychotherapy</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER DISCLAIMER ================= -->
+  <div class="ap-footer-note">
+    <div class="ap-wrap">
+      <p>Disclaimer: Dr. Amy is not a medical doctor or dentist.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  (function(){
+    var revealEls = document.querySelectorAll('.ap-reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); }
+        });
+      }, { threshold:0.12 });
+      revealEls.forEach(function(el){ io.observe(el); });
+    } else {
+      revealEls.forEach(function(el){ el.classList.add('in-view'); });
+    }
+  })();
+</script>
+
+</body>
+</html>
