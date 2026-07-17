@@ -3,34 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neuropsychological Assessments & Diagnosis | Nightingale Pediatrics</title>
-<meta name="description" content="Clinical assessments for IQ, ADHD, Autism, and Learning Disorders. We provide clinical reports for school placement and exam accommodations.">
-<link rel="canonical" href="https://nightingalepediatrics.com/diagnostics" />
+
+<title>ADHD Assessment Singapore & Autism Diagnosis (ADOS / ADI-R) | MOE Accepted</title>
+<meta name="description" content="Private ADHD & Autism diagnosis in Singapore (Novena). No wait times. Our reports (ADOS/ADI-R/WISC-V) are accepted by MOE and International Schools for exam accommodations.">
+<meta name="keywords" content="ADHD Assessment Singapore, Autism Diagnosis Singapore, Private Child Psychologist Novena, ADOS Assessment Singapore, ADI-R Singapore, ADHD Test Cost Singapore, MOE Access Arrangements">
+<link rel="canonical" href="https://nightingalepediatrics.com/assessments/adhd-autism-diagnosis" />
 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MedicalWebPage",
-  "name": "Psycho-Educational & Neurodevelopmental Diagnostics",
-  "description": "Diagnostic testing for IQ, ADHD, Autism, and Academic Functioning using Wechsler Scales, WIAT-4, and ADOS-2 protocols.",
-  "provider": {
-    "@type": "MedicalClinic",
-    "name": "Nightingale Pediatrics",
-    "image": "https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/nightingale%20official%20icon%20(1).svg",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Singapore",
-      "addressCountry": "SG"
-    }
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "ADHD & Autism Diagnostic Assessment",
+    "provider": {
+      "@type": "MedicalClinic",
+      "name": "Nightingale Pediatrics",
+      "image": "https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/nightingale%20official%20icon%20(1).svg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "10 Sinaran Drive, #10-27, Novena Medical Center",
+        "addressLocality": "Singapore",
+        "postalCode": "307506",
+        "addressCountry": "SG"
+      },
+      "priceRange": "$2500 - $5000 SGD"
+    },
+    "medicalSpecialty": ["Pediatric Psychology", "Neuropsychology"],
+    "about": [
+      { "@type": "MedicalCondition", "name": "Attention Deficit Hyperactivity Disorder (ADHD)" },
+      { "@type": "MedicalCondition", "name": "Autism Spectrum Disorder (ASD)" },
+      { "@type": "MedicalCondition", "name": "Specific Learning Disorder (SLD)" }
+    ]
   },
-  "medicalSpecialty": ["Pediatric Psychology", "Educational Psychology", "Neuropsychology"],
-  "availableService": [
-    { "@type": "MedicalTest", "name": "Intellectual Functioning (Wechsler)" },
-    { "@type": "MedicalTest", "name": "Academic Functioning Assessment (WIAT-4)" },
-    { "@type": "MedicalTest", "name": "ADHD Abbreviated Assessment" },
-    { "@type": "MedicalTest", "name": "Comprehensive Neurodevelopmental Diagnostic" }
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is a private ADHD diagnosis accepted by MOE schools?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our psychologists are registered with the Singapore Register of Psychologists (SRP). Our diagnostic reports use DSM-5 criteria and are accepted by the Ministry of Education (MOE) for applications regarding Mother Tongue Exemption and Access Arrangements (extra time)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a psychologist prescribe ADHD medication in Singapore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, psychologists do not prescribe medication. However, our Formal Diagnostic Report is the medical document required by psychiatrists or pediatricians to initiate a medication plan. We can refer you directly to our partner medical doctors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between a screener and a full diagnosis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 'screener' only indicates risk (e.g., 'At risk for ADHD'). A 'Full Diagnosis' (which we provide) confirms the condition using clinical interviews and standardized testing. Schools and exam boards require a Full Diagnosis for accommodations."
+        }
+      }
+    ]
+  }
+]
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,22 +74,22 @@
 
 <style>
 
-  #tx-page {
+  #diag-page {
     width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
   }
-  #tx-page *,
-  #tx-page *::before,
-  #tx-page *::after {
+  #diag-page *,
+  #diag-page *::before,
+  #diag-page *::after {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
   }
 
   /* ---------- Design tokens (shared with Nightingale Pediatrics / Bonfire AI) ---------- */
-  #tx-page {
+  #diag-page {
     --sand:#FAF9F6;
     --sand-deep:#F2EEE4;
     --sage:#4F6B4F;
@@ -67,7 +102,7 @@
     --white:#FFFFFF;
     --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
     --sans: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --max-w: 1180px;
+    --max-w: 1140px;
 
     background: var(--sand);
     color: var(--charcoal);
@@ -76,379 +111,488 @@
     line-height: 1.65;
   }
 
-  #tx-page img{ max-width:100%; display:block; }
-  #tx-page a{ text-decoration:none; color:inherit; }
-  #tx-page h1, #tx-page h2, #tx-page h3, #tx-page h4{
+  #diag-page img{ max-width:100%; display:block; }
+  #diag-page a{ text-decoration:none; color:inherit; }
+  #diag-page h1, #diag-page h2, #diag-page h3, #diag-page h4{
     font-family: var(--serif);
     font-weight: 400;
     color: var(--charcoal);
     letter-spacing: -0.01em;
   }
-  #tx-page p{ line-height:1.65; }
-  #tx-page :focus-visible{ outline:2px solid var(--sage-dark); outline-offset:3px; }
+  #diag-page p{ line-height:1.65; }
+  #diag-page :focus-visible{ outline:2px solid var(--sage-dark); outline-offset:3px; }
 
-  .tx-wrap{ width:100%; max-width:var(--max-w); margin:0 auto; padding:0 5%; position:relative; z-index:2; }
-  .tx-section{ position:relative; padding:96px 0; }
+  .dg-wrap{ width:100%; max-width:var(--max-w); margin:0 auto; padding:0 5%; position:relative; z-index:2; }
+  .dg-section{ position:relative; padding:88px 0; }
 
   /* ---------- Top bar ---------- */
-  .tx-topbar{ background:var(--sand); border-bottom:1px solid var(--line); }
-  .tx-topbar-inner{ max-width:var(--max-w); margin:0 auto; padding:18px 5%; display:flex; align-items:center; }
-  .tx-logo{ height:38px; width:auto; }
+  .dg-topbar{ background:var(--sand); border-bottom:1px solid var(--line); }
+  .dg-topbar-inner{ max-width:var(--max-w); margin:0 auto; padding:18px 5%; display:flex; align-items:center; }
+  .dg-logo{ height:38px; width:auto; }
 
-  /* ---------- Buttons ---------- */
-  .tx-btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:8px;
-    padding:16px 32px;
-    font-family:var(--sans); font-weight:500; font-size:1rem;
-    border-radius:100px; cursor:pointer;
-    transition:all .25s ease;
+  /* ---------- Breadcrumb ---------- */
+  .dg-breadcrumb{
+    padding:14px 5%;
+    font-size:0.82rem;
+    color:var(--charcoal-soft);
+    background:var(--sand);
+    border-bottom:1px solid var(--line);
   }
-  .tx-btn-white{ background:var(--white); color:var(--sage-dark) !important; border:1px solid var(--white); box-shadow:0 10px 26px rgba(0,0,0,0.15); }
-  .tx-btn-white:hover{ transform:translateY(-2px); box-shadow:0 14px 30px rgba(0,0,0,0.2); }
-  .tx-btn-outline-white{ background:transparent; color:var(--white) !important; border:1px solid rgba(255,255,255,0.7); }
-  .tx-btn-outline-white:hover{ background:rgba(255,255,255,0.12); transform:translateY(-2px); }
-  .tx-btn-sage{ background:var(--sage); color:var(--white) !important; border:1px solid var(--sage); box-shadow:0 6px 20px rgba(79,107,79,0.22); }
-  .tx-btn-sage:hover{ background:var(--sage-dark); border-color:var(--sage-dark); transform:translateY(-2px); }
-  .tx-btn-outline-sage{ background:transparent; color:var(--sage-dark) !important; border:1px solid var(--sage-dark); }
-  .tx-btn-outline-sage:hover{ background:var(--sage-light); }
-
-  /* ---------- Ambient blobs ---------- */
-  .tx-blob{ position:absolute; z-index:0; pointer-events:none; opacity:0.9; }
-  @media (prefers-reduced-motion: no-preference){
-    .tx-blob-drift{ animation:tx-drift 28s ease-in-out infinite alternate; }
-  }
-  @keyframes tx-drift{
-    0%{ transform:translate(0,0) scale(1) rotate(0deg); }
-    100%{ transform:translate(14px,-16px) scale(1.04) rotate(3deg); }
-  }
+  .dg-breadcrumb-inner{ max-width:var(--max-w); margin:0 auto; }
+  .dg-breadcrumb a{ color:var(--charcoal-soft); transition:color .2s ease; }
+  .dg-breadcrumb a:hover{ color:var(--sage-dark); }
+  .dg-breadcrumb-current{ color:var(--sage-dark); font-weight:500; }
 
   /* ---------- Hero ---------- */
-  .tx-hero{ background:var(--sage); color:var(--white); padding:100px 0; text-align:center; overflow:hidden; position:relative; }
-  .tx-eyebrow{
+  .dg-hero{ background:var(--sage); color:var(--white); padding:88px 0 96px; text-align:center; overflow:hidden; position:relative; }
+  .dg-eyebrow{
     display:inline-block; font-weight:500; text-transform:uppercase; letter-spacing:0.08em;
-    font-size:0.84rem; color:rgba(255,255,255,0.82); margin-bottom:18px;
+    font-size:0.84rem; color:rgba(255,255,255,0.8); margin-bottom:18px;
   }
-  .tx-hero h1{ color:var(--white); font-size:clamp(2.2rem, 4vw, 3.4rem); max-width:820px; margin:0 auto 22px; line-height:1.12; }
-  .tx-hero p{ font-size:1.14rem; max-width:680px; margin:0 auto 38px; color:rgba(255,255,255,0.92); }
-  .tx-hero-btns{ display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+  .dg-hero h1{ color:var(--white); font-size:clamp(2.2rem, 4vw, 3.2rem); max-width:820px; margin:0 auto 46px; line-height:1.15; }
 
-  /* ---------- Trust bar ---------- */
-  .tx-trust-bar{ background:var(--sand-deep); padding:26px 5%; border-bottom:1px solid var(--line); text-align:center; }
-  .tx-trust-grid{ display:flex; justify-content:center; gap:30px; flex-wrap:wrap; max-width:var(--max-w); margin:0 auto; }
-  .tx-trust-item{ display:flex; align-items:center; gap:9px; font-weight:500; color:var(--sage-dark); font-size:0.9rem; white-space:nowrap; }
-  .tx-trust-icon{ color:var(--terracotta); font-size:1.1rem; }
+  /* ---------- Hero tabs ---------- */
+  .dg-tab-layout{ display:flex; gap:36px; max-width:960px; margin:0 auto; text-align:left; align-items:stretch; }
+  .dg-tab-menu{ flex:0 0 260px; display:flex; flex-direction:column; border-left:2px solid rgba(255,255,255,0.18); }
+  .dg-tab-btn{
+    padding:20px 26px; text-align:left; background:transparent; border:none;
+    font-family:var(--sans); font-size:1.02rem; font-weight:500;
+    color:rgba(255,255,255,0.55); cursor:pointer; position:relative;
+    transition:all .3s ease; border-left:4px solid transparent; margin-left:-2px;
+  }
+  .dg-tab-btn:hover{ color:var(--white); background:rgba(255,255,255,0.04); }
+  .dg-tab-btn.active{
+    color:var(--terracotta);
+    border-left:4px solid var(--terracotta);
+    background:linear-gradient(90deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 100%);
+  }
+  .dg-tab-num{
+    font-size:0.76rem; display:block; text-transform:uppercase; letter-spacing:0.06em;
+    margin-bottom:6px; color:rgba(255,255,255,0.4); transition:color .3s ease;
+  }
+  .dg-tab-btn.active .dg-tab-num{ color:var(--terracotta); }
+
+  .dg-tab-content{ flex:1; display:flex; }
+  .dg-tab-card{
+    display:none; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14);
+    border-radius:20px; padding:36px; width:100%; align-items:center;
+    animation:dg-fade .4s ease-out forwards;
+  }
+  .dg-tab-card.active{ display:flex; }
+  .dg-tab-card p{ color:rgba(255,255,255,0.94); font-size:1.06rem; line-height:1.7; margin:0; }
+  @keyframes dg-fade{ from{ opacity:0; transform:translateY(12px);} to{ opacity:1; transform:translateY(0);} }
 
   /* ---------- Section headers ---------- */
-  .tx-head{ text-align:center; max-width:720px; margin:0 auto 50px auto; }
-  .tx-head-left{ text-align:left; max-width:600px; margin-bottom:44px; }
-  .tx-head h2, .tx-head-left h2{ font-size:clamp(1.8rem, 2.6vw, 2.4rem); margin-bottom:14px; }
-  .tx-head p, .tx-head-left p{ color:var(--charcoal-soft); font-size:1.06rem; margin:0; }
+  .dg-head{ text-align:center; max-width:720px; margin:0 auto 50px auto; }
+  .dg-head h2{ font-size:clamp(1.7rem, 2.4vw, 2.3rem); margin-bottom:12px; }
+  .dg-head p{ color:var(--charcoal-soft); font-size:1.05rem; margin:0; }
 
-  /* ---------- Batteries (assessment cards + sticky visual) ---------- */
-  .tx-batteries{ background:var(--sand); }
-  .tx-batteries-layout{ display:flex; align-items:flex-start; gap:56px; }
-  .tx-batteries-left{ flex:1; min-width:0; }
-  .tx-battery-grid{ display:grid; grid-template-columns:1fr; gap:22px; }
+  /* ---------- Packages ---------- */
+  .dg-packages{ background:var(--white); }
+  .dg-packages-grid{ display:grid; grid-template-columns:1fr 1fr; gap:36px; max-width:980px; margin:0 auto; align-items:start; }
 
-  .tx-battery-card{
-    background:var(--white);
-    border:1px solid var(--line);
-    box-shadow:0 8px 26px rgba(44,53,57,0.04);
-    padding:28px 30px;
-    border-radius:16px;
+  .dg-pkg-card{
+    border:1px solid var(--line); border-radius:20px; padding:40px 36px 44px;
+    background:var(--white); display:flex; flex-direction:column; height:100%;
     position:relative;
-    overflow:hidden;
-    display:flex; flex-direction:column;
-    transition:transform .3s ease, box-shadow .3s ease;
   }
-  .tx-battery-card::before{
-    content:''; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--terracotta);
+  .dg-pkg-card.dg-highlight{
+    border:2px solid var(--sage);
+    box-shadow:0 22px 50px rgba(79,107,79,0.14);
+    background:var(--sand-deep);
   }
-  .tx-battery-card:hover{ transform:translateY(-3px); box-shadow:0 16px 36px rgba(44,53,57,0.08); }
-  .tx-battery-title{ font-size:1.22rem; margin:0 0 10px 0; }
-  .tx-battery-desc{ font-size:0.94rem; color:var(--charcoal-soft); margin-bottom:18px; flex-grow:1; }
-  .tx-battery-desc strong{ color:var(--charcoal); }
-  .tx-battery-desc em{ color:var(--charcoal-soft); }
+  .dg-badge-gold{
+    position:absolute; top:-15px; left:50%; transform:translateX(-50%);
+    background:var(--sage); color:var(--white);
+    padding:7px 16px; border-radius:100px; font-size:0.72rem; font-weight:600;
+    text-transform:uppercase; letter-spacing:0.05em; white-space:nowrap;
+    box-shadow:0 4px 12px rgba(0,0,0,0.12);
+  }
 
-  .tx-tool-list{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; }
-  .tx-tool-badge{
-    font-size:0.72rem; font-weight:600; color:var(--charcoal-soft);
-    background:var(--sand-deep); padding:5px 11px; border-radius:6px; border:1px solid var(--line);
-  }
-  .tx-tool-badge.tx-price{ border-color:var(--terracotta); color:var(--sage-dark); background:#fdf3ee; }
+  .dg-pkg-title{ font-size:1.4rem; margin:8px 0 8px; }
+  .dg-pkg-price{ font-family:var(--serif); font-size:2rem; color:var(--terracotta); margin-bottom:18px; display:block; }
+  .dg-pkg-desc{ font-size:0.94rem; color:var(--charcoal-soft); margin-bottom:26px; min-height:44px; }
 
-  .tx-battery-btn{
-    display:block; text-align:center; background:transparent;
-    border:1px solid var(--sage-dark); color:var(--sage-dark) !important;
-    padding:11px; border-radius:100px; font-weight:500; font-size:0.9rem;
-    transition:.25s; margin-top:auto;
+  .dg-checklist{ list-style:none; padding:0; margin-bottom:34px; flex-grow:1; }
+  .dg-checklist li{ margin-bottom:12px; padding-left:26px; position:relative; font-size:0.92rem; color:var(--charcoal-soft); }
+  .dg-checklist li::before{
+    content:'✓'; position:absolute; left:0; color:var(--sage-dark); font-weight:bold;
   }
-  .tx-battery-btn:hover{ background:var(--sage-light); }
+  .dg-checklist li strong{ color:var(--charcoal); }
 
-  /* ---------- Sticky blob visual ---------- */
-  .tx-blob-visual{
-    flex:0 0 40%;
-    display:flex; justify-content:center; align-items:center;
-    height:560px;
-    position:sticky; top:100px;
+  .dg-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    width:100%; padding:15px 24px;
+    font-family:var(--sans); font-weight:500; font-size:0.98rem;
+    border-radius:100px; text-align:center; cursor:pointer;
+    transition:all .25s ease;
   }
-  .tx-glass-blob{
-    position:relative;
-    background:rgba(255,255,255,0.35);
-    border:1px solid rgba(255,255,255,0.5);
-    box-shadow:0 10px 34px rgba(79,107,79,0.14);
-    border-radius:45% 55% 70% 30% / 30% 50% 70% 50%;
-    overflow:hidden;
-    width:100%; max-width:400px; height:400px;
-    margin:auto;
-  }
-  @media (prefers-reduced-motion: no-preference){
-    .tx-glass-blob{ animation:tx-blob-pulse 8s infinite alternate ease-in-out; }
-  }
-  @keyframes tx-blob-pulse{
-    0%{ border-radius:45% 55% 70% 30% / 30% 50% 70% 50%; }
-    100%{ border-radius:60% 40% 30% 70% / 50% 30% 50% 60%; }
-  }
-  .tx-blob-img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .dg-btn-outline{ border:1px solid var(--sage-dark); color:var(--sage-dark) !important; background:transparent; }
+  .dg-btn-outline:hover{ background:var(--sage-light); }
+  .dg-btn-solid{ background:var(--sage); color:var(--white) !important; border:1px solid var(--sage); box-shadow:0 6px 20px rgba(79,107,79,0.22); }
+  .dg-btn-solid:hover{ background:var(--sage-dark); border-color:var(--sage-dark); transform:translateY(-2px); }
 
-  /* ---------- Process ---------- */
-  .tx-process{ background:var(--white); }
-  .tx-process-step{ display:flex; gap:28px; max-width:880px; margin:0 auto 38px; align-items:flex-start; }
-  .tx-step-num{
-    font-size:2.6rem; font-family:var(--serif); color:var(--terracotta);
-    opacity:0.8; line-height:1; min-width:64px; text-align:center;
+  /* ---------- Consultants ---------- */
+  .dg-consultants{ background:var(--sand-deep); }
+  .dg-consultants-grid{ display:flex; justify-content:center; gap:36px; flex-wrap:wrap; }
+  .dg-consultant{ background:var(--white); border:1px solid var(--line); border-radius:20px; padding:0 0 26px; text-align:center; width:100%; max-width:300px; box-shadow:0 10px 28px rgba(44,53,57,0.04); }
+  .dg-consultant-photo-wrap{ position:relative; display:flex; justify-content:center; padding-top:32px; margin-bottom:16px; }
+  .dg-consultant-blob{ position:absolute; top:14px; left:0; right:0; margin:auto; width:130px; height:130px; z-index:0; }
+  .dg-consultant-img{
+    position:relative; z-index:1;
+    width:112px; height:112px; border-radius:50%; object-fit:cover;
+    border:3px solid var(--white); box-shadow:0 8px 20px rgba(44,53,57,0.12);
   }
-  .tx-process-step h3{ font-size:1.2rem; margin-bottom:8px; }
-  .tx-process-step p{ color:var(--charcoal-soft); font-size:0.98rem; margin:0; }
-
-  .tx-disclaimer{
-    max-width:880px; margin:44px auto 0; padding:24px 28px;
-    background:var(--sand-deep); border-left:3px solid var(--sage-dark);
-    border-radius:0 12px 12px 0; font-size:0.9rem; color:var(--charcoal-soft);
-  }
-  .tx-disclaimer strong{ color:var(--charcoal); }
+  .dg-consultant-name{ font-size:1.2rem; margin-bottom:4px; }
+  .dg-consultant-role{ font-size:0.78rem; color:var(--sage-dark); font-weight:600; text-transform:uppercase; letter-spacing:0.05em; display:block; margin-bottom:14px; }
+  .dg-consultant-bio{ font-size:0.9rem; color:var(--charcoal-soft); padding:0 22px; margin:0; }
 
   /* ---------- FAQ ---------- */
-  .tx-faq{ background:var(--sand-deep); }
-  .tx-faq-list{ max-width:760px; margin:0 auto; }
-  details.tx-faq-item{
-    background:var(--white); border:1px solid var(--line); border-radius:16px;
-    padding:22px 26px; margin-bottom:14px;
+  .dg-faq{ background:var(--white); }
+  .dg-faq-list{ max-width:760px; margin:0 auto; }
+  details.dg-faq-item{
+    background:var(--sand-deep); border:1px solid var(--line); border-radius:16px;
+    padding:22px 26px; margin-bottom:14px; transition:border-color .2s ease;
   }
-  details.tx-faq-item summary{
+  details.dg-faq-item:hover{ border-color:var(--sage); }
+  details.dg-faq-item summary{
     font-family:var(--serif); font-size:1.06rem; color:var(--charcoal);
     cursor:pointer; list-style:none;
     display:flex; align-items:center; justify-content:space-between; gap:16px;
   }
-  details.tx-faq-item summary::-webkit-details-marker{ display:none; }
-  details.tx-faq-item summary::after{
+  details.dg-faq-item summary::-webkit-details-marker{ display:none; }
+  details.dg-faq-item summary::after{
     content:"+"; font-family:var(--sans); font-size:1.3rem; color:var(--sage-dark);
     flex-shrink:0; transition:transform .2s ease;
   }
-  details.tx-faq-item[open] summary::after{ transform:rotate(45deg); }
-  details.tx-faq-item p{ margin-top:14px; margin-bottom:0; color:var(--charcoal-soft); font-size:0.95rem; }
-  details.tx-faq-item p strong{ color:var(--charcoal); }
-  details.tx-faq-item p em{ color:var(--charcoal-soft); }
+  details.dg-faq-item[open] summary::after{ transform:rotate(45deg); }
+  details.dg-faq-item p{ margin-top:14px; margin-bottom:0; color:var(--charcoal-soft); font-size:0.95rem; }
 
   /* ---------- Reveal on scroll ---------- */
-  .tx-reveal{ opacity:0; transform:translateY(16px); transition:opacity .8s ease, transform .8s ease; }
-  .tx-reveal.in-view{ opacity:1; transform:translateY(0); }
-  @media (prefers-reduced-motion: reduce){
-    .tx-reveal{ opacity:1; transform:none; transition:none; }
-    .tx-blob-drift{ animation:none; }
-  }
+  .dg-reveal{ opacity:0; transform:translateY(16px); transition:opacity .8s ease, transform .8s ease; }
+  .dg-reveal.in-view{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){ .dg-reveal{ opacity:1; transform:none; transition:none; } }
 
   /* ---------- Responsive ---------- */
-  @media (max-width:960px){
-    .tx-hero h1{ font-size:2.2rem; }
-    .tx-process-step{ flex-direction:column; gap:10px; }
-    .tx-step-num{ text-align:left; }
-    .tx-trust-grid{ gap:14px 26px; }
-    .tx-batteries-layout{ flex-direction:column; gap:40px; }
-    .tx-head-left{ text-align:center; margin:0 auto 40px; }
-    .tx-blob-visual{ display:none; }
+  @media (max-width:800px){
+    .dg-tab-layout{ flex-direction:column; gap:0; }
+    .dg-tab-menu{ flex-direction:row; border-left:none; border-bottom:2px solid rgba(255,255,255,0.18); margin-bottom:20px; }
+    .dg-tab-btn{ border-left:none; border-bottom:4px solid transparent; padding:14px 10px; margin-bottom:-2px; margin-left:0; flex:1; text-align:center; }
+    .dg-tab-btn.active{ border-left:none; border-bottom:4px solid var(--terracotta); }
+    .dg-packages-grid{ grid-template-columns:1fr; gap:52px; }
+    .dg-pkg-card.dg-highlight{ transform:none; }
   }
   @media (max-width:560px){
-    .tx-section{ padding:64px 0; }
-    .tx-hero{ padding:64px 0; }
-    .tx-btn{ width:100%; }
+    .dg-section{ padding:60px 0; }
+    .dg-hero{ padding:56px 0 64px; }
   }
 
 </style>
 </head>
 <body>
 
-<div id="tx-page">
+<div id="diag-page">
 
-  <header class="tx-topbar">
-    <div class="tx-topbar-inner">
-      <a href="https://nightingalepediatrics.com/">
-        <img class="tx-logo" src="https://www.image2url.com/r2/default/images/1783666412458-814dcc7c-9b49-4bca-8e9e-0c12884b623c.png" alt="Nightingale Pediatrics">
-      </a>
+  <style>
+  /* ---------- Shared site nav (self-contained, safe to drop into any page) ---------- */
+  .n-topbar{
+    background: #FAF9F6;
+    border-bottom: 1px solid #E5E0D3;
+    font-family: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .n-topbar *, .n-topbar *::before, .n-topbar *::after{ box-sizing:border-box; }
+  .n-topbar-inner{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .n-logo{ height: 38px; width: auto; flex-shrink: 0; }
+
+  .n-nav{ display:flex; align-items:center; gap:28px; }
+  .n-nav-links{ display:flex; align-items:center; gap:26px; list-style:none; margin:0; padding:0; }
+  .n-nav-link{
+    font-size:0.94rem; font-weight:500;
+    color:#2C3539; white-space:nowrap; text-decoration:none;
+    padding:6px 0; position:relative;
+  }
+  .n-nav-link:hover{ color:#3B5240; }
+
+  .n-nav-dropdown{ position:relative; }
+  .n-nav-dropdown-toggle{
+    display:inline-flex; align-items:center; gap:5px;
+    background:none; border:none; cursor:pointer;
+    font-family:inherit; font-size:0.94rem; font-weight:500;
+    color:#2C3539; padding:6px 0;
+  }
+  .n-nav-dropdown-toggle:hover{ color:#3B5240; }
+  .n-nav-dropdown-toggle svg{ width:13px; height:13px; transition:transform .2s ease; }
+  .n-nav-dropdown.n-open .n-nav-dropdown-toggle svg{ transform:rotate(180deg); }
+
+  .n-nav-dropdown-menu{
+    position:absolute; top:calc(100% + 14px); left:50%; transform:translateX(-50%);
+    background:#FFFFFF; border:1px solid #E5E0D3; border-radius:16px;
+    box-shadow:0 18px 40px rgba(44,53,57,0.12);
+    padding:10px; min-width:250px;
+    opacity:0; visibility:hidden; transform:translateX(-50%) translateY(6px);
+    transition:opacity .2s ease, transform .2s ease, visibility .2s;
+    z-index:50;
+  }
+  .n-nav-dropdown.n-open .n-nav-dropdown-menu{
+    opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);
+  }
+  .n-nav-dropdown-menu a{
+    display:block; padding:11px 14px; border-radius:10px;
+    font-size:0.92rem; color:#2C3539; font-weight:400; text-decoration:none;
+  }
+  .n-nav-dropdown-menu a:hover{ background:#E8EFE3; color:#3B5240; }
+
+  .n-nav-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:11px 24px;
+    background:#4F6B4F;
+    color:#FFFFFF !important;
+    font-family:inherit; font-weight:500; font-size:0.9rem;
+    border-radius:100px; border:1px solid #4F6B4F;
+    text-decoration:none; cursor:pointer; flex-shrink:0;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    box-shadow:0 6px 20px rgba(79,107,79,0.22);
+  }
+  .n-nav-btn:hover{ background:#3B5240; border-color:#3B5240; transform:translateY(-2px); }
+
+  .n-nav-toggle{
+    display:none;
+    background:none; border:none; cursor:pointer;
+    width:38px; height:38px; align-items:center; justify-content:center;
+    color:#2C3539; flex-shrink:0;
+  }
+  .n-nav-toggle svg{ width:24px; height:24px; }
+
+  .n-mobile-menu{
+    display:none;
+    position:fixed; inset:0; z-index:300;
+    background:#FAF9F6;
+    padding:20px 6%;
+    overflow-y:auto;
+    font-family: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .n-mobile-menu.n-open{ display:block; }
+  .n-mobile-menu-top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:36px; }
+  .n-mobile-menu-close{ background:none; border:none; cursor:pointer; width:38px; height:38px; color:#2C3539; }
+  .n-mobile-menu-close svg{ width:26px; height:26px; }
+  .n-mobile-links{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px; }
+  .n-mobile-links a, .n-mobile-links .n-mobile-group-label{
+    display:block; padding:14px 4px; font-family:Georgia, 'Iowan Old Style', 'Times New Roman', serif; font-size:1.3rem;
+    color:#2C3539; border-bottom:1px solid #E5E0D3; text-decoration:none;
+  }
+  .n-mobile-group-label{ font-family:inherit; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.06em; color:#3B5240; border-bottom:none; padding-bottom:2px; padding-top:22px; font-weight:600; }
+  .n-mobile-links a.n-mobile-sub{ font-family:inherit; font-size:1.02rem; padding-left:16px; color:#48545A; }
+  .n-mobile-cta{ margin-top:28px; display:block; text-align:center; padding:15px 24px !important; font-size:1rem !important; }
+
+  @media (max-width:900px){
+    .n-nav-links, .n-nav-cta{ display:none; }
+    .n-nav-toggle{ display:flex; }
+  }
+</style>
+
+<header class="n-topbar">
+  <div class="n-topbar-inner">
+    <a href="https://nightingalepediatrics.com/">
+      <img class="n-logo" src="https://www.image2url.com/r2/default/images/1783666412458-814dcc7c-9b49-4bca-8e9e-0c12884b623c.png" alt="Nightingale Pediatrics">
+    </a>
+
+    <nav class="n-nav" aria-label="Primary">
+      <ul class="n-nav-links">
+        <li><a class="n-nav-link" href="screening.html">Screening</a></li>
+        <li class="n-nav-dropdown" id="assessmentsDropdown">
+          <button type="button" class="n-nav-dropdown-toggle" id="assessmentsToggle" aria-expanded="false">
+            Assessments
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="n-nav-dropdown-menu">
+            <a href="diagnosis.html">ADHD &amp; Autism Diagnosis</a>
+            <a href="iq-school-readiness.html">IQ &amp; School Readiness</a>
+            <a href="diagnostics.html">Full Diagnostics Overview</a>
+          </div>
+        </li>
+        <li><a class="n-nav-link" href="pricing.html">Pricing</a></li>
+        <li><a class="n-nav-link" href="adhd-assessment-guide.html">ADHD Guide</a></li>
+        <li><a class="n-nav-link" href="https://bonfire-health.github.io/Bonfire-AI/">Bonfire AI</a></li>
+      </ul>
+      <a href="https://wa.me/6582228505" class="n-nav-btn n-nav-cta">Book Intake</a>
+    </nav>
+
+    <button type="button" class="n-nav-toggle" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="n-mobile-menu" id="mobileMenu">
+  <div class="n-mobile-menu-top">
+    <img class="n-logo" src="https://www.image2url.com/r2/default/images/1783666412458-814dcc7c-9b49-4bca-8e9e-0c12884b623c.png" alt="Nightingale Pediatrics">
+    <button type="button" class="n-mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <ul class="n-mobile-links">
+    <li><a href="screening.html">Screening</a></li>
+    <li><span class="n-mobile-group-label">Assessments</span></li>
+    <li><a class="n-mobile-sub" href="diagnosis.html">ADHD &amp; Autism Diagnosis</a></li>
+    <li><a class="n-mobile-sub" href="iq-school-readiness.html">IQ &amp; School Readiness</a></li>
+    <li><a class="n-mobile-sub" href="diagnostics.html">Full Diagnostics Overview</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="adhd-assessment-guide.html">ADHD Guide</a></li>
+    <li><a href="https://bonfire-health.github.io/Bonfire-AI/">Bonfire AI</a></li>
+  </ul>
+  <a href="https://wa.me/6582228505" class="n-nav-btn n-mobile-cta">Book Intake</a>
+</div>
+
+
+  <nav class="dg-breadcrumb">
+    <div class="dg-breadcrumb-inner">
+      <a href="/">Home</a> /
+      <a href="/diagnosis">Diagnosis</a> /
+      <span class="dg-breadcrumb-current">Neurodevelopmental Assessment</span>
     </div>
-  </header>
+  </nav>
 
   <!-- ================= HERO ================= -->
-  <section class="tx-hero">
-    <svg class="tx-blob tx-blob-drift" style="top:-60px; right:-110px; width:360px; height:360px; opacity:0.14;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#FFFFFF" d="M52,-58C66,-46,74,-25,75,-3C76,19,70,42,55,56C40,70,17,76,-6,79C-29,82,-53,81,-66,67C-79,53,-81,25,-78,0C-75,-25,-67,-49,-51,-62C-35,-75,-11,-77,10,-77C31,-77,38,-70,52,-58Z" transform="translate(100 100)"/>
-    </svg>
-    <div class="tx-wrap tx-reveal in-view">
-      <span class="tx-eyebrow">Valid for MOE &amp; International Schools</span>
-      <h1>Clinical Clarity, From Anywhere.</h1>
-      <p>We provide full psycho-educational and neurodevelopmental diagnostics. All new diagnostic cases will require an initial consultation to ensure we assess the right areas.</p>
-      <div class="tx-hero-btns">
-        <a href="#batteries" class="tx-btn tx-btn-white">View Assessment Options</a>
-        <a href="https://nightingale.intakeq.com/booking?serviceId=7625afe1-92b4-41d5-beaa-a0d90aa9180b" class="tx-btn tx-btn-outline-white">Book Required Consultation</a>
+  <section class="dg-hero">
+    <span class="dg-eyebrow">Clinical Diagnostics • Novena Medical Center</span>
+    <h1>Neurodevelopmental Diagnosis.</h1>
+
+    <div class="dg-tab-layout">
+      <div class="dg-tab-menu">
+        <button class="dg-tab-btn active" onclick="diagSwitchTab(event, 'dg-tab-eval')">
+          <span class="dg-tab-num">01</span> The Evaluation
+        </button>
+        <button class="dg-tab-btn" onclick="diagSwitchTab(event, 'dg-tab-outcome')">
+          <span class="dg-tab-num">02</span> The Outcome
+        </button>
+      </div>
+
+      <div class="dg-tab-content">
+        <div id="dg-tab-eval" class="dg-tab-card active">
+          <p>A clinical evaluation using standardized tools to confirm Neurodevelopmental Disorders (DSM-5) including ADHD, Autism, Specific Learning Disability (SLD), and other conditions such as Anxiety, OCD or Depression.</p>
+        </div>
+        <div id="dg-tab-outcome" class="dg-tab-card">
+          <p>These assessments and resultant diagnoses are accepted by psychiatrists for medications and international and MOE schools for Individual Education Plan accommodations and programme placement. The individual strength and weakness profile of the child is identified so that interventions can be tailored and effective.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= TRUST BAR ================= -->
-  <div class="tx-trust-bar">
-    <div class="tx-trust-grid">
-      <div class="tx-trust-item"><span class="tx-trust-icon">★</span> Led by Senior Consultants</div>
-      <div class="tx-trust-item"><span class="tx-trust-icon">✓</span> Standardized Tests</div>
-      <div class="tx-trust-item"><span class="tx-trust-icon">🔒</span> Secure Tele-Health</div>
-      <div class="tx-trust-item"><span class="tx-trust-icon">🏆</span> DSM-5 Criteria</div>
-    </div>
-  </div>
+  <!-- ================= PACKAGES ================= -->
+  <section class="dg-section dg-packages">
+    <div class="dg-wrap">
+      <div class="dg-packages-grid">
 
-  <!-- ================= BATTERIES ================= -->
-  <section id="batteries" class="tx-section tx-batteries">
-    <div class="tx-wrap">
-      <div class="tx-batteries-layout">
+        <div class="dg-pkg-card dg-reveal">
+          <h3 class="dg-pkg-title">ADHD Assessment</h3>
+          <span class="dg-pkg-price">S$2,500</span>
+          <p class="dg-pkg-desc">Targeted diagnostic for Attention Deficit Hyperactivity Disorder (ADHD) and executive functioning gaps.</p>
 
-        <div class="tx-batteries-left">
-          <div class="tx-head-left tx-reveal">
-            <h2>Psychological &amp; Diagnostic Assessments</h2>
-            <p>We use standardized, multi-modal psychometric tests to formulate clinical diagnoses. Pricing includes the testing sessions, consultations with other allied health providers, review of records, questionnaires, direct testing sessions, full psychological report, feedback session, and school observation if deemed necessary. The initial consultation is charged separately.</p>
-          </div>
+          <ul class="dg-checklist">
+            <li><strong>Review of Records:</strong> Summary of previous reports &amp; allied health data.</li>
+            <li><strong>Clinical Interview:</strong> Full developmental history intake.</li>
+            <li><strong>Direct Assessment:</strong> Attention/EF testing using MOXO 360.</li>
+            <li><strong>Multi-Modal Questionnaires:</strong> Conners-4, BASC-4, BRIEF-2, Vineland-3.</li>
+            <li><strong>Outcome:</strong> Formal ADHD Diagnosis (if criteria met).</li>
+            <li><strong>Valid For:</strong> School Accommodations, Therapeutic Interventions, Psychiatric Referrals.</li>
+          </ul>
 
-          <div class="tx-battery-grid tx-reveal">
-
-            <div class="tx-battery-card">
-              <h3 class="tx-battery-title">1. Cognitive Functioning</h3>
-              <p class="tx-battery-desc">Measures verbal capabilities, reasoning, spatial organisation, short term memory and processing speed, all of which create a full-scale intelligence quotient score (IQ). Used for understanding learning potential, cognitive strengths and weaknesses, and school or programme applications.</p>
-              <div class="tx-tool-list">
-                <span class="tx-tool-badge">Wechsler Scales</span>
-                <span class="tx-tool-badge">WPPSI/WISC/WAIS</span>
-                <span class="tx-tool-badge tx-price">&gt;2 Hours Testing Time</span>
-              </div>
-              <a href="https://nightingalepediatrics.com/academic-assessment" class="tx-battery-btn">Learn More</a>
-            </div>
-
-            <div class="tx-battery-card">
-              <h3 class="tx-battery-title">2. Academic Functioning</h3>
-              <p class="tx-battery-desc">Compares cognitive functioning (IQ) with academic performance to identify strengths and weaknesses.</p>
-              <div class="tx-tool-list">
-                <span class="tx-tool-badge">Wechsler Scales</span>
-                <span class="tx-tool-badge">WIAT-4</span>
-                <span class="tx-tool-badge tx-price">&gt;3 Hours Testing Time</span>
-              </div>
-              <a href="https://nightingalepediatrics.com/academic-assessment" class="tx-battery-btn">Learn More</a>
-            </div>
-
-            <div class="tx-battery-card">
-              <h3 class="tx-battery-title">3. ADHD &amp; Executive Function (Abbreviated)</h3>
-              <p class="tx-battery-desc">A targeted assessment to identify most cases of ADHD. Clinical interview, records review, multi-informant ADHD diagnostic rating scales, social-emotional and adaptive questionnaires, and direct assessment of attention and executive functioning accounting for distracting environments. <em>Note: If cognitive/academic testing is required, this moves to the Comprehensive category.</em></p>
-              <div class="tx-tool-list">
-                <span class="tx-tool-badge">Conners 4</span>
-                <span class="tx-tool-badge">BASC-3</span>
-                <span class="tx-tool-badge">Vineland-3</span>
-                <span class="tx-tool-badge">BRIEF-2</span>
-                <span class="tx-tool-badge tx-price">&gt;2 Hours Testing Time</span>
-              </div>
-              <a href="https://nightingalepediatrics.com/neurodevelopmental-assessment" class="tx-battery-btn">Learn More</a>
-            </div>
-
-            <div class="tx-battery-card">
-              <h3 class="tx-battery-title">4. Comprehensive Neurodevelopmental Diagnostic</h3>
-              <p class="tx-battery-desc">Full evaluation for complex presentations or multiple DSM-5 Neurodevelopmental Disorders, including: <strong>Autism Spectrum Disorder (ASD)</strong>, <strong>Specific Learning Disorder</strong> (Dyslexia, Dyscalculia, Dysgraphia), <strong>Developmental Coordination Disorder</strong> (Dyspraxia), and <strong>Language Disorders</strong>.</p>
-              <div class="tx-tool-list">
-                <span class="tx-tool-badge">Full Multi-Modal Battery</span>
-                <span class="tx-tool-badge tx-price">&gt;4 Hours Testing Time</span>
-              </div>
-              <a href="https://nightingalepediatrics.com/neurodevelopmental-assessment" class="tx-battery-btn">Learn More</a>
-            </div>
-
-          </div>
+          <a href="https://nightingale.intakeq.com/booking?serviceId=7625afe1-92b4-41d5-beaa-a0d90aa9180b" class="dg-btn dg-btn-outline">Book ADHD Test</a>
         </div>
 
-        <div class="tx-blob-visual">
-          <div class="tx-glass-blob">
-            <img class="tx-blob-img" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/teleassessment.svg" alt="Tele-Assessment Illustration">
-          </div>
+        <div class="dg-pkg-card dg-highlight dg-reveal">
+          <div class="dg-badge-gold">Clinical Standard</div>
+          <h3 class="dg-pkg-title">Comprehensive Diagnostic</h3>
+          <span class="dg-pkg-price">S$4,000 - S$5,000</span>
+          <p class="dg-pkg-desc">Essential for complex profiles involving Autism (ASD), Specific Learning Disorders (SLD), Developmental Coordination Disorder (DCD), or Intellectual Disorders.</p>
+
+          <ul class="dg-checklist">
+            <li><strong>Includes:</strong> Everything in ADHD Assessment PLUS:</li>
+            <li><strong>Academic Achievement:</strong> WIAT-4 (Reading, Writing, Math, Others), and Wechsler Scales such as WISC-5 and WPPSI-4 (Cognitive Functioning).</li>
+            <li><strong>Neuropsych:</strong> NEPSY-II, DKEFS, CVLT-C, CELF-5 (Memory, Social Perception, Visual Perception, Visual Motor Integration, Semantic Communication).</li>
+            <li><strong>Projective:</strong> Rorschach Exner (if clinically indicated).</li>
+            <li><strong>Autism Specifics:</strong> ADOS-2, ADI-R, ASRS/SRS Questionnaires.</li>
+            <li><strong>Comprehensive Outcome:</strong> School Accommodations, Recommendations for Therapeutic Interventions (at School, Home, With Peers), Other Allied Health Provider Referrals PLUS Full Differential Diagnosis with Strength/Weakness Profile.</li>
+          </ul>
+
+          <a href="https://nightingale.intakeq.com/booking?serviceId=7625afe1-92b4-41d5-beaa-a0d90aa9180b" class="dg-btn dg-btn-solid">Book Comprehensive Test</a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ================= PROCESS ================= -->
-  <section class="tx-section tx-process">
-    <div class="tx-wrap">
-      <div class="tx-head tx-reveal">
-        <h2>The Diagnostic Process</h2>
-        <p>A clinical pathway structured for review by schools and medical boards.</p>
+  <!-- ================= CONSULTANTS ================= -->
+  <section class="dg-section dg-consultants">
+    <div class="dg-wrap">
+      <div class="dg-head dg-reveal">
+        <h2>Meet Our Clinical Team</h2>
+        <p>Your assessment will be conducted by our Senior Consultants, ensuring professional clinical care.</p>
       </div>
 
-      <div class="tx-process-step tx-reveal">
-        <div class="tx-step-num">1</div>
-        <div>
-          <h3>Initial Consultation (Required)</h3>
-          <p>Every case begins with a 1-hour session with a Senior Consultant (S$330) to review developmental history and confirm the correct testing roadmap for your child.</p>
+      <div class="dg-consultants-grid dg-reveal">
+        <div class="dg-consultant">
+          <div class="dg-consultant-photo-wrap">
+            <svg class="dg-consultant-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#E8EFE3" d="M48,-55C61,-45,69,-27,71,-8C73,10,70,29,59,44C48,59,29,70,8,73C-13,76,-38,71,-53,57C-68,43,-73,20,-72,-3C-71,-26,-64,-49,-49,-60C-34,-71,-11,-70,7,-73C25,-76,35,-65,48,-55Z" transform="translate(100 100)"/>
+            </svg>
+            <img class="dg-consultant-img" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/Clinician%20Photos/clare.png" alt="Dr. Clare Ong">
+          </div>
+          <h3 class="dg-consultant-name">Dr. Clare Ong</h3>
+          <span class="dg-consultant-role">Senior Consultant Psychologist</span>
+          <p class="dg-consultant-bio">34 years experience. Established the psychology division at MOE/NIE. Specializes in assessments.</p>
         </div>
-      </div>
 
-      <div class="tx-process-step tx-reveal">
-        <div class="tx-step-num">2</div>
-        <div>
-          <h3>Clinical Testing &amp; Data</h3>
-          <p>Standardized testing is conducted via secure video or in-clinic. We also collect multi-source data from parents and teachers using digital questionnaires.</p>
+        <div class="dg-consultant">
+          <div class="dg-consultant-photo-wrap">
+            <svg class="dg-consultant-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#C97B5A" fill-opacity="0.22" d="M46,-52C58,-42,64,-23,66,-3C68,16,66,35,54,48C42,61,21,69,-2,71C-25,73,-50,69,-63,54C-76,39,-77,14,-73,-9C-69,-32,-60,-53,-45,-63C-29,-73,-15,-72,3,-75C21,-78,34,-62,46,-52Z" transform="translate(100 100)"/>
+            </svg>
+            <img class="dg-consultant-img" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/Clinician%20Photos/belinda.png" alt="Dr. Belinda Teo">
+          </div>
+          <h3 class="dg-consultant-name">Dr. Belinda Teo</h3>
+          <span class="dg-consultant-role">Senior Consultant Psychologist</span>
+          <p class="dg-consultant-bio">24 years experience specializing in neurodiversity, neuropsychological assessments, and autism.</p>
         </div>
-      </div>
-
-      <div class="tx-process-step tx-reveal">
-        <div class="tx-step-num">3</div>
-        <div>
-          <h3>Report &amp; Feedback</h3>
-          <p>You receive a full clinical report detailing findings and a "School Action Plan." A feedback session is included in the assessment fee to explain the results.</p>
-        </div>
-      </div>
-
-      <div class="tx-disclaimer tx-reveal">
-        <strong>Important Clinical Protocol:</strong> Written consent is sought prior to the commencement of any diagnostic assessment to gather and share information from other sources. If consent is not granted, this might impact our capacity to provide a formal diagnosis, although confidentiality will be strictly maintained. The final clinical report is the property of the parent/guardian and will not be shared with schools or third parties unless explicitly requested by you.
       </div>
     </div>
   </section>
 
   <!-- ================= FAQ ================= -->
-  <section class="tx-section tx-faq">
-    <div class="tx-wrap">
-      <div class="tx-head tx-reveal">
+  <section class="dg-section dg-faq">
+    <div class="dg-wrap">
+      <div class="dg-head dg-reveal">
         <h2>Common Questions</h2>
+        <p>Answers for Singapore parents.</p>
       </div>
 
-      <div class="tx-faq-list tx-reveal">
-        <details class="tx-faq-item">
-          <summary>Why is the Initial Consultation charged separately?</summary>
-          <p>The consultation is a standalone clinical service to review history and determine medical necessity. Not every child requires a full battery, and this session ensures your child only undergoes the necessary testing.</p>
+      <div class="dg-faq-list dg-reveal">
+        <details class="dg-faq-item">
+          <summary>Is a private ADHD diagnosis accepted by MOE schools?</summary>
+          <p>Yes. Our psychologists are registered with the Singapore Register of Psychologists (SRP). Our diagnostic reports utilize DSM-5 criteria and are accepted by the Ministry of Education (MOE) for applications regarding Mother Tongue Exemption and Access Arrangements (extra time).</p>
         </details>
 
-        <details class="tx-faq-item">
-          <summary>Do I need a "Screener" or a "Diagnosis"?</summary>
-          <p>A <strong>Screener</strong> indicates <em>risk</em>. A <strong>Diagnostic Assessment</strong> provides a formal clinical diagnosis. If you need exam accommodations (like extra time) or school placement support, schools typically require a full diagnostic report.</p>
+        <details class="dg-faq-item">
+          <summary>Can a psychologist prescribe ADHD medication in Singapore?</summary>
+          <p>No, psychologists do not prescribe medication. However, our <strong>Formal Diagnostic Report</strong> is the medical document required by psychiatrists or pediatricians to initiate a medication plan. We can refer you directly to our partner medical doctors for this step.</p>
         </details>
 
-        <details class="tx-faq-item">
-          <summary>Is this accepted by International Schools?</summary>
-          <p>Yes. We have experience offering services to a variety of international schools with varying curriculums and pedagogies (American, British, International Baccalaureate, etc.), and work closely with their learning support and pastoral care teams to provide relevant and appropriate recommendations.</p>
+        <details class="dg-faq-item">
+          <summary>What is the difference between a screener and a full diagnosis?</summary>
+          <p>A "Screener" typically indicates risk levels (e.g., "At risk for ADHD") but is not sufficient for official purposes. A <strong>Full Diagnosis</strong> (which we provide) confirms the condition using clinical interviews and standardized testing. International Schools and Exam Boards require the Full Diagnosis for accommodations.</p>
         </details>
 
-        <details class="tx-faq-item">
-          <summary>Can this be done online?</summary>
-          <p>For children aged 7+, most components (ADHD testing, neurodiversity testing, clinical interviews) can be conducted online. For Autism, we will provide a clear testing roadmap during the initial consultation session. All remote assessments use appropriate tools, trained facilitators, and relevant and secure software that maintain strict professional standards.</p>
+        <details class="dg-faq-item">
+          <summary>Do I need a referral from a polyclinic?</summary>
+          <p>No. As a private clinic, you can book directly with us without a referral. This allows you to skip the 6-12 month wait times often experienced in the public system.</p>
         </details>
       </div>
     </div>
@@ -457,8 +601,18 @@
 </div>
 
 <script>
+  function diagSwitchTab(evt, tabId){
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("dg-tab-card");
+    for(i = 0; i < tabcontent.length; i++){ tabcontent[i].classList.remove("active"); }
+    tablinks = document.getElementsByClassName("dg-tab-btn");
+    for(i = 0; i < tablinks.length; i++){ tablinks[i].classList.remove("active"); }
+    document.getElementById(tabId).classList.add("active");
+    evt.currentTarget.classList.add("active");
+  }
+
   (function(){
-    var revealEls = document.querySelectorAll('.tx-reveal');
+    var revealEls = document.querySelectorAll('.dg-reveal');
     if('IntersectionObserver' in window){
       var io = new IntersectionObserver(function(entries){
         entries.forEach(function(e){
@@ -470,6 +624,410 @@
       revealEls.forEach(function(el){ el.classList.add('in-view'); });
     }
   })();
+</script>
+
+<style>
+  /* --- FOOTER: restyled to match the sand/sage system --- */
+  #nightingale-footer {
+    --f-sage: #4F6B4F;
+    --f-sage-dark: #3B5240;
+    --f-sand: #FAF9F6;
+    --f-text: #ffffff;
+    --f-text-dim: rgba(255, 255, 255, 0.72);
+    --f-sans: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --f-serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+
+    font-family: var(--f-sans);
+    font-weight: 300;
+    background-color: var(--f-sage);
+    color: var(--f-text);
+    padding: 72px 5% 36px;
+    border-top: 4px solid var(--f-sand);
+  }
+
+  #nightingale-footer * { box-sizing: border-box; }
+  #nightingale-footer a { text-decoration: none; color: var(--f-text) !important; transition: 0.2s; }
+  #nightingale-footer a:hover { color: var(--f-sand) !important; }
+
+  .footer-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    gap: 36px;
+    margin-bottom: 56px;
+  }
+
+  .footer-col h3 {
+    font-family: var(--f-serif);
+    font-weight: 400;
+    color: var(--f-sand) !important;
+    font-size: 1.05rem;
+    margin: 0 0 18px 0;
+  }
+
+  .footer-logo { width: 150px; height: auto; display: block; margin-bottom: 18px; }
+
+  .footer-brand p {
+    color: var(--f-text-dim);
+    line-height: 1.6;
+    font-size: 0.92rem;
+    max-width: 320px;
+    margin: 0 0 18px 0;
+  }
+
+  .footer-links { list-style: none; padding: 0; margin: 0; }
+  .footer-links li { margin-bottom: 10px; }
+  .footer-links a { font-size: 0.92rem; color: var(--f-text-dim) !important; }
+  .footer-links a:hover { color: var(--f-text) !important; }
+
+  .footer-contact p { color: var(--f-text); font-size: 0.92rem; margin: 0 0 14px 0; line-height: 1.6; }
+
+  #nightingale-footer .footer-btn {
+    display: inline-block;
+    border: 1px solid var(--f-sand);
+    color: var(--f-sand) !important;
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-size: 0.84rem;
+    font-weight: 500;
+    margin-top: 6px;
+  }
+  #nightingale-footer .footer-btn:hover { background: var(--f-sand); color: var(--f-sage-dark) !important; }
+
+  .footer-compliance {
+    max-width: 800px;
+    margin: 0 auto 44px auto;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 36px;
+  }
+  .footer-compliance h4 {
+    font-family: var(--f-serif);
+    font-weight: 400;
+    color: var(--f-text-dim);
+    font-size: 1rem;
+    margin: 0 0 22px 0;
+  }
+  .compliance-badges { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+  .comp-badge {
+    display: flex; align-items: center; gap: 9px;
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 8px 18px;
+    border-radius: 8px;
+  }
+  .comp-icon { font-size: 1.25rem; }
+  .comp-text { text-align: left; font-size: 0.66rem; font-weight: 500; letter-spacing: 0.5px; line-height: 1.25; color: var(--f-text); }
+
+  .footer-disclaimer {
+    max-width: 860px;
+    margin: 0 auto 28px auto;
+    text-align: center;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+  .footer-disclaimer a { text-decoration: underline; color: rgba(255,255,255,0.75) !important; }
+
+  .footer-bottom {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: var(--f-text-dim);
+    font-size: 0.8rem;
+    gap: 12px;
+  }
+
+  @media (max-width: 800px) {
+    .footer-container { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: span 2; text-align: center; }
+    .footer-brand .footer-logo { margin-left: auto; margin-right: auto; }
+    .footer-brand p { margin-left: auto; margin-right: auto; }
+  }
+  @media (max-width: 560px) {
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
+    .footer-brand .footer-logo { margin-left: auto; margin-right: auto; }
+    .comp-badge { width: 100%; justify-content: center; }
+  }
+</style>
+
+<footer id="nightingale-footer">
+  <div class="footer-container">
+
+    <div class="footer-col footer-brand">
+      <img src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/Misc/white-nightingale-logo.svg" alt="Nightingale Pediatrics" class="footer-logo">
+      <p>Clinical-grade screening and intervention for children and parents in Singapore.</p>
+      <a href="https://wa.me/6582228505" class="footer-btn">Book Intake Call</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Assessments</h3>
+      <ul class="footer-links">
+        <li><a href="screening.html">Screening</a></li>
+        <li><a href="diagnosis.html">ADHD &amp; Autism Diagnosis</a></li>
+        <li><a href="iq-school-readiness.html">IQ &amp; School Readiness</a></li>
+        <li><a href="diagnostics.html">Full Diagnostics Overview</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul class="footer-links">
+        <li><a href="https://bonfire-health.github.io/Bonfire-AI/">Bonfire AI</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="adhd-assessment-guide.html">ADHD Guide</a></li>
+        <li><a href="https://wa.me/6582228505">Masterclass</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-contact">
+      <h3>Contact</h3>
+      <p>
+        <a href="https://wa.me/6582228505">+65 8222 8505</a><br>
+        <a href="mailto:concierge@bonfire.cc">concierge@bonfire.cc</a>
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-compliance">
+    <h4>Built with tools that are:</h4>
+    <div class="compliance-badges">
+      <div class="comp-badge">
+        <span class="comp-icon">⚕️</span>
+        <span class="comp-text">HIPAA<br>COMPLIANT</span>
+      </div>
+      <div class="comp-badge">
+        <span class="comp-icon">🔒</span>
+        <span class="comp-text">GDPR<br>COMPLIANT</span>
+      </div>
+      <div class="comp-badge">
+        <span class="comp-icon">🛡️</span>
+        <span class="comp-text">PDPA<br>COMPLIANT</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-disclaimer">
+    Nightingale Pediatrics does not provide psychiatric emergency services. If you or someone you know are in a crisis, please call 995, 999, National Mindline 1711, <a href="https://www.sos.org.sg/contact-us/" target="_blank">SOS (Samaritans of Singapore)</a>, <a href="https://www.imh.com.sg/Pages/Contact-Us.aspx" target="_blank">IMH</a> or head to the nearest emergency room for assistance.
+  </div>
+
+  <div class="footer-bottom">
+    <span>Copyright © 2026 Bonfire Health Pte. Ltd. All Rights Reserved.</span>
+    <span>
+      <a href="https://nightingalepediatrics.com/privacy-policy-nightingale">Privacy Policy</a> &nbsp;|&nbsp;
+      <a href="https://nightingalepediatrics.com/terms-of-use-nightingale">Terms of Service</a>
+    </span>
+  </div>
+</footer>
+
+<style>
+  /* ---------- Click-to-WhatsApp widget ---------- */
+  .wa-widget{
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    font-family: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: opacity .3s ease, transform .3s ease;
+  }
+  .wa-widget.wa-hidden{ opacity: 0; transform: translateY(14px); pointer-events: none; }
+
+  .wa-bubble{
+    max-width: 232px;
+    background: #FAF9F6;
+    color: #2C3539;
+    border: 1px solid #E5E0D3;
+    border-radius: 16px 16px 4px 16px;
+    padding: 14px 30px 14px 16px;
+    font-size: 0.86rem;
+    line-height: 1.45;
+    box-shadow: 0 12px 32px rgba(44,53,57,0.16);
+    position: relative;
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+    transition: opacity .3s ease, transform .3s ease;
+    pointer-events: none;
+  }
+  .wa-bubble.wa-show{ opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+  .wa-bubble-close{
+    position: absolute;
+    top: 4px; right: 6px;
+    background: none;
+    border: none;
+    font-size: 17px;
+    line-height: 1;
+    color: #48545A;
+    cursor: pointer;
+    padding: 6px;
+  }
+
+  .wa-button{
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+    position: relative;
+    flex-shrink: 0;
+    transition: transform .2s ease;
+  }
+  .wa-button:hover{ transform: scale(1.06); }
+  .wa-button svg{ width: 28px; height: 28px; position: relative; z-index: 2; }
+  .wa-pulse{
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #25D366;
+    opacity: 0.55;
+    z-index: 1;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .wa-pulse{ animation: wa-pulse-anim 2.4s ease-out infinite; }
+  }
+  @keyframes wa-pulse-anim{
+    0%{ transform: scale(1); opacity: 0.5; }
+    100%{ transform: scale(1.7); opacity: 0; }
+  }
+
+  @media (max-width: 600px){
+    .wa-widget{ right: 16px; bottom: 16px; }
+    .wa-bubble{ max-width: 200px; font-size: 0.82rem; }
+    .wa-button{ width: 52px; height: 52px; }
+    .wa-button svg{ width: 25px; height: 25px; }
+  }
+</style>
+
+<div class="wa-widget" id="waWidget">
+  <div class="wa-bubble" id="waBubble">
+    <button type="button" class="wa-bubble-close" id="waBubbleClose" aria-label="Dismiss">&times;</button>
+    <span id="waBubbleText">Hi! Have a question? Chat with us on WhatsApp.</span>
+  </div>
+  <a href="https://wa.me/6582228505" id="waButton" class="wa-button" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <span class="wa-pulse" aria-hidden="true"></span>
+
+<script>
+(function(){
+    // ---------- Nav: Assessments dropdown ----------
+    var assessmentsDropdown = document.getElementById('assessmentsDropdown');
+    var assessmentsToggle = document.getElementById('assessmentsToggle');
+    if(assessmentsDropdown && assessmentsToggle){
+      assessmentsToggle.addEventListener('click', function(e){
+        e.stopPropagation();
+        var isOpen = assessmentsDropdown.classList.toggle('n-open');
+        assessmentsToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      document.addEventListener('click', function(e){
+        if(!assessmentsDropdown.contains(e.target)){
+          assessmentsDropdown.classList.remove('n-open');
+          assessmentsToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape'){
+          assessmentsDropdown.classList.remove('n-open');
+          assessmentsToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // ---------- Nav: mobile menu ----------
+    var mobileMenu = document.getElementById('mobileMenu');
+    var mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    var mobileMenuClose = document.getElementById('mobileMenuClose');
+    function openMobileMenu(){
+      mobileMenu.classList.add('n-open');
+      mobileMenuToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMobileMenu(){
+      mobileMenu.classList.remove('n-open');
+      mobileMenuToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    if(mobileMenuToggle) mobileMenuToggle.addEventListener('click', openMobileMenu);
+    if(mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
+    if(mobileMenu){
+      mobileMenu.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', closeMobileMenu);
+      });
+    }
+
+
+    // ---------- Click-to-WhatsApp widget: dynamic, context-aware ----------
+    var waButton = document.getElementById('waButton');
+    var waWidget = document.getElementById('waWidget');
+    var waBubble = document.getElementById('waBubble');
+    var waBubbleText = document.getElementById('waBubbleText');
+    var waBubbleClose = document.getElementById('waBubbleClose');
+    var waBase = 'https://wa.me/6582228505';
+    var waDefaultMessage = "Hi Nightingale, I'd like to learn more about your services!";
+    var waBubbleDismissed = false;
+
+    function waSetMessage(text){
+      waButton.setAttribute('href', waBase + '?text=' + encodeURIComponent(text));
+    }
+    waSetMessage(waDefaultMessage);
+
+    // Track which tagged section is currently in view and update the pre-filled message to match.
+    // Carousel cards are handled separately below (hover/tap) since on wide viewports all 3 are
+    // visible at once, making "which one is in view" ambiguous for scroll-based detection.
+    var waTargets = document.querySelectorAll('[data-wa-message]:not(.n-carousel-card)');
+    if('IntersectionObserver' in window && waTargets.length){
+      var waContextObserver = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting && entry.intersectionRatio >= 0.55){
+            var msg = entry.target.getAttribute('data-wa-message') || waDefaultMessage;
+            waSetMessage(msg);
+          }
+        });
+      }, { threshold: [0.55] });
+      waTargets.forEach(function(el){ waContextObserver.observe(el); });
+    }
+
+    // Carousel cards: hover (desktop) or tap (mobile) is a clearer intent signal than scroll
+    // position here, since multiple cards can be on screen together.
+    document.querySelectorAll('.n-carousel-card[data-wa-message]').forEach(function(card){
+      var setFromCard = function(){ waSetMessage(card.getAttribute('data-wa-message')); };
+      card.addEventListener('mouseenter', setFromCard);
+      card.addEventListener('touchstart', setFromCard, { passive: true });
+      card.addEventListener('focusin', setFromCard);
+    });
+
+    // Hide the floating widget once the footer's own WhatsApp links are on screen, to avoid duplicate CTAs
+    var waFooter = document.getElementById('nightingale-footer');
+    if('IntersectionObserver' in window && waFooter){
+      var waFooterObserver = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          waWidget.classList.toggle('wa-hidden', entry.isIntersecting);
+        });
+      }, { threshold: 0.05 });
+      waFooterObserver.observe(waFooter);
+    }
+
+    // Show a friendly greeting bubble a few seconds after the page loads, once
+    setTimeout(function(){
+      if(!waBubbleDismissed) waBubble.classList.add('wa-show');
+    }, 3500);
+
+    if(waBubbleClose){
+      waBubbleClose.addEventListener('click', function(){
+        waBubbleDismissed = true;
+        waBubble.classList.remove('wa-show');
+      });
+    }
+})();
 </script>
 
 </body>
