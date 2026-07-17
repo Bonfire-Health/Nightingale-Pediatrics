@@ -529,20 +529,20 @@
 
       <nav class="n-nav" aria-label="Primary">
         <ul class="n-nav-links">
-          <li><a class="n-nav-link" href="screening">Screening</a></li>
+          <li><a class="n-nav-link" href="screening.html">Screening</a></li>
           <li class="n-nav-dropdown" id="assessmentsDropdown">
             <button type="button" class="n-nav-dropdown-toggle" id="assessmentsToggle" aria-expanded="false">
               Assessments
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
             </button>
             <div class="n-nav-dropdown-menu">
-              <a href="diagnosis">ADHD &amp; Autism Diagnosis</a>
-              <a href="iq-school-readiness">IQ &amp; School Readiness</a>
-              <a href="diagnostics">Full Diagnostics Overview</a>
+              <a href="diagnosis.html">ADHD &amp; Autism Diagnosis</a>
+              <a href="iq-school-readiness.html">IQ &amp; School Readiness</a>
+              <a href="diagnostics.html">Full Diagnostics Overview</a>
             </div>
           </li>
-          <li><a class="n-nav-link" href="pricing">Pricing</a></li>
-          <li><a class="n-nav-link" href="children-adhd-testing-singapore">ADHD Guide</a></li>
+          <li><a class="n-nav-link" href="pricing.html">Pricing</a></li>
+          <li><a class="n-nav-link" href="adhd-assessment-guide.html">ADHD Guide</a></li>
           <li><a class="n-nav-link" href="https://bonfire-health.github.io/Bonfire-AI/">Bonfire AI</a></li>
         </ul>
         <a href="https://wa.me/6582228505" class="n-btn n-btn-small n-nav-cta">Book Intake</a>
@@ -562,13 +562,13 @@
       </button>
     </div>
     <ul class="n-mobile-links">
-      <li><a href="screening">Screening</a></li>
+      <li><a href="screening.html">Screening</a></li>
       <li><span class="n-mobile-group-label">Assessments</span></li>
-      <li><a class="n-mobile-sub" href="diagnosis">ADHD &amp; Autism Diagnosis</a></li>
-      <li><a class="n-mobile-sub" href="iq-school-readiness">IQ &amp; School Readiness</a></li>
-      <li><a class="n-mobile-sub" href="diagnostics">Full Diagnostics Overview</a></li>
-      <li><a href="pricing">Pricing</a></li>
-      <li><a href="adhd-assessment-guide">ADHD Guide</a></li>
+      <li><a class="n-mobile-sub" href="diagnosis.html">ADHD &amp; Autism Diagnosis</a></li>
+      <li><a class="n-mobile-sub" href="iq-school-readiness.html">IQ &amp; School Readiness</a></li>
+      <li><a class="n-mobile-sub" href="diagnostics.html">Full Diagnostics Overview</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="adhd-assessment-guide.html">ADHD Guide</a></li>
       <li><a href="https://bonfire-health.github.io/Bonfire-AI/">Bonfire AI</a></li>
     </ul>
     <a href="https://wa.me/6582228505" class="n-btn n-mobile-cta">Book Intake</a>
@@ -915,11 +915,11 @@
 </div>
 
 <style>
-  /* --- FOOTER: restyled to match the sand/sage/terracotta system --- */
+  /* --- FOOTER: restyled to match the sand/sage system --- */
   #nightingale-footer {
     --f-sage: #4F6B4F;
     --f-sage-dark: #3B5240;
-    --f-terracotta: #C97B5A;
+    --f-sand: #FAF9F6;
     --f-text: #ffffff;
     --f-text-dim: rgba(255, 255, 255, 0.72);
     --f-sans: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -930,12 +930,12 @@
     background-color: var(--f-sage);
     color: var(--f-text);
     padding: 72px 5% 36px;
-    border-top: 4px solid var(--f-terracotta);
+    border-top: 4px solid var(--f-sand);
   }
 
   #nightingale-footer * { box-sizing: border-box; }
-  #nightingale-footer a { text-decoration: none; color: var(--f-text); transition: 0.2s; }
-  #nightingale-footer a:hover { color: var(--f-terracotta); }
+  #nightingale-footer a { text-decoration: none; color: var(--f-text) !important; transition: 0.2s; }
+  #nightingale-footer a:hover { color: var(--f-sand) !important; }
 
   .footer-container {
     max-width: 1180px;
@@ -949,7 +949,7 @@
   .footer-col h3 {
     font-family: var(--f-serif);
     font-weight: 400;
-    color: var(--f-terracotta);
+    color: var(--f-sand) !important;
     font-size: 1.05rem;
     margin: 0 0 18px 0;
   }
@@ -966,22 +966,22 @@
 
   .footer-links { list-style: none; padding: 0; margin: 0; }
   .footer-links li { margin-bottom: 10px; }
-  .footer-links a { font-size: 0.92rem; color: var(--f-text-dim); }
-  .footer-links a:hover { color: var(--f-text); }
+  .footer-links a { font-size: 0.92rem; color: var(--f-text-dim) !important; }
+  .footer-links a:hover { color: var(--f-text) !important; }
 
   .footer-contact p { color: var(--f-text); font-size: 0.92rem; margin: 0 0 14px 0; line-height: 1.6; }
 
-  .footer-btn {
+  #nightingale-footer .footer-btn {
     display: inline-block;
-    border: 1px solid var(--f-terracotta);
-    color: var(--f-terracotta);
+    border: 1px solid var(--f-sand);
+    color: var(--f-sand) !important;
     padding: 10px 22px;
     border-radius: 100px;
     font-size: 0.84rem;
     font-weight: 500;
     margin-top: 6px;
   }
-  .footer-btn:hover { background: var(--f-terracotta); color: var(--f-sage-dark); }
+  #nightingale-footer .footer-btn:hover { background: var(--f-sand); color: var(--f-sage-dark) !important; }
 
   .footer-compliance {
     max-width: 800px;
@@ -1015,7 +1015,7 @@
     color: rgba(255,255,255,0.55);
     line-height: 1.6;
   }
-  .footer-disclaimer a { text-decoration: underline; color: rgba(255,255,255,0.75); }
+  .footer-disclaimer a { text-decoration: underline; color: rgba(255,255,255,0.75) !important; }
 
   .footer-bottom {
     max-width: 1180px;
@@ -1056,10 +1056,10 @@
     <div class="footer-col">
       <h3>Assessments</h3>
       <ul class="footer-links">
-        <li><a href="screening">Screening</a></li>
-        <li><a href="diagnosis">ADHD &amp; Autism Diagnosis</a></li>
-        <li><a href="iq-school-readiness">IQ &amp; School Readiness</a></li>
-        <li><a href="diagnostics">Full Diagnostics Overview</a></li>
+        <li><a href="screening.html">Screening</a></li>
+        <li><a href="diagnosis.html">ADHD &amp; Autism Diagnosis</a></li>
+        <li><a href="iq-school-readiness.html">IQ &amp; School Readiness</a></li>
+        <li><a href="diagnostics.html">Full Diagnostics Overview</a></li>
       </ul>
     </div>
 
@@ -1067,8 +1067,8 @@
       <h3>Resources</h3>
       <ul class="footer-links">
         <li><a href="https://bonfire-health.github.io/Bonfire-AI/">Bonfire AI</a></li>
-        <li><a href="pricing">Pricing</a></li>
-        <li><a href="adhd-assessment-guide">ADHD Guide</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="adhd-assessment-guide.html">ADHD Guide</a></li>
         <li><a href="https://wa.me/6582228505">Masterclass</a></li>
       </ul>
     </div>
