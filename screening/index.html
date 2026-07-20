@@ -186,7 +186,7 @@
   .sc-price-card > p{ color:rgba(255,255,255,0.88); margin-bottom:8px; }
 
   .sc-plan-detail{ margin-bottom:20px; }
-  .sc-plan-detail-title{ font-weight:600; display:block; margin-bottom:5px; color:var(--terracotta); font-size:0.92rem; }
+  .sc-plan-detail-title{ font-weight:600; display:block; margin-bottom:5px; color:var(--sand); font-size:0.92rem; }
   .sc-plan-detail-desc{ display:block; font-size:0.85rem; color:rgba(255,255,255,0.7); margin-top:6px; line-height:1.5; }
   .sc-price-card p, .sc-price-card div{ font-size:0.94rem; color:rgba(255,255,255,0.9); }
 
@@ -202,18 +202,24 @@
 
   /* ---------- Team ---------- */
   .sc-clinician-grid{ display:flex; justify-content:center; gap:40px; flex-wrap:wrap; }
-  .sc-clinician{ max-width:280px; text-align:center; }
-  .sc-clinician-photo-wrap{ position:relative; display:flex; justify-content:center; margin-bottom:18px; }
+  .sc-clinician{ display:flex; align-items:center; gap:32px; max-width:560px; text-align:left; }
+  .sc-clinician-photo-wrap{ position:relative; flex-shrink:0; width:180px; margin-bottom:0; }
   .sc-clinician-blob{ position:absolute; inset:0; z-index:0; }
   .sc-clinician-photo{
     position:relative; z-index:1;
-    width:78%; aspect-ratio:1/1; object-fit:cover;
+    width:100%; aspect-ratio:1/1; object-fit:cover;
     border-radius:42% 58% 61% 39% / 51% 44% 56% 49%;
     background:var(--white); border:1px solid var(--line);
   }
+  .sc-clinician-copy{ flex:1; min-width:0; }
   .sc-clinician-name{ font-size:1.14rem; margin-bottom:4px; }
   .sc-clinician-role{ font-size:0.86rem; font-style:italic; color:var(--sage-dark); margin-bottom:12px; }
   .sc-clinician-desc{ font-size:0.94rem; color:var(--charcoal-soft); margin-bottom:16px; }
+
+  @media (max-width:560px){
+    .sc-clinician{ flex-direction:column; text-align:center; gap:18px; }
+    .sc-clinician-photo-wrap{ width:160px; }
+  }
 
   /* ---------- FAQ ---------- */
   .sc-faq{ background:var(--sand); }
@@ -237,8 +243,8 @@
 
   /* ---------- Final CTA ---------- */
   .sc-cta{ background:var(--sage); color:var(--white); text-align:center; overflow:hidden; }
-  .sc-cta h2{ color:var(--white); font-size:clamp(1.8rem, 2.6vw, 2.6rem); margin-bottom:16px; }
-  .sc-cta p{ color:rgba(255,255,255,0.88); font-size:1.06rem; margin-bottom:32px; }
+  .sc-cta h2{ color:var(--white) !important; font-size:clamp(1.8rem, 2.6vw, 2.6rem); margin-bottom:16px; }
+  .sc-cta p{ color:rgba(255,255,255,0.88) !important; font-size:1.06rem; margin-bottom:32px; }
 
   /* ---------- Reveal on scroll ---------- */
   .sc-reveal{ opacity:0; transform:translateY(16px); transition:opacity .8s ease, transform .8s ease; }
@@ -390,7 +396,7 @@
           <div class="n-nav-dropdown-menu">
             <a href="/neurodevelopmental-assessment">ADHD &amp; Autism Diagnosis</a>
             <a href="/academic-assessment">IQ &amp; School Readiness</a>
-            <a href="/diagnosis">Full Diagnostics Overview</a>
+            <a href="diagnostics.html">Full Diagnostics Overview</a>
           </div>
         </li>
         <li><a class="n-nav-link" href="/pricing">Pricing</a></li>
@@ -418,7 +424,7 @@
     <li><span class="n-mobile-group-label">Assessments</span></li>
     <li><a class="n-mobile-sub" href="/neurodevelopmental-assessment">ADHD &amp; Autism Diagnosis</a></li>
     <li><a class="n-mobile-sub" href="/academic-assessment">IQ &amp; School Readiness</a></li>
-    <li><a class="n-mobile-sub" href="/diagnosis">Full Diagnostics Overview</a></li>
+    <li><a class="n-mobile-sub" href="diagnostics.html">Full Diagnostics Overview</a></li>
     <li><a href="/pricing">Pricing</a></li>
     <li><a href="/children-adhd-testing-singapore">ADHD Guide</a></li>
     <li><a href="https://bonfire-health.github.io/Bonfire-AI/">Bonfire AI</a></li>
@@ -521,14 +527,15 @@
             </svg>
             <img class="sc-clinician-photo" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/Clinician%20Photos/amy.png" alt="Dr. Amy Reale" loading="lazy">
           </div>
-          <h3 class="sc-clinician-name">Dr. Amy Reale</h3>
-          <div class="sc-clinician-role">Chief Clinical Officer</div>
-          <p class="sc-clinician-desc">Trained in the US as a clinical and school psychologist with over 24 years of experience across 3 continents.</p>
-          <a href="https://nightingalepediatrics.com/amy-reale" class="sc-btn sc-btn-ghost" style="padding:11px 24px; font-size:0.9rem;" target="_blank" rel="noopener noreferrer">About Dr. Amy</a>
+          <div class="sc-clinician-copy">
+            <h3 class="sc-clinician-name">Dr. Amy Reale</h3>
+            <div class="sc-clinician-role">Chief Clinical Officer</div>
+            <p class="sc-clinician-desc">Trained in the US as a clinical and school psychologist with over 24 years of experience across 3 continents.</p>
+            <a href="https://nightingalepediatrics.com/amy-reale" class="sc-btn sc-btn-ghost" style="padding:11px 24px; font-size:0.9rem;" target="_blank" rel="noopener noreferrer">About Dr. Amy</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </div>  </section>
 
   <!-- ================= FAQ ================= -->
   <section class="sc-section sc-faq">
@@ -733,7 +740,7 @@
         <li><a href="/screening">Screening</a></li>
         <li><a href="/neurodevelopmental-assessment">ADHD &amp; Autism Diagnosis</a></li>
         <li><a href="/academic-assessment">IQ &amp; School Readiness</a></li>
-        <li><a href="/diagnosis">Full Diagnostics Overview</a></li>
+        <li><a href="diagnostics.html">Full Diagnostics Overview</a></li>
       </ul>
     </div>
 
@@ -878,6 +885,9 @@
   </div>
   <a href="https://wa.me/6582228505" id="waButton" class="wa-button" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
     <span class="wa-pulse" aria-hidden="true"></span>
+    <svg viewBox="0 0 32 32" fill="#ffffff" aria-hidden="true"><path d="M16.001 3C9.096 3 3.5 8.596 3.5 15.5c0 2.42.687 4.68 1.878 6.598L3 29l7.087-2.336A12.44 12.44 0 0016.001 28C22.905 28 28.5 22.404 28.5 15.5S22.905 3 16.001 3zm0 22.6a10.06 10.06 0 01-5.13-1.404l-.368-.219-3.79 1.25 1.27-3.693-.24-.38A10.06 10.06 0 015.9 15.5c0-5.577 4.524-10.1 10.101-10.1S26.1 9.923 26.1 15.5 21.577 25.6 16.001 25.6zm5.542-7.564c-.303-.152-1.793-.885-2.07-.986-.278-.101-.48-.152-.682.152-.202.303-.784.985-.961 1.188-.177.202-.354.227-.657.076-.303-.152-1.278-.471-2.435-1.504-.9-.803-1.508-1.795-1.685-2.098-.177-.303-.019-.467.133-.618.136-.136.303-.354.454-.53.152-.177.202-.303.303-.506.101-.202.05-.379-.025-.53-.076-.152-.682-1.646-.935-2.253-.246-.591-.497-.511-.682-.52l-.582-.01a1.12 1.12 0 00-.809.379c-.278.303-1.06 1.036-1.06 2.529s1.085 2.934 1.236 3.137c.152.202 2.135 3.26 5.174 4.572.723.312 1.287.499 1.727.639.726.231 1.386.198 1.908.12.582-.087 1.793-.733 2.046-1.442.253-.708.253-1.315.177-1.442-.076-.126-.278-.202-.581-.354z"/></svg>
+  </a>
+</div>
 
 <script>
 (function(){
