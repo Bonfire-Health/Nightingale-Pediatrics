@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Davy Guo | Consultant Psychologist | Nightingale Pediatrics</title>
+<meta name="description" content="Dr. Davy Guo is a Chartered Psychologist with over 16 years of experience specializing in child and adolescent anxiety, ADHD, and cross-cultural issues.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@300..700&display=swap" rel="stylesheet">
+
+<style>
+
+  #davy-page {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  #davy-page *,
+  #davy-page *::before,
+  #davy-page *::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- Design tokens (shared with Nightingale Pediatrics / Bonfire AI) ---------- */
+  #davy-page {
+    --sand:#FAF9F6;
+    --sand-deep:#F2EEE4;
+    --sage:#4F6B4F;
+    --sage-dark:#3B5240;
+    --sage-light:#E8EFE3;
+    --terracotta:#C97B5A;
+    --charcoal:#2C3539;
+    --charcoal-soft:#48545A;
+    --line:#E5E0D3;
+    --white:#FFFFFF;
+    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    --sans: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --max-w: 1120px;
+
+    background: var(--sand);
+    color: var(--charcoal);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  #davy-page img{ max-width:100%; display:block; }
+  #davy-page a{ text-decoration:none; color:inherit; }
+  #davy-page h1, #davy-page h2, #davy-page h3, #davy-page h4{
+    font-family: var(--serif);
+    font-weight: 400;
+    color: var(--charcoal);
+    letter-spacing: -0.01em;
+  }
+  #davy-page :focus-visible{ outline: 2px solid var(--sage-dark); outline-offset: 3px; }
+
+  .dv-wrap{ width:100%; max-width:var(--max-w); margin:0 auto; padding:0 5%; position:relative; }
+  .dv-section{ position:relative; padding:70px 0; }
+
+  /* ---------- Ambient blobs ---------- */
+  .dv-blob{ position:absolute; z-index:0; pointer-events:none; opacity:0.9; }
+  @media (prefers-reduced-motion: no-preference){
+    .dv-blob-drift{ animation:dv-drift 28s ease-in-out infinite alternate; }
+  }
+  @keyframes dv-drift{
+    0%{ transform:translate(0,0) scale(1) rotate(0deg); }
+    100%{ transform:translate(14px,-16px) scale(1.04) rotate(3deg); }
+  }
+
+  /* ---------- Hero / profile ---------- */
+  .dv-hero{ padding:80px 0 84px; overflow:hidden; }
+  .dv-profile-grid{
+    display:grid;
+    grid-template-columns: 0.82fr 1.18fr;
+    gap:64px;
+    align-items:start;
+    position:relative; z-index:2;
+  }
+
+  .dv-photo-wrap{ position:relative; }
+  .dv-photo-blob{ position:absolute; inset:-6%; z-index:0; }
+  .dv-photo-frame{
+    position:relative; z-index:1;
+    width:100%;
+    aspect-ratio: 4/5;
+    object-fit:cover;
+    border-radius: 46% 54% 58% 42% / 52% 46% 54% 48%;
+    background:var(--white);
+    border:1px solid var(--line);
+    box-shadow: 0 20px 46px rgba(44,53,57,0.12);
+  }
+
+  .dv-cred-list{ list-style:none; margin:32px 0 0; padding:0; }
+  .dv-cred-list li{
+    display:flex; align-items:flex-start; gap:10px;
+    font-size:0.92rem; color:var(--charcoal-soft);
+    padding-bottom:12px; margin-bottom:12px;
+    border-bottom:1px solid var(--line);
+  }
+  .dv-cred-list li:last-child{ border-bottom:none; margin-bottom:0; padding-bottom:0; }
+  .dv-cred-icon{ color:var(--terracotta); flex-shrink:0; line-height:1.5; }
+
+  .dv-role-tag{
+    display:block;
+    font-size:0.82rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--sage-dark);
+    font-weight:500;
+    margin-bottom:16px;
+  }
+
+  .dv-name-row{
+    display:flex; align-items:center; flex-wrap:wrap; gap:16px;
+    margin-bottom:10px;
+  }
+  .dv-name{ font-size:clamp(2.2rem, 4.2vw, 3.4rem); line-height:1.08; margin:0; }
+
+  .dv-badge{
+    display:inline-flex; align-items:center; gap:7px;
+    background:var(--sage-light);
+    color:var(--sage-dark);
+    padding:7px 15px;
+    border-radius:100px;
+    border:1px solid rgba(79,107,79,0.25);
+    font-size:0.8rem; font-weight:500;
+    text-transform:uppercase; letter-spacing:0.04em;
+  }
+  .dv-badge svg{ width:14px; height:14px; color:var(--terracotta); flex-shrink:0; }
+
+  .dv-subtitle{
+    font-family:var(--sans); font-weight:400;
+    font-size:1.14rem; color:var(--charcoal-soft);
+    margin:0 0 34px 0;
+  }
+
+  .dv-bio p{ font-size:1.03rem; color:var(--charcoal-soft); margin:0 0 18px 0; }
+
+  .dv-quote{
+    margin:32px 0;
+    padding:26px 30px;
+    background:var(--sand-deep);
+    border-radius:14px;
+    font-family:var(--serif);
+    font-size:1.14rem;
+    font-style:italic;
+    color:var(--sage-dark);
+  }
+
+  .dv-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:16px 34px;
+    background:var(--sage); color:var(--white) !important;
+    font-family:var(--sans); font-weight:500; font-size:1rem;
+    border-radius:100px; border:1px solid var(--sage);
+    cursor:pointer;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    box-shadow:0 6px 20px rgba(79,107,79,0.22);
+  }
+  .dv-btn:hover{ background:var(--sage-dark); border-color:var(--sage-dark); transform:translateY(-2px); box-shadow:0 10px 26px rgba(79,107,79,0.28); }
+  .dv-availability{ margin-top:16px; font-size:0.88rem; color:var(--charcoal-soft); }
+
+  /* ---------- Core competencies (dark sage section) ---------- */
+  .dv-expertise{ background:var(--sage); color:var(--white); overflow:hidden; }
+  .dv-expertise-head{ text-align:center; max-width:680px; margin:0 auto 52px auto; position:relative; z-index:2; }
+  .dv-expertise-head h2{ color:var(--white) !important; font-size:clamp(1.8rem, 2.6vw, 2.5rem); margin-bottom:16px; }
+  .dv-expertise-head p{ color:rgba(255,255,255,0.86) !important; font-size:1.08rem; margin:0; }
+
+  .dv-cap-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:20px;
+    position:relative; z-index:2;
+  }
+  .dv-cap-card{
+    display:flex; align-items:center; gap:14px;
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:14px;
+    padding:20px 22px;
+    transition:background .25s ease, border-color .25s ease;
+  }
+  .dv-cap-card:hover{ background:rgba(255,255,255,0.12); border-color:var(--terracotta); }
+  .dv-cap-dot{ width:8px; height:8px; border-radius:50%; background:var(--terracotta); flex-shrink:0; }
+  .dv-cap-text{ font-size:1rem; font-weight:400; color:var(--white); margin:0; }
+
+  /* ---------- Footer disclaimer ---------- */
+  .dv-footer-note{
+    background:var(--sand);
+    padding:32px 0;
+    text-align:center;
+    border-top:1px solid var(--line);
+  }
+  .dv-footer-note p{ margin:0; font-size:0.84rem; color:var(--charcoal-soft); }
+
+  /* ---------- Reveal on scroll ---------- */
+  .dv-reveal{ opacity:0; transform:translateY(16px); transition:opacity .8s ease, transform .8s ease; }
+  .dv-reveal.in-view{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    .dv-reveal{ opacity:1; transform:none; transition:none; }
+    .dv-blob-drift{ animation:none; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:860px){
+    .dv-profile-grid{ grid-template-columns:1fr; gap:40px; text-align:left; }
+    .dv-photo-wrap{ max-width:400px; margin:0 auto; }
+    .dv-name-row{ justify-content:flex-start; }
+  }
+  @media (max-width:560px){
+    .dv-hero{ padding:52px 0 60px; }
+    .dv-section{ padding:56px 0; }
+    .dv-name{ font-size:2.1rem; }
+    .dv-btn{ width:100%; }
+  }
+
+</style>
+</head>
+<body>
+
+<div id="davy-page">
+
+  <style>
+  /* ---------- Shared site nav (self-contained, safe to drop into any page) ---------- */
+  .n-topbar{
+    background: #FAF9F6;
+    border-bottom: 1px solid #E5E0D3;
+    font-family: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .n-topbar *, .n-topbar *::before, .n-topbar *::after{ box-sizing:border-box; }
+  .n-topbar-inner{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .n-logo{ height: 38px; width: auto; flex-shrink: 0; }
+
+  .n-nav{ display:flex; align-items:center; gap:28px; }
+  .n-nav-links{ display:flex; align-items:center; gap:26px; list-style:none; margin:0; padding:0; }
+  .n-nav-link{
+    font-size:0.94rem; font-weight:500;
+    color:#2C3539; white-space:nowrap; text-decoration:none;
+    padding:6px 0; position:relative;
+  }
+  .n-nav-link:hover{ color:#3B5240; }
+
+  .n-nav-dropdown{ position:relative; }
+  .n-nav-dropdown-toggle{
+    display:inline-flex; align-items:center; gap:5px;
+    background:none; border:none; cursor:pointer;
+    font-family:inherit; font-size:0.94rem; font-weight:500;
+    color:#2C3539; padding:6px 0;
+  }
+  .n-nav-dropdown-toggle:hover{ color:#3B5240; }
+  .n-nav-dropdown-toggle svg{ width:13px; height:13px; transition:transform .2s ease; }
+  .n-nav-dropdown.n-open .n-nav-dropdown-toggle svg{ transform:rotate(180deg); }
+
+  .n-nav-dropdown-menu{
+    position:absolute; top:calc(100% + 14px); left:50%; transform:translateX(-50%);
+    background:#FFFFFF; border:1px solid #E5E0D3; border-radius:16px;
+    box-shadow:0 18px 40px rgba(44,53,57,0.12);
+    padding:10px; min-width:250px;
+    opacity:0; visibility:hidden; transform:translateX(-50%) translateY(6px);
+    transition:opacity .2s ease, transform .2s ease, visibility .2s;
+    z-index:50;
+  }
+  .n-nav-dropdown.n-open .n-nav-dropdown-menu{
+    opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);
+  }
+  .n-nav-dropdown-menu a{
+    display:block; padding:11px 14px; border-radius:10px;
+    font-size:0.92rem; color:#2C3539; font-weight:400; text-decoration:none;
+  }
+  .n-nav-dropdown-menu a:hover{ background:#E8EFE3; color:#3B5240; }
+
+  .n-nav-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:11px 24px;
+    background:#4F6B4F;
+    color:#FFFFFF !important;
+    font-family:inherit; font-weight:500; font-size:0.9rem;
+    border-radius:100px; border:1px solid #4F6B4F;
+    text-decoration:none; cursor:pointer; flex-shrink:0;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    box-shadow:0 6px 20px rgba(79,107,79,0.22);
+  }
+  .n-nav-btn:hover{ background:#3B5240; border-color:#3B5240; transform:translateY(-2px); }
+
+  .n-nav-toggle{
+    display:none;
+    background:none; border:none; cursor:pointer;
+    width:38px; height:38px; align-items:center; justify-content:center;
+    color:#2C3539; flex-shrink:0;
+  }
+  .n-nav-toggle svg{ width:24px; height:24px; }
+
+  .n-mobile-menu{
+    display:none;
+    position:fixed; inset:0; z-index:300;
+    background:#FAF9F6;
+    padding:20px 6%;
+    overflow-y:auto;
+    font-family: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .n-mobile-menu.n-open{ display:block; }
+  .n-mobile-menu-top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:36px; }
+  .n-mobile-menu-close{ background:none; border:none; cursor:pointer; width:38px; height:38px; color:#2C3539; }
+  .n-mobile-menu-close svg{ width:26px; height:26px; }
+  .n-mobile-links{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px; }
+  .n-mobile-links a, .n-mobile-links .n-mobile-group-label{
+    display:block; padding:14px 4px; font-family:Georgia, 'Iowan Old Style', 'Times New Roman', serif; font-size:1.3rem;
+    color:#2C3539; border-bottom:1px solid #E5E0D3; text-decoration:none;
+  }
+  .n-mobile-group-label{ font-family:inherit; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.06em; color:#3B5240; border-bottom:none; padding-bottom:2px; padding-top:22px; font-weight:600; }
+  .n-mobile-links a.n-mobile-sub{ font-family:inherit; font-size:1.02rem; padding-left:16px; color:#48545A; }
+  .n-mobile-cta{ margin-top:28px; display:block; text-align:center; padding:15px 24px !important; font-size:1rem !important; }
+
+  @media (max-width:900px){
+    .n-nav-links, .n-nav-cta{ display:none; }
+    .n-nav-toggle{ display:flex; }
+  }
+</style>
+
+<header class="n-topbar">
+  <div class="n-topbar-inner">
+    <a href="https://nightingalepediatrics.com/">
+      <img class="n-logo" src="https://www.image2url.com/r2/default/images/1783666412458-814dcc7c-9b49-4bca-8e9e-0c12884b623c.png" alt="Nightingale Pediatrics">
+    </a>
+
+    <nav class="n-nav" aria-label="Primary">
+      <ul class="n-nav-links">
+        <li><a class="n-nav-link" href="/screening">Screening</a></li>
+        <li class="n-nav-dropdown" id="assessmentsDropdown">
+          <button type="button" class="n-nav-dropdown-toggle" id="assessmentsToggle" aria-expanded="false">
+            Assessments
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="n-nav-dropdown-menu">
+            <a href="/neurodevelopmental-assessment">ADHD &amp; Autism Diagnosis</a>
+            <a href="/academic-assessment">IQ &amp; School Readiness</a>
+            <a href="diagnostics.html">Full Diagnostics Overview</a>
+          </div>
+        </li>
+        <li><a class="n-nav-link" href="/pricing">Pricing</a></li>
+        <li><a class="n-nav-link" href="/children-adhd-testing-singapore">ADHD Guide</a></li>
+        <li><a class="n-nav-link" href="https://bonfire-health.github.io/Bonfire-AI/">Bonfire AI</a></li>
+      </ul>
+      <a href="https://wa.me/6582228505" class="n-nav-btn n-nav-cta">Book Intake</a>
+    </nav>
+
+    <button type="button" class="n-nav-toggle" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="n-mobile-menu" id="mobileMenu">
+  <div class="n-mobile-menu-top">
+    <img class="n-logo" src="https://www.image2url.com/r2/default/images/1783666412458-814dcc7c-9b49-4bca-8e9e-0c12884b623c.png" alt="Nightingale Pediatrics">
+    <button type="button" class="n-mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <ul class="n-mobile-links">
+    <li><a href="/screening">Screening</a></li>
+    <li><span class="n-mobile-group-label">Assessments</span></li>
+    <li><a class="n-mobile-sub" href="/neurodevelopmental-assessment">ADHD &amp; Autism Diagnosis</a></li>
+    <li><a class="n-mobile-sub" href="/academic-assessment">IQ &amp; School Readiness</a></li>
+    <li><a class="n-mobile-sub" href="diagnostics.html">Full Diagnostics Overview</a></li>
+    <li><a href="/pricing">Pricing</a></li>
+    <li><a href="/children-adhd-testing-singapore">ADHD Guide</a></li>
+    <li><a href="https://bonfire-health.github.io/Bonfire-AI/">Bonfire AI</a></li>
+  </ul>
+  <a href="https://wa.me/6582228505" class="n-nav-btn n-mobile-cta">Book Intake</a>
+</div>
+
+
+  <!-- ================= HERO / PROFILE ================= -->
+  <section class="dv-section dv-hero">
+    <svg class="dv-blob dv-blob-drift" style="top:-60px; right:-120px; width:360px; height:360px; opacity:0.6;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#C97B5A" fill-opacity="0.2" d="M46,-52C58,-42,64,-23,66,-3C68,16,66,35,54,48C42,61,21,69,-2,71C-25,73,-50,69,-63,54C-76,39,-77,14,-73,-9C-69,-32,-60,-53,-45,-63C-29,-73,-15,-72,3,-75C21,-78,34,-62,46,-52Z" transform="translate(100 100)"/>
+    </svg>
+
+    <div class="dv-wrap">
+      <div class="dv-profile-grid">
+
+        <div class="dv-reveal in-view">
+          <div class="dv-photo-wrap">
+            <svg class="dv-photo-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#E8EFE3" d="M48,-55C61,-45,69,-27,71,-8C73,10,70,29,59,44C48,59,29,70,8,73C-13,76,-38,71,-53,57C-68,43,-73,20,-72,-3C-71,-26,-64,-49,-49,-60C-34,-71,-11,-70,7,-73C25,-76,35,-65,48,-55Z" transform="translate(100 100)"/>
+            </svg>
+            <img class="dv-photo-frame" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/Clinician%20Photos/davy.png" alt="Dr. Davy Guo">
+          </div>
+
+          <ul class="dv-cred-list">
+            <li><span class="{PFX}-cred-icon">✦</span> Doctorate in Counseling Psychology, Univ. of Manchester, UK</li>
+            <li><span class="{PFX}-cred-icon">✦</span> Chartered Psychologist, British Psychological Society</li>
+            <li><span class="{PFX}-cred-icon">✦</span> Licensed Psychotherapist, National Ministry of Health (CN)</li>
+            <li><span class="{PFX}-cred-icon">✦</span> Clinical Supervisor, Chinese CBT Association</li>
+            <li><span class="{PFX}-cred-icon">✦</span> 15+ Years Clinical Experience</li>
+          </ul>
+        </div>
+
+        <div class="dv-reveal in-view">
+          <span class="dv-role-tag">Consultant Psychologist</span>
+
+          <div class="dv-name-row">
+            <h1 class="dv-name">Dr. Davy Guo</h1>
+            <span class="dv-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Chartered Psychologist
+            </span>
+          </div>
+
+          <h2 class="dv-subtitle">Counseling Psychologist | DCounPsych, CPsychol</h2>
+
+          <div class="dv-bio">
+            <p>Dr. Davy holds a Doctorate in Counseling Psychology from the University of Manchester, UK. He is a Chartered Psychologist with the British Psychological Society, a licensed Psychotherapist certified by the Chinese Ministry of Health, and a board member of the Zhejiang Neuroscience Association Autism Professional Committee.</p>
+            <p>With over 15 years of experience across Canada, the UK, China, and Singapore, he specializes in supporting children and adolescents navigating anxiety, mood disorders, ADHD, and cross-cultural issues. His work includes therapeutic interventions, assessments, and social and academic support services, notably with special education centers like ELG.</p>
+            <p>Utilizing a range of therapeutic models&mdash;including Cognitive Behavioral Therapy (CBT), Person-Centered Therapy, Solution Focused Therapy, and Mindfulness&mdash;Dr. Davy provides clinical psychological and emotional support for international and bilingual schools.</p>
+            <p>In addition to his clinical practice, he has over a decade of experience providing targeted support for university students and is frequently invited by schools and organizations to conduct workshops and specialized training on a variety of mental health subjects.</p>
+          </div>
+
+          <div class="dv-quote">
+            &quot;Dr. Davy's cross-cultural experience and adaptable therapeutic approach provide a supportive environment for children and adolescents navigating complex academic and emotional challenges.&quot;
+          </div>
+
+          <a href="https://calendly.com/meeting-with-nightingale/concierge" target="_blank" rel="noopener noreferrer" class="dv-btn">Book Consultation</a>
+          <p class="dv-availability">Available Online Only. Languages: English &amp; Chinese.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CORE CLINICAL COMPETENCIES ================= -->
+  <section class="dv-section dv-expertise">
+    <svg class="dv-blob" style="bottom:-120px; left:-100px; width:380px; height:380px; opacity:0.18;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#FFFFFF" d="M50,-56C64,-45,72,-25,73,-4C74,17,68,38,54,52C40,66,19,74,-3,77C-25,80,-49,78,-63,64C-77,50,-81,24,-79,0C-77,-24,-70,-48,-54,-60C-38,-72,-13,-72,7,-75C27,-78,36,-67,50,-56Z" transform="translate(100 100)"/>
+    </svg>
+    <div class="dv-wrap">
+      <div class="dv-expertise-head dv-reveal">
+        <h2>Core Clinical Competencies</h2>
+        <p>Dr. Davy utilizes a structured clinical approach to support neurodivergent individuals and students navigating cross-cultural and academic pressures.</p>
+      </div>
+
+      <div class="dv-cap-grid dv-reveal">
+        <div class="{PFX}-cap-card"><span class="{PFX}-cap-dot"></span><p class="{PFX}-cap-text">Child &amp; Adolescent Counseling</p></div>
+        <div class="{PFX}-cap-card"><span class="{PFX}-cap-dot"></span><p class="{PFX}-cap-text">ADHD &amp; Neurodiversity</p></div>
+        <div class="{PFX}-cap-card"><span class="{PFX}-cap-dot"></span><p class="{PFX}-cap-text">Anxiety &amp; Mood Disorders</p></div>
+        <div class="{PFX}-cap-card"><span class="{PFX}-cap-dot"></span><p class="{PFX}-cap-text">Cognitive Behavioral Therapy (CBT)</p></div>
+        <div class="{PFX}-cap-card"><span class="{PFX}-cap-dot"></span><p class="{PFX}-cap-text">Cross-Cultural Challenges</p></div>
+        <div class="{PFX}-cap-card"><span class="{PFX}-cap-dot"></span><p class="{PFX}-cap-text">Solution Focused Therapy</p></div>
+        <div class="{PFX}-cap-card"><span class="{PFX}-cap-dot"></span><p class="{PFX}-cap-text">School &amp; Academic Support</p></div>
+        <div class="{PFX}-cap-card"><span class="{PFX}-cap-dot"></span><p class="{PFX}-cap-text">Mental Health Workshops</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER DISCLAIMER ================= -->
+  <div class="dv-footer-note">
+    <div class="dv-wrap">
+      <p>Disclaimer: Not a medical doctor or dentist. Services provided are psychological and therapeutic in nature.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  (function(){
+    var revealEls = document.querySelectorAll('.dv-reveal');
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); }
+        });
+      }, { threshold:0.12 });
+      revealEls.forEach(function(el){ io.observe(el); });
+    } else {
+      revealEls.forEach(function(el){ el.classList.add('in-view'); });
+    }
+  })();
+</script>
+
+<style>
+  /* --- FOOTER: restyled to match the sand/sage system --- */
+  #nightingale-footer {
+    --f-sage: #4F6B4F;
+    --f-sage-dark: #3B5240;
+    --f-sand: #FAF9F6;
+    --f-text: #ffffff;
+    --f-text-dim: rgba(255, 255, 255, 0.72);
+    --f-sans: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --f-serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+
+    font-family: var(--f-sans);
+    font-weight: 300;
+    background-color: var(--f-sage);
+    color: var(--f-text);
+    padding: 72px 5% 36px;
+    border-top: 4px solid var(--f-sand);
+  }
+
+  #nightingale-footer * { box-sizing: border-box; }
+  #nightingale-footer a { text-decoration: none; color: var(--f-text) !important; transition: 0.2s; }
+  #nightingale-footer a:hover { color: var(--f-sand) !important; }
+
+  .footer-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    gap: 36px;
+    margin-bottom: 56px;
+  }
+
+  .footer-col h3 {
+    font-family: var(--f-serif);
+    font-weight: 400;
+    color: var(--f-sand) !important;
+    font-size: 1.05rem;
+    margin: 0 0 18px 0;
+  }
+
+  .footer-logo { width: 150px; height: auto; display: block; margin-bottom: 18px; }
+
+  .footer-brand p {
+    color: var(--f-text-dim);
+    line-height: 1.6;
+    font-size: 0.92rem;
+    max-width: 320px;
+    margin: 0 0 18px 0;
+  }
+
+  .footer-links { list-style: none; padding: 0; margin: 0; }
+  .footer-links li { margin-bottom: 10px; }
+  .footer-links a { font-size: 0.92rem; color: var(--f-text-dim) !important; }
+  .footer-links a:hover { color: var(--f-text) !important; }
+
+  .footer-contact p { color: var(--f-text); font-size: 0.92rem; margin: 0 0 14px 0; line-height: 1.6; }
+
+  #nightingale-footer .footer-btn {
+    display: inline-block;
+    border: 1px solid var(--f-sand);
+    color: var(--f-sand) !important;
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-size: 0.84rem;
+    font-weight: 500;
+    margin-top: 6px;
+  }
+  #nightingale-footer .footer-btn:hover { background: var(--f-sand); color: var(--f-sage-dark) !important; }
+
+  .footer-compliance {
+    max-width: 800px;
+    margin: 0 auto 44px auto;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 36px;
+  }
+  .footer-compliance h4 {
+    font-family: var(--f-serif);
+    font-weight: 400;
+    color: var(--f-text-dim);
+    font-size: 1rem;
+    margin: 0 0 22px 0;
+  }
+  .compliance-badges { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+  .comp-badge {
+    display: flex; align-items: center; gap: 9px;
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 8px 18px;
+    border-radius: 8px;
+  }
+  .comp-icon { font-size: 1.25rem; }
+  .comp-text { text-align: left; font-size: 0.66rem; font-weight: 500; letter-spacing: 0.5px; line-height: 1.25; color: var(--f-text); }
+
+  .footer-disclaimer {
+    max-width: 860px;
+    margin: 0 auto 28px auto;
+    text-align: center;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+  .footer-disclaimer a { text-decoration: underline; color: rgba(255,255,255,0.75) !important; }
+
+  .footer-bottom {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: var(--f-text-dim);
+    font-size: 0.8rem;
+    gap: 12px;
+  }
+
+  @media (max-width: 800px) {
+    .footer-container { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: span 2; text-align: center; }
+    .footer-brand .footer-logo { margin-left: auto; margin-right: auto; }
+    .footer-brand p { margin-left: auto; margin-right: auto; }
+  }
+  @media (max-width: 560px) {
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
+    .footer-brand .footer-logo { margin-left: auto; margin-right: auto; }
+    .comp-badge { width: 100%; justify-content: center; }
+  }
+</style>
+
+<footer id="nightingale-footer">
+  <div class="footer-container">
+
+    <div class="footer-col footer-brand">
+      <img src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/Misc/white-nightingale-logo.svg" alt="Nightingale Pediatrics" class="footer-logo">
+      <p>Clinical-grade screening and intervention for children and parents in Singapore.</p>
+      <a href="https://wa.me/6582228505" class="footer-btn">Book Intake Call</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Assessments</h3>
+      <ul class="footer-links">
+        <li><a href="/screening">Screening</a></li>
+        <li><a href="/neurodevelopmental-assessment">ADHD &amp; Autism Diagnosis</a></li>
+        <li><a href="/academic-assessment">IQ &amp; School Readiness</a></li>
+        <li><a href="diagnostics.html">Full Diagnostics Overview</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul class="footer-links">
+        <li><a href="https://bonfire-health.github.io/Bonfire-AI/">Bonfire AI</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/children-adhd-testing-singapore">ADHD Guide</a></li>
+        <li><a href="https://wa.me/6582228505">Masterclass</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-contact">
+      <h3>Contact</h3>
+      <p>
+        <a href="https://wa.me/6582228505">+65 8222 8505</a><br>
+        <a href="mailto:concierge@bonfire.cc">concierge@bonfire.cc</a>
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-compliance">
+    <h4>Built with tools that are:</h4>
+    <div class="compliance-badges">
+      <div class="comp-badge">
+        <span class="comp-icon">⚕️</span>
+        <span class="comp-text">HIPAA<br>COMPLIANT</span>
+      </div>
+      <div class="comp-badge">
+        <span class="comp-icon">🔒</span>
+        <span class="comp-text">GDPR<br>COMPLIANT</span>
+      </div>
+      <div class="comp-badge">
+        <span class="comp-icon">🛡️</span>
+        <span class="comp-text">PDPA<br>COMPLIANT</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-disclaimer">
+    Nightingale Pediatrics does not provide psychiatric emergency services. If you or someone you know are in a crisis, please call 995, 999, National Mindline 1711, <a href="https://www.sos.org.sg/contact-us/" target="_blank">SOS (Samaritans of Singapore)</a>, <a href="https://www.imh.com.sg/Pages/Contact-Us.aspx" target="_blank">IMH</a> or head to the nearest emergency room for assistance.
+  </div>
+
+  <div class="footer-bottom">
+    <span>Copyright © 2026 Bonfire Health Pte. Ltd. All Rights Reserved.</span>
+    <span>
+      <a href="https://nightingalepediatrics.com/privacy-policy-nightingale">Privacy Policy</a> &nbsp;|&nbsp;
+      <a href="https://nightingalepediatrics.com/terms-of-use-nightingale">Terms of Service</a>
+    </span>
+  </div>
+</footer>
+
+<style>
+  /* ---------- Click-to-WhatsApp widget ---------- */
+  .wa-widget{
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    font-family: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: opacity .3s ease, transform .3s ease;
+  }
+  .wa-widget.wa-hidden{ opacity: 0; transform: translateY(14px); pointer-events: none; }
+
+  .wa-bubble{
+    max-width: 232px;
+    background: #FAF9F6;
+    color: #2C3539;
+    border: 1px solid #E5E0D3;
+    border-radius: 16px 16px 4px 16px;
+    padding: 14px 30px 14px 16px;
+    font-size: 0.86rem;
+    line-height: 1.45;
+    box-shadow: 0 12px 32px rgba(44,53,57,0.16);
+    position: relative;
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+    transition: opacity .3s ease, transform .3s ease;
+    pointer-events: none;
+  }
+  .wa-bubble.wa-show{ opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+  .wa-bubble-close{
+    position: absolute;
+    top: 4px; right: 6px;
+    background: none;
+    border: none;
+    font-size: 17px;
+    line-height: 1;
+    color: #48545A;
+    cursor: pointer;
+    padding: 6px;
+  }
+
+  .wa-button{
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+    position: relative;
+    flex-shrink: 0;
+    transition: transform .2s ease;
+  }
+  .wa-button:hover{ transform: scale(1.06); }
+  .wa-button svg{ width: 28px; height: 28px; position: relative; z-index: 2; }
+  .wa-pulse{
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #25D366;
+    opacity: 0.55;
+    z-index: 1;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .wa-pulse{ animation: wa-pulse-anim 2.4s ease-out infinite; }
+  }
+  @keyframes wa-pulse-anim{
+    0%{ transform: scale(1); opacity: 0.5; }
+    100%{ transform: scale(1.7); opacity: 0; }
+  }
+
+  @media (max-width: 600px){
+    .wa-widget{ right: 16px; bottom: 16px; }
+    .wa-bubble{ max-width: 200px; font-size: 0.82rem; }
+    .wa-button{ width: 52px; height: 52px; }
+    .wa-button svg{ width: 25px; height: 25px; }
+  }
+</style>
+
+<div class="wa-widget" id="waWidget">
+  <div class="wa-bubble" id="waBubble">
+    <button type="button" class="wa-bubble-close" id="waBubbleClose" aria-label="Dismiss">&times;</button>
+    <span id="waBubbleText">Hi! Have a question? Chat with us on WhatsApp.</span>
+  </div>
+  <a href="https://wa.me/6582228505" id="waButton" class="wa-button" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <span class="wa-pulse" aria-hidden="true"></span>
+    <svg viewBox="0 0 32 32" fill="#ffffff" aria-hidden="true"><path d="M16.001 3C9.096 3 3.5 8.596 3.5 15.5c0 2.42.687 4.68 1.878 6.598L3 29l7.087-2.336A12.44 12.44 0 0016.001 28C22.905 28 28.5 22.404 28.5 15.5S22.905 3 16.001 3zm0 22.6a10.06 10.06 0 01-5.13-1.404l-.368-.219-3.79 1.25 1.27-3.693-.24-.38A10.06 10.06 0 015.9 15.5c0-5.577 4.524-10.1 10.101-10.1S26.1 9.923 26.1 15.5 21.577 25.6 16.001 25.6zm5.542-7.564c-.303-.152-1.793-.885-2.07-.986-.278-.101-.48-.152-.682.152-.202.303-.784.985-.961 1.188-.177.202-.354.227-.657.076-.303-.152-1.278-.471-2.435-1.504-.9-.803-1.508-1.795-1.685-2.098-.177-.303-.019-.467.133-.618.136-.136.303-.354.454-.53.152-.177.202-.303.303-.506.101-.202.05-.379-.025-.53-.076-.152-.682-1.646-.935-2.253-.246-.591-.497-.511-.682-.52l-.582-.01a1.12 1.12 0 00-.809.379c-.278.303-1.06 1.036-1.06 2.529s1.085 2.934 1.236 3.137c.152.202 2.135 3.26 5.174 4.572.723.312 1.287.499 1.727.639.726.231 1.386.198 1.908.12.582-.087 1.793-.733 2.046-1.442.253-.708.253-1.315.177-1.442-.076-.126-.278-.202-.581-.354z"/></svg>
+  </a>
+</div>
+
+<script>
+(function(){
+    // ---------- Nav: Assessments dropdown ----------
+    var assessmentsDropdown = document.getElementById('assessmentsDropdown');
+    var assessmentsToggle = document.getElementById('assessmentsToggle');
+    if(assessmentsDropdown && assessmentsToggle){
+      assessmentsToggle.addEventListener('click', function(e){
+        e.stopPropagation();
+        var isOpen = assessmentsDropdown.classList.toggle('n-open');
+        assessmentsToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      document.addEventListener('click', function(e){
+        if(!assessmentsDropdown.contains(e.target)){
+          assessmentsDropdown.classList.remove('n-open');
+          assessmentsToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape'){
+          assessmentsDropdown.classList.remove('n-open');
+          assessmentsToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // ---------- Nav: mobile menu ----------
+    var mobileMenu = document.getElementById('mobileMenu');
+    var mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    var mobileMenuClose = document.getElementById('mobileMenuClose');
+    function openMobileMenu(){
+      mobileMenu.classList.add('n-open');
+      mobileMenuToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMobileMenu(){
+      mobileMenu.classList.remove('n-open');
+      mobileMenuToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    if(mobileMenuToggle) mobileMenuToggle.addEventListener('click', openMobileMenu);
+    if(mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
+    if(mobileMenu){
+      mobileMenu.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', closeMobileMenu);
+      });
+    }
+
+
+    // ---------- Click-to-WhatsApp widget: dynamic, context-aware ----------
+    var waButton = document.getElementById('waButton');
+    var waWidget = document.getElementById('waWidget');
+    var waBubble = document.getElementById('waBubble');
+    var waBubbleText = document.getElementById('waBubbleText');
+    var waBubbleClose = document.getElementById('waBubbleClose');
+    var waBase = 'https://wa.me/6582228505';
+    var waDefaultMessage = "Hi Nightingale, I'd like to learn more about your services!";
+    var waBubbleDismissed = false;
+
+    function waSetMessage(text){
+      waButton.setAttribute('href', waBase + '?text=' + encodeURIComponent(text));
+    }
+    waSetMessage(waDefaultMessage);
+
+    var waTargets = document.querySelectorAll('[data-wa-message]:not(.n-carousel-card)');
+    if('IntersectionObserver' in window && waTargets.length){
+      var waContextObserver = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting && entry.intersectionRatio >= 0.55){
+            var msg = entry.target.getAttribute('data-wa-message') || waDefaultMessage;
+            waSetMessage(msg);
+          }
+        });
+      }, { threshold: [0.55] });
+      waTargets.forEach(function(el){ waContextObserver.observe(el); });
+    }
+
+    document.querySelectorAll('.n-carousel-card[data-wa-message]').forEach(function(card){
+      var setFromCard = function(){ waSetMessage(card.getAttribute('data-wa-message')); };
+      card.addEventListener('mouseenter', setFromCard);
+      card.addEventListener('touchstart', setFromCard, { passive: true });
+      card.addEventListener('focusin', setFromCard);
+    });
+
+    var waFooter = document.getElementById('nightingale-footer');
+    if('IntersectionObserver' in window && waFooter){
+      var waFooterObserver = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          waWidget.classList.toggle('wa-hidden', entry.isIntersecting);
+        });
+      }, { threshold: 0.05 });
+      waFooterObserver.observe(waFooter);
+    }
+
+    setTimeout(function(){
+      if(!waBubbleDismissed) waBubble.classList.add('wa-show');
+    }, 3500);
+
+    if(waBubbleClose){
+      waBubbleClose.addEventListener('click', function(){
+        waBubbleDismissed = true;
+        waBubble.classList.remove('wa-show');
+      });
+    }
+})();
+</script>
+
+</body>
+</html>
