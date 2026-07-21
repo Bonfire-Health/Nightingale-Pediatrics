@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nightingale — Find your calm at 2 AM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@300..700&display=swap" rel="stylesheet">
+<style>
+
+  /* ---------- Design tokens ---------- */
+  :root{
+    --sand:#FAF9F6;
+    --sand-deep:#F2EEE4;
+    --sage:#4F6B4F;
+    --sage-dark:#3B5240;
+    --sage-light:#E8EFE3;
+    --terracotta:#C97B5A;
+    --charcoal:#2C3539;
+    --charcoal-soft:#48545A;
+    --line:#E5E0D3;
+    --white:#FFFFFF;
+    --wa-green-out:#DCF8C6;
+    --wa-tick-blue:#4FC3F7;
+    --wa-blue:#0A7CFF;
+    --wa-wallpaper:#EDE7D8;
+
+    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    --sans: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    --max-w: 1120px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--sand);
+    color:var(--charcoal);
+    font-family:var(--sans);
+    font-weight:300;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  img{ max-width:100%; display:block; }
+
+  a{ color:inherit; text-decoration:none; }
+
+  h1,h2,h3{
+    font-family:var(--serif);
+    font-weight:400;
+    color:var(--charcoal);
+    letter-spacing:-0.01em;
+  }
+
+  .wrap{
+    max-width:var(--max-w);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  section{ position:relative; }
+
+  :focus-visible{
+    outline:2px solid var(--sage-dark);
+    outline-offset:3px;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:16px 34px;
+    background:var(--sage);
+    color:var(--white);
+    font-family:var(--sans);
+    font-weight:500;
+    font-size:1rem;
+    border-radius:100px;
+    border:1px solid var(--sage);
+    cursor:pointer;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    box-shadow:0 6px 20px rgba(79,107,79,0.22);
+  }
+  .btn:hover{
+    background:var(--sage-dark);
+    transform:translateY(-2px);
+    box-shadow:0 10px 26px rgba(79,107,79,0.28);
+  }
+  .btn-ghost{
+    background:transparent;
+    color:var(--sage-dark);
+    border:1px solid var(--sage-dark);
+    box-shadow:none;
+    padding:11px 26px;
+    font-size:0.92rem;
+  }
+  .btn-ghost:hover{
+    background:var(--sage-light);
+    transform:none;
+    box-shadow:none;
+  }
+
+  /* ---------- Language toggle ---------- */
+  .hero-top-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:18px;
+  }
+  .lang-toggle{
+    display:flex;
+    background:var(--white);
+    border-radius:100px;
+    padding:4px;
+    gap:2px;
+    box-shadow:0 4px 14px rgba(44,53,57,0.14);
+    flex-shrink:0;
+  }
+  .lang-btn{
+    border:none;
+    background:transparent;
+    font-family:var(--sans);
+    font-size:0.8rem;
+    font-weight:500;
+    padding:7px 15px;
+    border-radius:100px;
+    color:var(--charcoal-soft);
+    cursor:pointer;
+    transition:background .2s ease, color .2s ease;
+  }
+  .lang-btn.active{
+    background:var(--sage);
+    color:var(--white);
+  }
+  @media (max-width:900px){
+    .hero-top-row{ justify-content:center; }
+  }
+  @media (max-width:480px){
+    .lang-btn{ padding:6px 12px; font-size:0.74rem; }
+  }
+
+  /* ---------- Ambient blobs ---------- */
+  .blob{
+    position:absolute;
+    z-index:0;
+    pointer-events:none;
+    filter:blur(0px);
+    opacity:0.9;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .blob-drift{ animation:drift 26s ease-in-out infinite alternate; }
+  }
+  @keyframes drift{
+    0%{ transform:translate(0,0) scale(1) rotate(0deg); }
+    100%{ transform:translate(14px,-18px) scale(1.04) rotate(3deg); }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:130px 0 110px;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+  }
+  .hero-copy .eyebrow{
+    font-size:0.82rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--sage-dark);
+    font-weight:500;
+  }
+  .hero-copy h1{
+    font-size:clamp(2.3rem, 4.2vw + 1rem, 3.7rem);
+    line-height:1.08;
+    margin-bottom:26px;
+  }
+  .hero-copy p{
+    font-size:1.08rem;
+    color:var(--charcoal-soft);
+    max-width:520px;
+    margin-bottom:36px;
+  }
+
+  .hero-visual{
+    position:relative;
+    display:flex;
+    justify-content:center;
+  }
+
+  /* ---------- Phone mockup ---------- */
+  .phone-mockup{
+    position:relative;
+    z-index:2;
+    width:290px;
+  }
+  .phone-frame{
+    position:relative;
+    width:100%;
+    aspect-ratio:290/598;
+    background:linear-gradient(160deg,#4a4a4d 0%, #232326 45%, #3a3a3d 100%);
+    border-radius:52px;
+    padding:12px;
+    box-shadow:0 30px 60px rgba(44,53,57,0.28), 0 8px 22px rgba(44,53,57,0.18);
+  }
+  .phone-frame::before{ /* side button */
+    content:"";
+    position:absolute;
+    right:-3px;
+    top:130px;
+    width:3px;
+    height:70px;
+    background:#2b2b2d;
+    border-radius:2px;
+  }
+  .phone-frame::after{ /* volume buttons */
+    content:"";
+    position:absolute;
+    left:-3px;
+    top:100px;
+    width:3px;
+    height:38px;
+    background:#2b2b2d;
+    border-radius:2px;
+    box-shadow:0 54px 0 #2b2b2d;
+  }
+  .phone-screen{
+    position:relative;
+    width:100%;
+    height:100%;
+    background:var(--sand-deep);
+    border-radius:40px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+  .dynamic-island{
+    position:absolute;
+    top:10px;
+    left:50%;
+    transform:translateX(-50%);
+    width:84px;
+    height:22px;
+    background:#0b0b0c;
+    border-radius:14px;
+    z-index:5;
+  }
+  .status-bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 18px 4px;
+    font-size:0.74rem;
+    font-weight:600;
+    color:var(--charcoal);
+    background:var(--sand-deep);
+  }
+  .status-icons{ display:flex; align-items:center; gap:4px; }
+  .status-icons .bars{ display:flex; align-items:flex-end; gap:1.5px; }
+  .status-icons .bars span{ width:2.5px; background:var(--charcoal); border-radius:1px; }
+  .status-icons .bars span:nth-child(1){ height:3px; }
+  .status-icons .bars span:nth-child(2){ height:5px; }
+  .status-icons .bars span:nth-child(3){ height:7px; }
+  .status-icons .bars span:nth-child(4){ height:9px; }
+  .status-icons .net-label{ font-size:0.65rem; font-weight:600; margin:0 1px; }
+  .status-icons .batt-pill{
+    display:flex; align-items:center; gap:3px;
+    font-size:0.62rem; font-weight:600; color:var(--charcoal);
+  }
+  .status-icons .batt{ width:17px; height:8.5px; border:1px solid var(--charcoal); border-radius:2.5px; position:relative; }
+  .status-icons .batt::after{ content:""; position:absolute; right:-3px; top:2px; width:1.5px; height:3.5px; background:var(--charcoal); border-radius:0 1px 1px 0; }
+  .status-icons .batt::before{ content:""; position:absolute; inset:1.5px; background:var(--charcoal); border-radius:1px; width:75%; }
+
+  .chat-header{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 12px 12px;
+    border-bottom:1px solid rgba(44,53,57,0.08);
+    background:var(--sand-deep);
+  }
+  .chat-back{
+    flex-shrink:0;
+    color:var(--wa-blue);
+    font-size:1.3rem;
+    line-height:1;
+    padding:0 2px;
+  }
+  .chat-avatar{
+    width:32px; height:32px;
+    border-radius:50%;
+    object-fit:cover;
+    border:1px solid rgba(44,53,57,0.08);
+    flex-shrink:0;
+  }
+  .chat-header-text{ display:flex; flex-direction:column; line-height:1.3; min-width:0; }
+  .chat-name-row{ display:flex; align-items:center; gap:4px; }
+  .chat-name{ font-size:0.86rem; font-weight:700; color:var(--charcoal); }
+  .verified-badge{ flex-shrink:0; }
+  .chat-status{ font-size:0.64rem; color:var(--charcoal-soft); }
+
+  .chat-body{
+    flex:1;
+    padding:14px 9px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    background-color:var(--wa-wallpaper);
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(79,107,79,0.07) 0 3px, transparent 3px),
+      radial-gradient(circle at 75% 12%, rgba(79,107,79,0.07) 0 2.5px, transparent 2.5px),
+      radial-gradient(circle at 45% 40%, rgba(201,123,90,0.07) 0 2px, transparent 2px),
+      radial-gradient(circle at 88% 55%, rgba(79,107,79,0.06) 0 3px, transparent 3px),
+      radial-gradient(circle at 25% 70%, rgba(201,123,90,0.06) 0 2.5px, transparent 2.5px),
+      radial-gradient(circle at 60% 85%, rgba(79,107,79,0.07) 0 2px, transparent 2px),
+      radial-gradient(circle at 10% 92%, rgba(79,107,79,0.06) 0 2.5px, transparent 2.5px),
+      radial-gradient(circle at 92% 88%, rgba(201,123,90,0.06) 0 2px, transparent 2px);
+    background-repeat:repeat;
+    background-size:140px 140px;
+  }
+  .chat-body::-webkit-scrollbar{ display:none; }
+
+  .msg{
+    position:relative;
+    max-width:80%;
+    padding:7px 8px 6px 10px;
+    font-size:0.76rem;
+    line-height:1.4;
+    border-radius:8px;
+    opacity:0;
+    transform:translateY(8px);
+    transition:opacity .45s ease, transform .45s ease;
+    box-shadow:0 1px 1px rgba(0,0,0,0.08);
+    text-align:left; /* Ensure all text inside bubbles is left aligned */
+  }
+  .msg.show{ opacity:1; transform:translateY(0); }
+  .msg-text{ display:inline; }
+  .msg-time{
+    display:inline-flex;
+    align-items:center;
+    gap:2px;
+    font-size:0.6rem;
+    float:right;
+    margin:5px 0 -2px 6px;
+    white-space:nowrap;
+  }
+  
+  /* WhatsApp mirrors conversations: user on right, AI on left */
+  .msg.user{
+    align-self:flex-end;
+    background:var(--wa-green-out);
+    color:var(--charcoal);
+    border-radius:8px 8px 2px 8px;
+  }
+  .msg.user::before{
+    content:"";
+    position:absolute;
+    top:0; right:-7px;
+    width:0; height:0;
+    border-style:solid;
+    border-width:0 0 10px 10px;
+    border-color:transparent transparent transparent var(--wa-green-out);
+  }
+  .msg.user .msg-time{ color:rgba(44,53,57,0.55); }
+  
+  .msg.ai{
+    align-self:flex-start;
+    background:var(--white);
+    color:var(--charcoal);
+    border-radius:8px 8px 8px 2px;
+  }
+  .msg.ai::before{
+    content:"";
+    position:absolute;
+    top:0; left:-7px;
+    width:0; height:0;
+    border-style:solid;
+    border-width:0 10px 10px 0;
+    border-color:transparent var(--white) transparent transparent;
+  }
+  .msg.ai .msg-time{ color:rgba(44,53,57,0.45); }
+  .tick{ display:inline-flex; }
+
+  .typing{
+    align-self:flex-start;
+    display:flex;
+    gap:4px;
+    background:var(--white);
+    padding:11px 14px;
+    border-radius:15px 15px 15px 3px;
+    box-shadow:0 1px 3px rgba(44,53,57,0.08);
+    opacity:0;
+    transform:translateY(8px);
+    transition:opacity .35s ease, transform .35s ease;
+  }
+  .typing.show{ opacity:1; transform:translateY(0); }
+  .typing span{
+    width:5px; height:5px;
+    border-radius:50%;
+    background:var(--charcoal-soft);
+    opacity:0.55;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .typing span{ animation:bounce 1.1s infinite ease-in-out; }
+    .typing span:nth-child(2){ animation-delay:0.15s; }
+    .typing span:nth-child(3){ animation-delay:0.3s; }
+  }
+  @keyframes bounce{
+    0%,60%,100%{ transform:translateY(0); opacity:0.4; }
+    30%{ transform:translateY(-3px); opacity:0.9; }
+  }
+
+  .quick-replies{
+    align-self:flex-start; /* Attached to the left, under AI message */
+    display:flex;
+    flex-direction:column;
+    flex-shrink:0;
+    width:80%;
+    margin-top:-4px;
+    background:var(--white);
+    border-radius:0 0 8px 8px;
+    overflow:hidden;
+    box-shadow:0 1px 1px rgba(0,0,0,0.08);
+  }
+  .quick-reply{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:8px;
+    font-size:0.72rem;
+    font-weight:400;
+    color:var(--wa-blue);
+    background:var(--white);
+    border:none;
+    border-top:1px solid rgba(44,53,57,0.08);
+    padding:10px 10px 10px 16px;
+    opacity:0;
+    transform:translateY(4px);
+    transition:opacity .3s ease, transform .3s ease, background .2s ease;
+    text-align:left;
+  }
+  .quick-reply svg{ flex-shrink:0; }
+  .quick-reply.show{ opacity:1; transform:translateY(0); }
+  .quick-reply.picked{ background:rgba(10,124,255,0.10); }
+
+  .chat-input-bar{
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 10px 14px;
+    background:var(--sand-deep);
+  }
+  .chat-input-bar .icon-btn{
+    width:20px; height:20px;
+    color:var(--charcoal-soft);
+    flex-shrink:0;
+  }
+  .chat-input-bar .input-pill{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:var(--white);
+    border-radius:100px;
+    padding:7px 10px 7px 14px;
+    font-size:0.72rem;
+    color:rgba(44,53,57,0.4);
+    border:1px solid rgba(44,53,57,0.15);
+  }
+  .chat-input-bar .mic-btn{
+    width:30px; height:30px;
+    border-radius:50%;
+    background:var(--sage);
+    color:var(--white);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+  .mic-btn-wrap{ position:relative; flex-shrink:0; }
+  .mic-tooltip{
+    position:absolute;
+    bottom:calc(100% + 8px);
+    right:-6px;
+    background:var(--charcoal);
+    color:var(--white);
+    font-size:0.56rem;
+    font-weight:500;
+    white-space:nowrap;
+    padding:5px 9px;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.18);
+  }
+  .mic-tooltip::after{
+    content:"";
+    position:absolute;
+    top:100%;
+    right:12px;
+    border:5px solid transparent;
+    border-top-color:var(--charcoal);
+  }
+
+  /* ---------- Privacy & Security banner ---------- */
+  .privacy-banner{
+    padding:44px 0;
+    background:var(--sand-deep);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .privacy-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .privacy-item{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    text-align:center;
+  }
+  .privacy-item svg{ flex-shrink:0; color:var(--sage-dark); width:30px; height:30px; }
+  .privacy-item span{
+    font-size:1.08rem;
+    font-weight:500;
+    color:var(--charcoal-soft);
+  }
+  @media (max-width:900px){
+    .privacy-grid{ grid-template-columns:1fr; gap:22px; }
+    .privacy-item svg{ width:32px; height:32px; }
+    .privacy-item span{ font-size:1.14rem; }
+  }
+
+  /* ---------- Medical disclaimer ---------- */
+  .disclaimer{
+    padding:36px 0 48px;
+    background:var(--sand);
+  }
+  .disclaimer p{
+    font-size:0.74rem;
+    line-height:1.7;
+    color:var(--charcoal-soft);
+    opacity:0.85;
+    max-width:900px;
+  }
+
+  /* ---------- About Dr. Amy CTA ---------- */
+  .amy-cta{
+    margin-top:24px;
+  }
+
+  /* ---------- How it helps ---------- */
+  .how{
+    padding:110px 0;
+    background:var(--sand-deep);
+  }
+  .section-head{
+    max-width:980px;
+    margin-bottom:64px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px;
+    align-items:start;
+  }
+  .section-head h2{
+    font-size:clamp(1.7rem, 2.4vw + 1rem, 2.4rem);
+    margin-bottom:0;
+  }
+  .section-head-copy p{
+    color:var(--charcoal-soft);
+    font-size:1.02rem;
+    margin-bottom:12px;
+  }
+  .section-head-copy p:last-child{
+    margin-bottom:0;
+  }
+  @media (max-width:900px){
+    .section-head{ grid-template-columns:1fr; gap:20px; text-align:left; }
+  }
+  .how-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:44px;
+  }
+  .how-item .num{
+    font-family:var(--serif);
+    font-size:2.6rem;
+    color:var(--terracotta);
+    opacity:0.75;
+    line-height:1;
+    margin-bottom:18px;
+  }
+  .how-item h3{
+    font-size:1.2rem;
+    margin-bottom:12px;
+  }
+  .how-item p{
+    color:var(--charcoal-soft);
+    font-size:0.98rem;
+  }
+
+  /* ---------- Meet Dr Amy ---------- */
+  .amy{
+    padding:120px 0;
+  }
+  .amy .wrap{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:64px;
+    align-items:center;
+  }
+  .amy-photo-wrap{
+    position:relative;
+    display:flex;
+    justify-content:center;
+  }
+  .amy-blob{
+    position:absolute;
+    inset:0;
+    z-index:0;
+  }
+  .amy-photo{
+    position:relative;
+    z-index:1;
+    width:78%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:42% 58% 61% 39% / 51% 44% 56% 49%;
+    background:var(--white);
+    border:1px solid var(--line);
+  }
+  .amy-copy h2{
+    font-size:clamp(1.7rem, 2.4vw + 1rem, 2.4rem);
+    margin-bottom:22px;
+  }
+  .amy-copy p{
+    color:var(--charcoal-soft);
+    font-size:1.05rem;
+    max-width:520px;
+  }
+
+  /* ---------- Try it out ---------- */
+  .trial{
+    padding:110px 0 130px;
+    background:var(--sage);
+    color:var(--white);
+    overflow:hidden;
+    position:relative;
+  }
+  .trial .wrap{ position:relative; z-index:2; max-width:680px; text-align:center; margin:0 auto; }
+  .trial h2{
+    color:var(--white);
+    font-size:clamp(1.8rem, 2.6vw + 1rem, 2.6rem);
+    margin-bottom:22px;
+  }
+  .trial p{
+    color:rgba(255,255,255,0.88);
+    font-size:1.06rem;
+    margin-bottom:14px;
+  }
+  .trial .btn{
+    margin-top:26px;
+    background:var(--white);
+    color:var(--sage-dark);
+    border-color:var(--white);
+    box-shadow:0 10px 26px rgba(0,0,0,0.15);
+  }
+  .trial .btn:hover{ background:var(--sand); }
+ .trial .escalation-note{
+    margin-top:22px;
+    font-size:0.7rem;
+    color:rgba(255,255,255,0.75);
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .8s ease, transform .8s ease;
+  }
+  .reveal.in-view{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+    .blob-drift{ animation:none; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    .hero .wrap{ grid-template-columns:1fr; text-align:center; }
+    .hero-copy p{ margin-left:auto; margin-right:auto; }
+    .hero-visual{ order:-1; margin-bottom:12px; }
+    .phone-mockup{ width:240px; }
+    .how-grid{ grid-template-columns:1fr; gap:40px; }
+    .amy .wrap{ grid-template-columns:1fr; text-align:center; }
+    .amy-copy p{ margin-left:auto; margin-right:auto; }
+    .amy-photo{ width:56%; }
+    .footer .wrap{ justify-content:center; text-align:center; }
+  }
+
+  @media (max-width:480px){
+    .wrap{ padding:0 20px; }
+    .hero{ padding:56px 0 70px; }
+    .how, .amy{ padding:76px 0; }
+    .trial{ padding:76px 0 90px; }
+  }
+
+</style>
+</head>
+<body>
+
+  <style>
+  /* ---------- Shared site nav (self-contained, safe to drop into any page) ---------- */
+  .n-topbar{
+    background: #FAF9F6;
+    border-bottom: 1px solid #E5E0D3;
+    font-family: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .n-topbar *, .n-topbar *::before, .n-topbar *::after{ box-sizing:border-box; }
+  .n-topbar-inner{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .n-logo{ height: 38px; width: auto; flex-shrink: 0; }
+
+  .n-nav{ display:flex; align-items:center; gap:28px; }
+  .n-nav-links{ display:flex; align-items:center; gap:26px; list-style:none; margin:0; padding:0; }
+  .n-nav-link{
+    font-size:0.94rem; font-weight:500;
+    color:#2C3539; white-space:nowrap; text-decoration:none;
+    padding:6px 0; position:relative;
+  }
+  .n-nav-link:hover{ color:#3B5240; }
+
+  .n-nav-dropdown{ position:relative; }
+  .n-nav-dropdown-toggle{
+    display:inline-flex; align-items:center; gap:5px;
+    background:none; border:none; cursor:pointer;
+    font-family:inherit; font-size:0.94rem; font-weight:500;
+    color:#2C3539; padding:6px 0;
+  }
+  .n-nav-dropdown-toggle:hover{ color:#3B5240; }
+  .n-nav-dropdown-toggle svg{ width:13px; height:13px; transition:transform .2s ease; }
+  .n-nav-dropdown.n-open .n-nav-dropdown-toggle svg{ transform:rotate(180deg); }
+
+  .n-nav-dropdown-menu{
+    position:absolute; top:calc(100% + 14px); left:50%; transform:translateX(-50%);
+    background:#FFFFFF; border:1px solid #E5E0D3; border-radius:16px;
+    box-shadow:0 18px 40px rgba(44,53,57,0.12);
+    padding:10px; min-width:250px;
+    opacity:0; visibility:hidden; transform:translateX(-50%) translateY(6px);
+    transition:opacity .2s ease, transform .2s ease, visibility .2s;
+    z-index:50;
+  }
+  .n-nav-dropdown.n-open .n-nav-dropdown-menu{
+    opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);
+  }
+  .n-nav-dropdown-menu a{
+    display:block; padding:11px 14px; border-radius:10px;
+    font-size:0.92rem; color:#2C3539; font-weight:400; text-decoration:none;
+  }
+  .n-nav-dropdown-menu a:hover{ background:#E8EFE3; color:#3B5240; }
+
+  .n-nav-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:11px 24px;
+    background:#4F6B4F;
+    color:#FFFFFF !important;
+    font-family:inherit; font-weight:500; font-size:0.9rem;
+    border-radius:100px; border:1px solid #4F6B4F;
+    text-decoration:none; cursor:pointer; flex-shrink:0;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    box-shadow:0 6px 20px rgba(79,107,79,0.22);
+  }
+  .n-nav-btn:hover{ background:#3B5240; border-color:#3B5240; transform:translateY(-2px); }
+
+  .n-nav-toggle{
+    display:none;
+    background:none; border:none; cursor:pointer;
+    width:38px; height:38px; align-items:center; justify-content:center;
+    color:#2C3539; flex-shrink:0;
+  }
+  .n-nav-toggle svg{ width:24px; height:24px; }
+
+  .n-mobile-menu{
+    display:none;
+    position:fixed; inset:0; z-index:300;
+    background:#FAF9F6;
+    padding:20px 6%;
+    overflow-y:auto;
+    font-family: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .n-mobile-menu.n-open{ display:block; }
+  .n-mobile-menu-top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:36px; }
+  .n-mobile-menu-close{ background:none; border:none; cursor:pointer; width:38px; height:38px; color:#2C3539; }
+  .n-mobile-menu-close svg{ width:26px; height:26px; }
+  .n-mobile-links{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px; }
+  .n-mobile-links a, .n-mobile-links .n-mobile-group-label{
+    display:block; padding:14px 4px; font-family:Georgia, 'Iowan Old Style', 'Times New Roman', serif; font-size:1.3rem;
+    color:#2C3539; border-bottom:1px solid #E5E0D3; text-decoration:none;
+  }
+  .n-mobile-group-label{ font-family:inherit; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.06em; color:#3B5240; border-bottom:none; padding-bottom:2px; padding-top:22px; font-weight:600; }
+  .n-mobile-links a.n-mobile-sub{ font-family:inherit; font-size:1.02rem; padding-left:16px; color:#48545A; }
+  .n-mobile-cta{ margin-top:28px; display:block; text-align:center; padding:15px 24px !important; font-size:1rem !important; }
+
+  @media (max-width:900px){
+    .n-nav-links, .n-nav-cta{ display:none; }
+    .n-nav-toggle{ display:flex; }
+  }
+</style>
+
+<header class="n-topbar">
+  <div class="n-topbar-inner">
+    <a href="https://nightingalepediatrics.com/">
+      <img class="n-logo" src="https://www.image2url.com/r2/default/images/1783666412458-814dcc7c-9b49-4bca-8e9e-0c12884b623c.png" alt="Nightingale Pediatrics">
+    </a>
+
+    <nav class="n-nav" aria-label="Primary">
+      <ul class="n-nav-links">
+        <li><a class="n-nav-link" href="/screening">Screening</a></li>
+        <li class="n-nav-dropdown" id="assessmentsDropdown">
+          <button type="button" class="n-nav-dropdown-toggle" id="assessmentsToggle" aria-expanded="false">
+            Assessments
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="n-nav-dropdown-menu">
+            <a href="/neurodevelopmental-assessment">ADHD &amp; Autism Diagnosis</a>
+            <a href="/academic-assessment">IQ &amp; School Readiness</a>
+            <a href="diagnostics.html">Full Diagnostics Overview</a>
+          </div>
+        </li>
+        <li><a class="n-nav-link" href="/pricing">Pricing</a></li>
+        <li><a class="n-nav-link" href="/children-adhd-testing-singapore">ADHD Guide</a></li>
+        <li><a class="n-nav-link" href="https://bonfire-health.github.io/Bonfire-AI/">Bonfire AI</a></li>
+      </ul>
+      <a href="https://wa.me/6582228505" class="n-nav-btn n-nav-cta">Book Intake</a>
+    </nav>
+
+    <button type="button" class="n-nav-toggle" id="mobileMenuToggle" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="n-mobile-menu" id="mobileMenu">
+  <div class="n-mobile-menu-top">
+    <img class="n-logo" src="https://www.image2url.com/r2/default/images/1783666412458-814dcc7c-9b49-4bca-8e9e-0c12884b623c.png" alt="Nightingale Pediatrics">
+    <button type="button" class="n-mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <ul class="n-mobile-links">
+    <li><a href="/screening">Screening</a></li>
+    <li><span class="n-mobile-group-label">Assessments</span></li>
+    <li><a class="n-mobile-sub" href="/neurodevelopmental-assessment">ADHD &amp; Autism Diagnosis</a></li>
+    <li><a class="n-mobile-sub" href="/academic-assessment">IQ &amp; School Readiness</a></li>
+    <li><a class="n-mobile-sub" href="diagnostics.html">Full Diagnostics Overview</a></li>
+    <li><a href="/pricing">Pricing</a></li>
+    <li><a href="/children-adhd-testing-singapore">ADHD Guide</a></li>
+    <li><a href="https://bonfire-health.github.io/Bonfire-AI/">Bonfire AI</a></li>
+  </ul>
+  <a href="https://wa.me/6582228505" class="n-nav-btn n-mobile-cta">Book Intake</a>
+</div>
+
+
+  <section class="hero">
+    <svg class="blob blob-drift" style="top:-80px; left:-120px; width:420px; height:420px;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="grain1"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0.31  0 0 0 0 0.42  0 0 0 0 0.31  0 0 0 0.05 0"/><feComposite operator="over" in2="SourceGraphic"/></filter>
+      </defs>
+      <path filter="url(#grain1)" fill="#E8EFE3" d="M52,-58C66,-46,74,-25,75,-3C76,19,70,42,55,56C40,70,17,76,-6,79C-29,82,-53,81,-66,67C-79,53,-81,25,-78,0C-75,-25,-67,-49,-51,-62C-35,-75,-11,-77,10,-77C31,-77,38,-70,52,-58Z" transform="translate(100 100)"/>
+    </svg>
+    <svg class="blob blob-drift" style="top:60px; right:-140px; width:380px; height:380px; opacity:0.55;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#C97B5A" d="M46,-52C58,-42,64,-23,66,-3C68,16,66,35,54,48C42,61,21,69,-2,71C-25,73,-50,69,-63,54C-76,39,-77,14,-73,-9C-69,-32,-60,-53,-45,-63C-29,-73,-15,-72,3,-75C21,-78,34,-62,46,-52Z" transform="translate(100 100)"/>
+    </svg>
+
+    <div class="wrap">
+      <div class="hero-copy reveal in-view">
+        <div class="hero-top-row">
+          <div class="lang-toggle" role="group" aria-label="Language / 语言">
+            <button type="button" class="lang-btn active" data-lang="en">EN</button>
+            <button type="button" class="lang-btn" data-lang="cn">中文</button>
+          </div>
+          <span class="eyebrow" data-i18n="heroEyebrow">AI Coach</span>
+        </div>
+        <h1 data-i18n="heroH1">Restore your peace at 2 AM.</h1>
+        <p data-i18n="heroP">When your kid or spouse upsets you, Nightingale AI is here. Trained with our team's clinical knowledge, our AI Coach can chat with you on WhatsApp to restore your inner peace. Backed by proven science.</p>
+        <a href="https://wa.me/6582228505" class="btn" data-i18n="heroBtn">Try it free for 14 days</a>
+      </div>
+
+      <div class="hero-visual">
+        <div class="phone-mockup" aria-hidden="true">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <div class="dynamic-island"></div>
+              <div class="status-bar">
+                <span>2:14</span>
+                <span class="status-icons">
+                  <span class="bars"><span></span><span></span><span></span><span></span></span>
+                  <span class="net-label">4G</span>
+                  <span class="batt-pill"><span class="batt"></span></span>
+                </span>
+              </div>
+              <div class="chat-header">
+                <span class="chat-back">‹</span>
+                <img class="chat-avatar" src="https://www.image2url.com/r2/default/images/1783322371088-0e98a7e5-aec4-4cbc-8ccc-532eb2a596d0.jpg" alt="Nightingale">
+                <div class="chat-header-text">
+                  <div class="chat-name-row">
+                    <span class="chat-name">Nightingale</span>
+                    <svg class="verified-badge" width="14" height="14" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_1815_53827)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M93.9979 49.9999L99.4459 39.9939C100.604 37.8669 99.8909 35.2049 97.8239 33.9419L88.1029 28.0009L87.8189 16.6119C87.7579 14.1899 85.8099 12.2419 83.3879 12.1809L71.9989 11.8969L66.0579 2.17593C64.7949 0.10893 62.1329 -0.60407 60.0059 0.55393L49.9999 6.00193L39.9939 0.55393C37.8669 -0.60407 35.2049 0.10893 33.9419 2.17593L28.0009 11.8969L16.6119 12.1809C14.1899 12.2419 12.2419 14.1899 12.1819 16.6119L11.8969 28.0009L2.17593 33.9419C0.10893 35.2049 -0.60407 37.8669 0.55393 39.9939L6.00193 49.9999L0.55393 60.0059C-0.60407 62.1329 0.10893 64.7949 2.17593 66.0579L11.8969 71.9989L12.1809 83.3879C12.2419 85.8089 14.1899 87.7579 16.6119 87.8179L28.0009 88.1029L33.9419 97.8239C35.2049 99.8909 37.8669 100.604 39.9939 99.4459L49.9999 93.9979L60.0059 99.4459C62.1329 100.604 64.7949 99.8909 66.0579 97.8239L71.9989 88.1029L83.3879 87.8179C85.8099 87.7579 87.7579 85.8089 87.8189 83.3879L88.1029 71.9989L97.8239 66.0579C99.8909 64.7949 100.604 62.1329 99.4459 60.0059L93.9979 49.9999ZM71.0919 42.1279L70.7879 42.3809C62.1289 49.5969 54.1429 57.5839 46.9269 66.2419L46.6739 66.5459C45.8569 67.5269 44.6639 68.1189 43.3879 68.1769C42.1119 68.2349 40.8709 67.7529 39.9679 66.8499L28.6039 55.4869C26.8289 53.7119 26.8289 50.8329 28.6039 49.0589C30.3799 47.2839 33.2569 47.2839 35.0329 49.0589L42.9149 56.9409C49.6859 49.1919 57.0589 41.9879 64.9679 35.3979L65.2719 35.1449C67.1999 33.5379 70.0669 33.7979 71.6729 35.7269C73.2809 37.6549 73.0199 40.5209 71.0919 42.1279Z" fill="#3897F0"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M71.0919 42.1279L70.7879 42.3809C62.1289 49.5969 54.1429 57.5839 46.9269 66.2419L46.6739 66.5459C45.8569 67.5269 44.6639 68.1189 43.3879 68.1769C42.1119 68.2349 40.8709 67.7529 39.9679 66.8499L28.6039 55.4869C26.8289 53.7119 26.8289 50.8329 28.6039 49.0589C30.3799 47.2839 33.2569 47.2839 35.0329 49.0589L42.9149 56.9409C49.6859 49.1919 57.0589 41.9879 64.9679 35.3979L65.2719 35.1449C67.1999 33.5379 70.0669 33.7979 71.6729 35.7269C73.2809 37.6549 73.0199 40.5209 71.0919 42.1279Z" fill="white"/>
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_1815_53827">
+                          <rect width="100" height="100" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </div>
+                  <span class="chat-status" data-i18n="chatBusiness">Business account</span>
+                </div>
+              </div>
+              <div class="chat-body" id="chatBody"></div>
+              <div class="chat-input-bar">
+                <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                <span class="input-pill">
+                  <span data-i18n="chatPlaceholder">Message</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5c1 1.2 2.2 1.8 3.5 1.8s2.5-.6 3.5-1.8" stroke-linecap="round"/><circle cx="9" cy="10" r="0.8" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r="0.8" fill="currentColor" stroke="none"/></svg>
+                </span>
+                <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.6-2.5h4.8L16 7"/><circle cx="12" cy="13.5" r="3.2"/></svg>
+                <span class="mic-btn-wrap">
+                  <span class="mic-tooltip" data-i18n="micTooltip">Send a voice note</span>
+                  <span class="mic-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 15a3 3 0 003-3V6a3 3 0 00-6 0v6a3 3 0 003 3z"/><path d="M19 11a7 7 0 01-14 0" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M12 18v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="privacy-banner">
+    <div class="wrap">
+      <div class="privacy-grid">
+        <div class="privacy-item reveal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+          <span data-i18n="privacyIcon1">End-to-End Encrypted</span>
+        </div>
+        <div class="privacy-item reveal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span data-i18n="privacyIcon2">100% Confidential</span>
+        </div>
+        <div class="privacy-item reveal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M6.5 6.5l11 11"/></svg>
+          <span data-i18n="privacyIcon3">Zero AI Training on Your Data</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2 data-i18n="howHeading">Better You for $49/Month, Not $1,400</h2>
+        <div class="section-head-copy">
+          <p data-i18n="howIntro1">Nightingale AI unpacks what you would usually learn from our clinical team over a month at your fingertips, 24/7.</p>
+          <p data-i18n="howIntro2">Manage your emotions better. Build stronger resilience anywhere. Repair your family relationships.</p>
+        </div>
+      </div>
+      <div class="how-grid">
+        <div class="how-item reveal">
+          <div class="num">1</div>
+          <h3 data-i18n="how1Title">Dr. Amy's Knowledge, 24/7</h3>
+          <p data-i18n="how1Body">Learn professional techniques based on what Dr. Amy would coach moms with.</p>
+        </div>
+        <div class="how-item reveal">
+          <div class="num">2</div>
+          <h3 data-i18n="how2Title">Scenario-Mode Exercises</h3>
+          <p data-i18n="how2Body">Get step-by-step guidance just by tapping buttons. No typing required.</p>
+        </div>
+        <div class="how-item reveal">
+          <div class="num">3</div>
+          <h3 data-i18n="how3Title">Voice Messages</h3>
+          <p data-i18n="how3Body">Too tired to text? Send our AI Coach a voice message in English or Mandarin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="amy">
+    <div class="wrap">
+      <div class="amy-photo-wrap reveal">
+        <svg class="amy-blob blob-drift" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#E8EFE3" d="M48,-55C61,-45,69,-27,71,-8C73,10,70,29,59,44C48,59,29,70,8,73C-13,76,-38,71,-53,57C-68,43,-73,20,-72,-3C-71,-26,-64,-49,-49,-60C-34,-71,-11,-70,7,-73C25,-76,35,-65,48,-55Z" transform="translate(100 100)"/>
+        </svg>
+        <img class="amy-photo" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/amy.svg" alt="Dr. Amy">
+      </div>
+      <div class="amy-copy reveal">
+        <h2 data-i18n="amyHeading">Trained with Dr. Amy's Clinical Knowledge</h2>
+        <p data-i18n="amyBody">Dr. Amy is an American licensed psychologist with over 20 years of experience helping families in Singapore navigate stress. She specializes in maternal mental health and parent-child bonding. Nightingale brings her compassionate, proven strategies directly to your phone exactly when you need them most.</p>
+        <a href="#" class="btn btn-ghost amy-cta" data-i18n="amyCta">About Dr. Amy</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="trial">
+    <svg class="blob" style="bottom:-160px; left:-100px; width:460px; height:460px; opacity:0.25;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#FFFFFF" d="M50,-56C64,-45,72,-25,73,-4C74,17,68,38,54,52C40,66,19,74,-3,77C-25,80,-49,78,-63,64C-77,50,-81,24,-79,0C-77,-24,-70,-48,-54,-60C-38,-72,-13,-72,7,-75C27,-78,36,-67,50,-56Z" transform="translate(100 100)"/>
+    </svg>
+    <div class="wrap reveal">
+      <h2 data-i18n="trialHeading">See if it helps for two full weekends.</h2>
+      <p data-i18n="trialP1">Get 14 days completely free. No credit card required today.</p>
+      <p data-i18n="trialP2">If it helps you find peace on the hard days, keep it in your pocket for just $49 a month. Cancel anytime.</p>
+      <a href="https://wa.me/6582228505" class="btn" data-i18n="trialBtn">Start my free 14-day trial</a>
+      <p class="escalation-note" data-i18n="escalationNote">Need more support? Our AI Coach can connect you with our clinical team.</p>
+    </div>
+  </section>
+
+  <section class="disclaimer">
+    <div class="wrap">
+      <p data-i18n="disclaimerText">MEDICAL DISCLAIMER: Nightingale AI is a self-regulation tool and is NOT a replacement for professional medical treatment, psychiatric care, or therapy. It does not diagnose or treat medical conditions. Nightingale AI does not provide emergency crisis support. If you or your child are in immediate danger, please call 995 / 999, contact the National Mindline at 1711, SOS (Samaritans of Singapore) at 1800 221 4444, IMH Emergency at 6389 2000, or visit your nearest emergency room.</p>
+    </div>
+  </section>
+
+  <script>
+    // ---------- Scroll reveal ----------
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('in-view'); io.unobserve(e.target); }
+      });
+    }, { threshold:0.15 });
+    revealEls.forEach(el=> io.observe(el));
+
+    // ---------- i18n dictionary for static page copy ----------
+    const dict = {
+      heroEyebrow: { en:"AI Coach", cn:"AI 教练" },
+      heroH1: { en:"Restore your peace at 2 AM.", cn:"凌晨两点，找回内心的平静。" },
+      heroP: { en:"When your kid or spouse upsets you, Nightingale AI is here. Trained with our team's clinical knowledge, our AI Coach can chat with you on WhatsApp to restore your inner peace. Backed by proven science.", cn:"当孩子或伴侣让您心烦意乱时，Nightingale AI 就在这里。AI 教练融合了我们团队的临床知识与科学实证，可以通过 WhatsApp 与您聊天，帮您找回内心的平静。" },
+      heroBtn: { en:"Try it free for 14 days", cn:"免费试用14天" },
+      micTooltip: { en:"Send a voice note", cn:"发送语音" },
+      chatBusiness: { en:"Business account", cn:"商业账号" },
+      chatPlaceholder: { en:"Message", cn:"输入消息" },
+      privacyIcon1: { en:"End-to-End Encrypted", cn:"端到端加密" },
+      privacyIcon2: { en:"100% Confidential", cn:"100% 隐私保密" },
+      privacyIcon3: { en:"Zero AI Training on Your Data", cn:"绝不使用您的数据训练AI" },
+      howHeading: { en:"Better You for $49/Month, Not $1,400", cn:"每月只需 $49，而不是 $1,400，遇见更好的自己" },
+      howIntro1: { en:"Nightingale AI unpacks what you would usually learn from our clinical team over a month at your fingertips, 24/7.", cn:"Nightingale AI 将您通常需要花一个月时间从我们临床团队那里学到的知识，转化为触手可及的 24/7 全天候支持。" },
+      howIntro2: { en:"Manage your emotions better. Build stronger resilience anywhere. Repair your family relationships.", cn:"更好地管理您的情绪。随时随地建立更强大的心理韧性。修复您的家庭关系。" },
+      how1Title: { en:"Dr. Amy's Knowledge, 24/7", cn:"Amy 博士的专业知识，全天候待命" },
+      how1Body: { en:"Learn professional techniques based on what Dr. Amy would coach moms with.", cn:"学习基于 Amy 博士日常指导母亲们的专业技巧。" },
+      how2Title: { en:"Scenario-Mode Exercises", cn:"场景化练习" },
+      how2Body: { en:"Get step-by-step guidance just by tapping buttons. No typing required.", cn:"只需点击按钮即可获得循序渐进的引导。完全无需打字。" },
+      how3Title: { en:"Voice Messages", cn:"语音消息" },
+      how3Body: { en:"Too tired to text? Send our AI Coach a voice message in English or Mandarin.", cn:"累得不想打字？您可以向我们的 AI 教练发送英文或中文的语音消息。" },
+      amyHeading: { en:"Trained with Dr. Amy's Clinical Knowledge", cn:"融合 Amy 博士的临床专业知识" },
+      amyBody: { en:"Dr. Amy is an American licensed psychologist with over 20 years of experience helping families in Singapore navigate stress. She specializes in maternal mental health and parent-child bonding. Nightingale brings her compassionate, proven strategies directly to your phone exactly when you need them most.", cn:"Amy 博士是一名美国执业心理学家，拥有超过 20 年的经验，致力于帮助新加坡家庭应对压力。她专注于母亲心理健康和亲子关系。Nightingale 将她充满同情心、经过验证的策略直接带到您的手机上，在您最需要的时候为您提供帮助。" },
+      amyCta: { en:"About Dr. Amy", cn:"关于 Amy 博士" },
+      trialHeading: { en:"See if it helps for two full weekends.", cn:"试试两个完整的周末，看看是否适合您。" },
+      trialP1: { en:"Get 14 days completely free. No credit card required today.", cn:"完全免费获得 14 天试用。今日无需信用卡。" },
+      trialP2: { en:"If it helps you find peace on the hard days, keep it in your pocket for just $49 a month. Cancel anytime.", cn:"如果它能帮您在艰难的日子里找到平静，只需每月 $49 即可继续使用。随时取消。" },
+      trialBtn: { en:"Start my free 14-day trial", cn:"开始我的14天免费试用" },
+      escalationNote: { en:"Need more support? Our AI Coach can connect you with our clinical team.", cn:"需要更多支持吗？我们的 AI 教练可以为您联系临床团队。" },
+      disclaimerText: { en:"MEDICAL DISCLAIMER: Nightingale AI is a self-regulation tool and is NOT a replacement for professional medical treatment, psychiatric care, or therapy. It does not diagnose or treat medical conditions. Nightingale AI does not provide emergency crisis support. If you or your child are in immediate danger, please call 995 / 999, contact the National Mindline at 1711, SOS (Samaritans of Singapore) at 1800 221 4444, IMH Emergency at 6389 2000, or visit your nearest emergency room.", cn:"医疗免责声明： Nightingale AI 是一种自我调节工具，不能替代专业的医疗、精神科护理或心理治疗。它不对医疗状况进行诊断或治疗。Nightingale AI 不提供紧急危机支持。如果您或您的孩子处于直接危险之中，请致电 995 / 999，联系 National Mindline 1711，新加坡援人协会 (SOS) 1800 221 4444，心理卫生学院 (IMH) 紧急情况 6389 2000，或前往离您最近的急诊室。" }
+    };
+
+    function applyStaticI18n(lang){
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        if(dict[key]) el.textContent = dict[key][lang];
+      });
+    }
+
+    // ---------- Animated WhatsApp conversation loop ----------
+    const chatBody = document.getElementById('chatBody');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let currentLang = 'en';
+    let loopToken = 0;
+
+    const scriptEN = [
+      { type:'user', text:"I had a fight with my 14 yr old son and he didn't talk to me the whole day. Why must he always get in trouble in school?", time:"2:12" },
+      { type:'typing' },
+      { type:'ai', text:"You must have a hard day. How are you feeling now?", time:"2:13" },
+      { type:'quick', options:["Still angry","Ashamed","Not sure"] },
+      { type:'pick', index:1, text:"Ashamed", time:"2:13" },
+      { type:'typing' },
+      { type:'ai', text:"You are probably thinking \"he is embarrassing me\" or \"he is making me lose face.\" Notice those thoughts. They are just temporary perceptions of him, not his full story.", time:"2:14" },
+      { type:'quick', options:["But it's true!","I want him to listen!","What should I do?"] },
+      { type:'pick', index:2, text:"What should I do?", time:"2:14" },
+      { type:'typing' },
+      { type:'ai', text:"I get that you want to fix this right away. Let that frustration stay for a short while. Before you engage him again, what's one thing you can do to restore your peace now?", time:"2:15" },
+      { type:'quick', options:["Give him space","Need to cool down","Not sure"] }
+    ];
+
+    const scriptCN = [
+      { type:'user', text:"我今天和14岁的儿子吵了一架，他一整天都没理我。他为什么总是在学校惹麻烦？", time:"2:12" },
+      { type:'typing' },
+      { type:'ai', text:"今天真是辛苦你了。现在心情怎么样？", time:"2:13" },
+      { type:'quick', options:["还在生气","觉得丢脸","说不上来"] },
+      { type:'pick', index:1, text:"觉得丢脸", time:"2:13" },
+      { type:'typing' },
+      { type:'ai', text:"你现在可能满脑子都是\"他让我太难堪了\"或者\"真让我丢脸\"。试着觉察这些念头就好，这只是对他一时的看法，并不能代表他的全部。", time:"2:14" },
+      { type:'quick', options:["但这是事实！","我想让他听话！","我该怎么办？"] },
+      { type:'pick', index:2, text:"我该怎么办？", time:"2:14" },
+      { type:'typing' },
+      { type:'ai', text:"我理解你想马上解决这事。允许这种烦躁感先停留一会儿。在再次去管他之前，你现在能做哪一件事来恢复内心的平静？", time:"2:15" },
+      { type:'quick', options:["给他点空间","需要冷静一下","不太清楚"] }
+    ];
+
+    function getScript(){ return currentLang === 'cn' ? scriptCN : scriptEN; }
+
+    const replyIcon = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0A7CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14L4 9l5-5"/><path d="M4 9h10a6 6 0 016 6v3"/></svg>';
+    const tickIcon = '<svg class="tick" width="14" height="10" viewBox="0 0 16 11" fill="none" stroke="#4FC3F7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6l3 3L9 3"/><path d="M6 6l3 3L15 3"/></svg>';
+
+    function clearChat(){ chatBody.innerHTML = ''; }
+
+    function addMessage(kind, text, time){
+      const el = document.createElement('div');
+      el.className = 'msg ' + kind;
+      const textSpan = document.createElement('span');
+      textSpan.className = 'msg-text';
+      textSpan.textContent = text;
+      el.appendChild(textSpan);
+      const timeSpan = document.createElement('span');
+      timeSpan.className = 'msg-time';
+      timeSpan.innerHTML = (time || '') + (kind === 'user' ? ' ' + tickIcon : '');
+      el.appendChild(timeSpan);
+      chatBody.appendChild(el);
+      requestAnimationFrame(()=> requestAnimationFrame(()=> el.classList.add('show')));
+      chatBody.scrollTop = chatBody.scrollHeight;
+      return el;
+    }
+
+    function addTyping(){
+      const el = document.createElement('div');
+      el.className = 'typing';
+      el.innerHTML = '<span></span><span></span><span></span>';
+      chatBody.appendChild(el);
+      requestAnimationFrame(()=> requestAnimationFrame(()=> el.classList.add('show')));
+      chatBody.scrollTop = chatBody.scrollHeight;
+      return el;
+    }
+
+    function addQuickReplies(options){
+      const wrap = document.createElement('div');
+      wrap.className = 'quick-replies';
+      options.forEach((opt, i)=>{
+        const row = document.createElement('div');
+        row.className = 'quick-reply';
+        row.innerHTML = replyIcon + '<span>' + opt + '</span>';
+        wrap.appendChild(row);
+        setTimeout(()=> row.classList.add('show'), 120 * i);
+      });
+      chatBody.appendChild(wrap);
+      chatBody.scrollTop = chatBody.scrollHeight;
+      return wrap;
+    }
+
+    async function wait(ms){ return new Promise(r=> setTimeout(r, ms)); }
+
+    async function runSequence(myToken){
+      clearChat();
+      let typingEl = null;
+      let lastQuickWrap = null;
+      const activeScript = getScript();
+
+      for(const step of activeScript){
+        if(myToken !== loopToken) return;
+        if(step.type === 'user'){
+          addMessage('user', step.text, step.time);
+          await wait(1300);
+        }
+        else if(step.type === 'typing'){
+          typingEl = addTyping();
+          await wait(1400);
+        }
+        else if(step.type === 'ai'){
+          if(typingEl){ typingEl.remove(); typingEl = null; }
+          addMessage('ai', step.text, step.time);
+          await wait(1100);
+        }
+        else if(step.type === 'quick'){
+          lastQuickWrap = addQuickReplies(step.options);
+          await wait(2600);
+        }
+        else if(step.type === 'pick'){
+          if(lastQuickWrap){
+            const rows = lastQuickWrap.querySelectorAll('.quick-reply');
+            if(rows[step.index]) rows[step.index].classList.add('picked');
+            await wait(500);
+          }
+          addMessage('user', step.text, step.time);
+          await wait(900);
+        }
+        if(myToken !== loopToken) return;
+      }
+
+      if(myToken !== loopToken) return;
+      await wait(3200);
+      if(myToken !== loopToken) return;
+
+      // fade out before looping
+      chatBody.style.transition = 'opacity .5s ease';
+      chatBody.style.opacity = '0';
+      await wait(600);
+      if(myToken !== loopToken) return;
+      chatBody.style.opacity = '1';
+    }
+
+    async function loopRunner(myToken){
+      if(reduceMotion){
+        clearChat();
+        const s = getScript();
+        addMessage('user', s[0].text, s[0].time).classList.add('show');
+        addMessage('ai', s[2].text, s[2].time).classList.add('show');
+        addQuickReplies(s[3].options).querySelectorAll('.quick-reply').forEach(p=>p.classList.add('show'));
+        return;
+      }
+      while(myToken === loopToken){
+        await runSequence(myToken);
+      }
+    }
+
+    function restartLoop(){
+      loopToken++;
+      loopRunner(loopToken);
+    }
+
+    // ---------- Language toggle wiring ----------
+    document.querySelectorAll('.lang-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const lang = btn.getAttribute('data-lang');
+        if(lang === currentLang) return;
+        currentLang = lang;
+        document.querySelectorAll('.lang-btn').forEach(b=> b.classList.toggle('active', b === btn));
+        document.documentElement.lang = lang === 'cn' ? 'zh-Hans' : 'en';
+        applyStaticI18n(lang);
+        restartLoop();
+      });
+    });
+
+    restartLoop();
+  </script>
+
+<style>
+  /* --- FOOTER: restyled to match the sand/sage system --- */
+  #nightingale-footer {
+    --f-sage: #4F6B4F;
+    --f-sage-dark: #3B5240;
+    --f-sand: #FAF9F6;
+    --f-text: #ffffff;
+    --f-text-dim: rgba(255, 255, 255, 0.72);
+    --f-sans: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --f-serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+
+    font-family: var(--f-sans);
+    font-weight: 300;
+    background-color: var(--f-sage);
+    color: var(--f-text);
+    padding: 72px 5% 36px;
+    border-top: 4px solid var(--f-sand);
+  }
+
+  #nightingale-footer * { box-sizing: border-box; }
+  #nightingale-footer a { text-decoration: none; color: var(--f-text) !important; transition: 0.2s; }
+  #nightingale-footer a:hover { color: var(--f-sand) !important; }
+
+  .footer-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    gap: 36px;
+    margin-bottom: 56px;
+  }
+
+  .footer-col h3 {
+    font-family: var(--f-serif);
+    font-weight: 400;
+    color: var(--f-sand) !important;
+    font-size: 1.05rem;
+    margin: 0 0 18px 0;
+  }
+
+  .footer-logo { width: 150px; height: auto; display: block; margin-bottom: 18px; }
+
+  .footer-brand p {
+    color: var(--f-text-dim);
+    line-height: 1.6;
+    font-size: 0.92rem;
+    max-width: 320px;
+    margin: 0 0 18px 0;
+  }
+
+  .footer-links { list-style: none; padding: 0; margin: 0; }
+  .footer-links li { margin-bottom: 10px; }
+  .footer-links a { font-size: 0.92rem; color: var(--f-text-dim) !important; }
+  .footer-links a:hover { color: var(--f-text) !important; }
+
+  .footer-contact p { color: var(--f-text); font-size: 0.92rem; margin: 0 0 14px 0; line-height: 1.6; }
+
+  #nightingale-footer .footer-btn {
+    display: inline-block;
+    border: 1px solid var(--f-sand);
+    color: var(--f-sand) !important;
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-size: 0.84rem;
+    font-weight: 500;
+    margin-top: 6px;
+  }
+  #nightingale-footer .footer-btn:hover { background: var(--f-sand); color: var(--f-sage-dark) !important; }
+
+  .footer-compliance {
+    max-width: 800px;
+    margin: 0 auto 44px auto;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 36px;
+  }
+  .footer-compliance h4 {
+    font-family: var(--f-serif);
+    font-weight: 400;
+    color: var(--f-text-dim);
+    font-size: 1rem;
+    margin: 0 0 22px 0;
+  }
+  .compliance-badges { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+  .comp-badge {
+    display: flex; align-items: center; gap: 9px;
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 8px 18px;
+    border-radius: 8px;
+  }
+  .comp-icon { font-size: 1.25rem; }
+  .comp-text { text-align: left; font-size: 0.66rem; font-weight: 500; letter-spacing: 0.5px; line-height: 1.25; color: var(--f-text); }
+
+  .footer-disclaimer {
+    max-width: 860px;
+    margin: 0 auto 28px auto;
+    text-align: center;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+  .footer-disclaimer a { text-decoration: underline; color: rgba(255,255,255,0.75) !important; }
+
+  .footer-bottom {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: var(--f-text-dim);
+    font-size: 0.8rem;
+    gap: 12px;
+  }
+
+  @media (max-width: 800px) {
+    .footer-container { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: span 2; text-align: center; }
+    .footer-brand .footer-logo { margin-left: auto; margin-right: auto; }
+    .footer-brand p { margin-left: auto; margin-right: auto; }
+  }
+  @media (max-width: 560px) {
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
+    .footer-brand .footer-logo { margin-left: auto; margin-right: auto; }
+    .comp-badge { width: 100%; justify-content: center; }
+  }
+</style>
+
+<footer id="nightingale-footer">
+  <div class="footer-container">
+
+    <div class="footer-col footer-brand">
+      <img src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/Misc/white-nightingale-logo.svg" alt="Nightingale Pediatrics" class="footer-logo">
+      <p>Clinical-grade screening and intervention for children and parents in Singapore.</p>
+      <a href="https://wa.me/6582228505" class="footer-btn">Book Intake Call</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Assessments</h3>
+      <ul class="footer-links">
+        <li><a href="/screening">Screening</a></li>
+        <li><a href="/neurodevelopmental-assessment">ADHD &amp; Autism Diagnosis</a></li>
+        <li><a href="/academic-assessment">IQ &amp; School Readiness</a></li>
+        <li><a href="diagnostics.html">Full Diagnostics Overview</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Resources</h3>
+      <ul class="footer-links">
+        <li><a href="https://bonfire-health.github.io/Bonfire-AI/">Bonfire AI</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/children-adhd-testing-singapore">ADHD Guide</a></li>
+        <li><a href="https://wa.me/6582228505">Masterclass</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-contact">
+      <h3>Contact</h3>
+      <p>
+        <a href="https://wa.me/6582228505">+65 8222 8505</a><br>
+        <a href="mailto:concierge@bonfire.cc">concierge@bonfire.cc</a>
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-compliance">
+    <h4>Built with tools that are:</h4>
+    <div class="compliance-badges">
+      <div class="comp-badge">
+        <span class="comp-icon">⚕️</span>
+        <span class="comp-text">HIPAA<br>COMPLIANT</span>
+      </div>
+      <div class="comp-badge">
+        <span class="comp-icon">🔒</span>
+        <span class="comp-text">GDPR<br>COMPLIANT</span>
+      </div>
+      <div class="comp-badge">
+        <span class="comp-icon">🛡️</span>
+        <span class="comp-text">PDPA<br>COMPLIANT</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-disclaimer">
+    Nightingale Pediatrics does not provide psychiatric emergency services. If you or someone you know are in a crisis, please call 995, 999, National Mindline 1711, <a href="https://www.sos.org.sg/contact-us/" target="_blank">SOS (Samaritans of Singapore)</a>, <a href="https://www.imh.com.sg/Pages/Contact-Us.aspx" target="_blank">IMH</a> or head to the nearest emergency room for assistance.
+  </div>
+
+  <div class="footer-bottom">
+    <span>Copyright © 2026 Bonfire Health Pte. Ltd. All Rights Reserved.</span>
+    <span>
+      <a href="https://nightingalepediatrics.com/privacy-policy-nightingale">Privacy Policy</a> &nbsp;|&nbsp;
+      <a href="https://nightingalepediatrics.com/terms-of-use-nightingale">Terms of Service</a>
+    </span>
+  </div>
+</footer>
+
+<style>
+  /* ---------- Click-to-WhatsApp widget ---------- */
+  .wa-widget{
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    font-family: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: opacity .3s ease, transform .3s ease;
+  }
+  .wa-widget.wa-hidden{ opacity: 0; transform: translateY(14px); pointer-events: none; }
+
+  .wa-bubble{
+    max-width: 232px;
+    background: #FAF9F6;
+    color: #2C3539;
+    border: 1px solid #E5E0D3;
+    border-radius: 16px 16px 4px 16px;
+    padding: 14px 30px 14px 16px;
+    font-size: 0.86rem;
+    line-height: 1.45;
+    box-shadow: 0 12px 32px rgba(44,53,57,0.16);
+    position: relative;
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+    transition: opacity .3s ease, transform .3s ease;
+    pointer-events: none;
+  }
+  .wa-bubble.wa-show{ opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+  .wa-bubble-close{
+    position: absolute;
+    top: 4px; right: 6px;
+    background: none;
+    border: none;
+    font-size: 17px;
+    line-height: 1;
+    color: #48545A;
+    cursor: pointer;
+    padding: 6px;
+  }
+
+  .wa-button{
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+    position: relative;
+    flex-shrink: 0;
+    transition: transform .2s ease;
+  }
+  .wa-button:hover{ transform: scale(1.06); }
+  .wa-button svg{ width: 28px; height: 28px; position: relative; z-index: 2; }
+  .wa-pulse{
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #25D366;
+    opacity: 0.55;
+    z-index: 1;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .wa-pulse{ animation: wa-pulse-anim 2.4s ease-out infinite; }
+  }
+  @keyframes wa-pulse-anim{
+    0%{ transform: scale(1); opacity: 0.5; }
+    100%{ transform: scale(1.7); opacity: 0; }
+  }
+
+  @media (max-width: 600px){
+    .wa-widget{ right: 16px; bottom: 16px; }
+    .wa-bubble{ max-width: 200px; font-size: 0.82rem; }
+    .wa-button{ width: 52px; height: 52px; }
+    .wa-button svg{ width: 25px; height: 25px; }
+  }
+</style>
+
+<div class="wa-widget" id="waWidget">
+  <div class="wa-bubble" id="waBubble">
+    <button type="button" class="wa-bubble-close" id="waBubbleClose" aria-label="Dismiss">&times;</button>
+    <span id="waBubbleText">Hi! Have a question? Chat with us on WhatsApp.</span>
+  </div>
+  <a href="https://wa.me/6582228505" id="waButton" class="wa-button" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <span class="wa-pulse" aria-hidden="true"></span>
+    <svg viewBox="0 0 32 32" fill="#ffffff" aria-hidden="true"><path d="M16.001 3C9.096 3 3.5 8.596 3.5 15.5c0 2.42.687 4.68 1.878 6.598L3 29l7.087-2.336A12.44 12.44 0 0016.001 28C22.905 28 28.5 22.404 28.5 15.5S22.905 3 16.001 3zm0 22.6a10.06 10.06 0 01-5.13-1.404l-.368-.219-3.79 1.25 1.27-3.693-.24-.38A10.06 10.06 0 015.9 15.5c0-5.577 4.524-10.1 10.101-10.1S26.1 9.923 26.1 15.5 21.577 25.6 16.001 25.6zm5.542-7.564c-.303-.152-1.793-.885-2.07-.986-.278-.101-.48-.152-.682.152-.202.303-.784.985-.961 1.188-.177.202-.354.227-.657.076-.303-.152-1.278-.471-2.435-1.504-.9-.803-1.508-1.795-1.685-2.098-.177-.303-.019-.467.133-.618.136-.136.303-.354.454-.53.152-.177.202-.303.303-.506.101-.202.05-.379-.025-.53-.076-.152-.682-1.646-.935-2.253-.246-.591-.497-.511-.682-.52l-.582-.01a1.12 1.12 0 00-.809.379c-.278.303-1.06 1.036-1.06 2.529s1.085 2.934 1.236 3.137c.152.202 2.135 3.26 5.174 4.572.723.312 1.287.499 1.727.639.726.231 1.386.198 1.908.12.582-.087 1.793-.733 2.046-1.442.253-.708.253-1.315.177-1.442-.076-.126-.278-.202-.581-.354z"/></svg>
+  </a>
+</div>
+
+
+<script>
+(function(){
+    // ---------- Nav: Assessments dropdown ----------
+    var assessmentsDropdown = document.getElementById('assessmentsDropdown');
+    var assessmentsToggle = document.getElementById('assessmentsToggle');
+    if(assessmentsDropdown && assessmentsToggle){
+      assessmentsToggle.addEventListener('click', function(e){
+        e.stopPropagation();
+        var isOpen = assessmentsDropdown.classList.toggle('n-open');
+        assessmentsToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      document.addEventListener('click', function(e){
+        if(!assessmentsDropdown.contains(e.target)){
+          assessmentsDropdown.classList.remove('n-open');
+          assessmentsToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape'){
+          assessmentsDropdown.classList.remove('n-open');
+          assessmentsToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // ---------- Nav: mobile menu ----------
+    var mobileMenu = document.getElementById('mobileMenu');
+    var mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    var mobileMenuClose = document.getElementById('mobileMenuClose');
+    function openMobileMenu(){
+      mobileMenu.classList.add('n-open');
+      mobileMenuToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMobileMenu(){
+      mobileMenu.classList.remove('n-open');
+      mobileMenuToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    if(mobileMenuToggle) mobileMenuToggle.addEventListener('click', openMobileMenu);
+    if(mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
+    if(mobileMenu){
+      mobileMenu.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', closeMobileMenu);
+      });
+    }
+
+
+    // ---------- Click-to-WhatsApp widget: dynamic, context-aware ----------
+    var waButton = document.getElementById('waButton');
+    var waWidget = document.getElementById('waWidget');
+    var waBubble = document.getElementById('waBubble');
+    var waBubbleText = document.getElementById('waBubbleText');
+    var waBubbleClose = document.getElementById('waBubbleClose');
+    var waBase = 'https://wa.me/6582228505';
+    var waDefaultMessage = "Hi Nightingale, I'd like to learn more about your services!";
+    var waBubbleDismissed = false;
+
+    function waSetMessage(text){
+      waButton.setAttribute('href', waBase + '?text=' + encodeURIComponent(text));
+    }
+    waSetMessage(waDefaultMessage);
+
+    // Track which tagged section is currently in view and update the pre-filled message to match.
+    // Carousel cards are handled separately below (hover/tap) since on wide viewports all 3 are
+    // visible at once, making "which one is in view" ambiguous for scroll-based detection.
+    var waTargets = document.querySelectorAll('[data-wa-message]:not(.n-carousel-card)');
+    if('IntersectionObserver' in window && waTargets.length){
+      var waContextObserver = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting && entry.intersectionRatio >= 0.55){
+            var msg = entry.target.getAttribute('data-wa-message') || waDefaultMessage;
+            waSetMessage(msg);
+          }
+        });
+      }, { threshold: [0.55] });
+      waTargets.forEach(function(el){ waContextObserver.observe(el); });
+    }
+
+    // Carousel cards: hover (desktop) or tap (mobile) is a clearer intent signal than scroll
+    // position here, since multiple cards can be on screen together.
+    document.querySelectorAll('.n-carousel-card[data-wa-message]').forEach(function(card){
+      var setFromCard = function(){ waSetMessage(card.getAttribute('data-wa-message')); };
+      card.addEventListener('mouseenter', setFromCard);
+      card.addEventListener('touchstart', setFromCard, { passive: true });
+      card.addEventListener('focusin', setFromCard);
+    });
+
+    // Hide the floating widget once the footer's own WhatsApp links are on screen, to avoid duplicate CTAs
+    var waFooter = document.getElementById('nightingale-footer');
+    if('IntersectionObserver' in window && waFooter){
+      var waFooterObserver = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          waWidget.classList.toggle('wa-hidden', entry.isIntersecting);
+        });
+      }, { threshold: 0.05 });
+      waFooterObserver.observe(waFooter);
+    }
+
+    // Show a friendly greeting bubble a few seconds after the page loads, once
+    setTimeout(function(){
+      if(!waBubbleDismissed) waBubble.classList.add('wa-show');
+    }, 3500);
+
+    if(waBubbleClose){
+      waBubbleClose.addEventListener('click', function(){
+        waBubbleDismissed = true;
+        waBubble.classList.remove('wa-show');
+      });
+    }
+})();
+</script>
+
+</body>
+</html>
