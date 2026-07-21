@@ -427,7 +427,7 @@
   .n-quiz-icon svg{ width:24px; height:24px; stroke:var(--sage-dark); }
 
   /* ---------- Clinician team ---------- */
-  .n-team-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:32px 26px; }
+  .n-team-grid{ display:grid; grid-template-columns:repeat(5, 1fr); gap:32px 22px; }
   .n-team-card{ text-align:center; }
   .n-team-photo-wrap{ position:relative; display:flex; justify-content:center; margin-bottom:18px; overflow:hidden; }
   .n-team-blob{ position:absolute; inset:0; z-index:0; }
@@ -448,9 +448,19 @@
     font-weight:500;
     margin-bottom:4px;
   }
-  .n-team-name{ font-size:1.12rem; margin:0; }
+  .n-team-name{ font-size:1.12rem; margin:0 0 14px 0; }
   a.n-team-link{ display:block; }
   a.n-team-link:hover .n-team-photo{ box-shadow:0 14px 30px rgba(44,53,57,0.14); }
+  .n-team-btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:9px 20px;
+    border:1px solid var(--sage-dark);
+    color:var(--sage-dark) !important;
+    font-size:0.82rem; font-weight:500;
+    border-radius:100px;
+    transition:background .2s ease, color .2s ease;
+  }
+  .n-team-btn:hover{ background:var(--sage-dark); color:var(--white) !important; }
 
   /* ---------- FAQ ---------- */
   .n-faq-list{ max-width:760px; margin:0 auto; }
@@ -825,16 +835,15 @@
 
       <div class="n-team-grid">
 
-        <a href="https://nightingalepediatrics.com/amy-reale" target="_blank" rel="noopener noreferrer" class="n-team-link n-reveal">
-          <div class="n-team-card">
-            <div class="n-team-photo-wrap">
-              <svg class="n-team-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="#E8EFE3" d="M48,-55C61,-45,69,-27,71,-8C73,10,70,29,59,44C48,59,29,70,8,73C-13,76,-38,71,-53,57C-68,43,-73,20,-72,-3C-71,-26,-64,-49,-49,-60C-34,-71,-11,-70,7,-73C25,-76,35,-65,48,-55Z" transform="translate(100 100)"/></svg>
-              <img class="n-team-photo" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/Clinician%20Photos/amy.png" alt="Dr. Amy Reale" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/nightingale%20official%20icon%20(1).svg'; this.style.objectFit='contain'; this.style.padding='30px';">
-            </div>
-            <div class="n-team-role">Chief Clinical Officer</div>
-            <h3 class="n-team-name">Dr. Amy Reale</h3>
+        <div class="n-team-card n-reveal">
+          <div class="n-team-photo-wrap">
+            <svg class="n-team-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="#E8EFE3" d="M48,-55C61,-45,69,-27,71,-8C73,10,70,29,59,44C48,59,29,70,8,73C-13,76,-38,71,-53,57C-68,43,-73,20,-72,-3C-71,-26,-64,-49,-49,-60C-34,-71,-11,-70,7,-73C25,-76,35,-65,48,-55Z" transform="translate(100 100)"/></svg>
+            <img class="n-team-photo" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/Clinician%20Photos/amy.png" alt="Dr. Amy Reale" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/nightingale%20official%20icon%20(1).svg'; this.style.objectFit='contain'; this.style.padding='30px';">
           </div>
-        </a>
+          <div class="n-team-role">Chief Clinical Officer</div>
+          <h3 class="n-team-name">Dr. Amy Reale</h3>
+          <a href="https://nightingalepediatrics.com/amy-reale" target="_blank" rel="noopener noreferrer" class="n-team-btn">About Dr. Amy</a>
+        </div>
 
         <div class="n-team-card n-reveal">
           <div class="n-team-photo-wrap">
@@ -843,6 +852,7 @@
           </div>
           <div class="n-team-role">Senior Consultant Psychologist</div>
           <h3 class="n-team-name">Dr. Jaswyn Chin</h3>
+          <a href="https://nightingalepediatrics.com/jaswyn-chin" target="_blank" rel="noopener noreferrer" class="n-team-btn">About Dr. Jaswyn</a>
         </div>
 
         <div class="n-team-card n-reveal">
@@ -852,18 +862,28 @@
           </div>
           <div class="n-team-role">Consultant Psychologist</div>
           <h3 class="n-team-name">Dr. Tan Yeow May</h3>
+          <a href="https://nightingalepediatrics.com/yeow-may" target="_blank" rel="noopener noreferrer" class="n-team-btn">About Dr. Tan</a>
         </div>
 
-        <a href="https://nightingalepediatrics.com/davy-guo" target="_blank" rel="noopener noreferrer" class="n-team-link n-reveal">
-          <div class="n-team-card">
-            <div class="n-team-photo-wrap">
-              <svg class="n-team-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="#C97B5A" fill-opacity="0.25" d="M48,-55C61,-45,69,-27,71,-8C73,10,70,29,59,44C48,59,29,70,8,73C-13,76,-38,71,-53,57C-68,43,-73,20,-72,-3C-71,-26,-64,-49,-49,-60C-34,-71,-11,-70,7,-73C25,-76,35,-65,48,-55Z" transform="translate(100 100)"/></svg>
-              <img class="n-team-photo" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/Clinician%20Photos/davy.png" alt="Dr. Davy Guo" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/nightingale%20official%20icon%20(1).svg'; this.style.objectFit='contain'; this.style.padding='30px';">
-            </div>
-            <div class="n-team-role">Consultant Psychologist</div>
-            <h3 class="n-team-name">Dr. Davy Guo</h3>
+        <div class="n-team-card n-reveal">
+          <div class="n-team-photo-wrap">
+            <svg class="n-team-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="#C97B5A" fill-opacity="0.25" d="M48,-55C61,-45,69,-27,71,-8C73,10,70,29,59,44C48,59,29,70,8,73C-13,76,-38,71,-53,57C-68,43,-73,20,-72,-3C-71,-26,-64,-49,-49,-60C-34,-71,-11,-70,7,-73C25,-76,35,-65,48,-55Z" transform="translate(100 100)"/></svg>
+            <img class="n-team-photo" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/Clinician%20Photos/davy.png" alt="Dr. Davy Guo" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/nightingale%20official%20icon%20(1).svg'; this.style.objectFit='contain'; this.style.padding='30px';">
           </div>
-        </a>
+          <div class="n-team-role">Consultant Psychologist</div>
+          <h3 class="n-team-name">Dr. Davy Guo</h3>
+          <a href="https://nightingalepediatrics.com/davy-guo" target="_blank" rel="noopener noreferrer" class="n-team-btn">About Dr. Davy</a>
+        </div>
+
+        <div class="n-team-card n-reveal">
+          <div class="n-team-photo-wrap">
+            <svg class="n-team-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="#E8EFE3" d="M48,-55C61,-45,69,-27,71,-8C73,10,70,29,59,44C48,59,29,70,8,73C-13,76,-38,71,-53,57C-68,43,-73,20,-72,-3C-71,-26,-64,-49,-49,-60C-34,-71,-11,-70,7,-73C25,-76,35,-65,48,-55Z" transform="translate(100 100)"/></svg>
+            <img class="n-team-photo" src="images/eileen.png" alt="Dr. Eileen Ng" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/nightingale%20official%20icon%20(1).svg'; this.style.objectFit='contain'; this.style.padding='30px';">
+          </div>
+          <div class="n-team-role">Clinical Psychologist</div>
+          <h3 class="n-team-name">Dr. Eileen Ng</h3>
+          <a href="https://nightingalepediatrics.com/eileen-ng" target="_blank" rel="noopener noreferrer" class="n-team-btn">About Dr. Eileen</a>
+        </div>
 
       </div>
     </div>
