@@ -32,7 +32,7 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ---------- Design tokens (shared with the Nightingale AI landing page) ---------- */
+  /* ---------- Design tokens ---------- */
   #nightingale-layout {
     --sand:#FAF9F6;
     --sand-deep:#F2EEE4;
@@ -72,10 +72,7 @@
   }
 
   /* ---------- Top bar / logo ---------- */
-  .n-topbar{
-    background: var(--sand);
-    border-bottom: 1px solid var(--line);
-  }
+  .n-topbar{ background: var(--sand); border-bottom: 1px solid var(--line); }
   .n-topbar-inner{
     max-width: var(--max-w);
     margin: 0 auto;
@@ -85,11 +82,7 @@
     justify-content: space-between;
     gap: 24px;
   }
-  .n-logo{
-    height: 38px;
-    width: auto;
-    flex-shrink: 0;
-  }
+  .n-logo{ height: 38px; width: auto; flex-shrink: 0; }
 
   /* ---------- Nav ---------- */
   .n-nav{ display:flex; align-items:center; gap:28px; }
@@ -133,19 +126,15 @@
   .n-nav-cta{ flex-shrink:0; }
 
   .n-nav-toggle{
-    display:none;
-    background:none; border:none; cursor:pointer;
+    display:none; background:none; border:none; cursor:pointer;
     width:38px; height:38px; align-items:center; justify-content:center;
     color:var(--charcoal); flex-shrink:0;
   }
   .n-nav-toggle svg{ width:24px; height:24px; }
 
   .n-mobile-menu{
-    display:none;
-    position:fixed; inset:0; z-index:300;
-    background:var(--sand);
-    padding:20px 6%;
-    overflow-y:auto;
+    display:none; position:fixed; inset:0; z-index:300;
+    background:var(--sand); padding:20px 6%; overflow-y:auto;
   }
   .n-mobile-menu.n-open{ display:block; }
   .n-mobile-menu-top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:36px; }
@@ -171,18 +160,11 @@
   .n-section-sand{ background:var(--sand); }
   .n-section-deep{ background:var(--sand-deep); }
   .n-section-sage{ background:var(--sage); color:var(--white); overflow:hidden; }
-  .n-section-white{ background:var(--white); }
 
   .n-eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-size:0.82rem;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--sage-dark);
-    font-weight:500;
-    margin-bottom:16px;
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--sage-dark); font-weight:500; margin-bottom:16px;
   }
   .n-section-sage .n-eyebrow{ color:rgba(255,255,255,0.85); }
 
@@ -197,28 +179,14 @@
 
   /* ---------- Buttons ---------- */
   .n-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    padding:16px 34px;
-    background:var(--sage);
-    color:var(--white) !important;
-    font-family:var(--sans);
-    font-weight:500;
-    font-size:1rem;
-    border-radius:100px;
-    border:1px solid var(--sage);
-    cursor:pointer;
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:16px 34px; background:var(--sage); color:var(--white) !important;
+    font-family:var(--sans); font-weight:500; font-size:1rem;
+    border-radius:100px; border:1px solid var(--sage); cursor:pointer;
     transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
     box-shadow:0 6px 20px rgba(79,107,79,0.22);
   }
   .n-btn:hover{ background:var(--sage-dark); border-color:var(--sage-dark); transform:translateY(-2px); box-shadow:0 10px 26px rgba(79,107,79,0.28); }
-  .n-btn-ghost{
-    background:transparent; color:var(--sage-dark) !important;
-    border:1px solid var(--sage-dark); box-shadow:none;
-  }
-  .n-btn-ghost:hover{ background:var(--sage-light); transform:none; box-shadow:none; }
   .n-btn-white{ background:var(--white); color:var(--sage-dark) !important; border-color:var(--white); box-shadow:0 10px 26px rgba(0,0,0,0.15); }
   .n-btn-white:hover{ background:var(--sand); }
   .n-btn-small{ padding:11px 24px; font-size:0.9rem; }
@@ -239,94 +207,56 @@
   .n-hero{ padding:96px 5% 90px; overflow:hidden; }
   .n-hero-inner{ max-width:760px; margin:0 auto; text-align:center; position:relative; z-index:2; }
   .n-hero-watermark{
-    position:absolute;
-    top:-40px; left:50%;
-    transform:translateX(-50%);
-    width:640px; max-width:140%;
-    opacity:0.07;
-    filter:grayscale(1) contrast(1.1);
-    z-index:1;
-    pointer-events:none;
+    position:absolute; top:-40px; left:50%; transform:translateX(-50%);
+    width:640px; max-width:140%; opacity:0.07; filter:grayscale(1) contrast(1.1);
+    z-index:1; pointer-events:none;
   }
   @media (max-width:640px){ .n-hero-watermark{ width:420px; } }
 
   /* ---------- Hero carousel ---------- */
   .n-carousel-wrap{ position:relative; max-width:1080px; margin:56px auto 0; }
   .n-carousel{
-    display:flex;
-    gap:24px;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    scrollbar-width:none;
-    -ms-overflow-style:none;
-    padding:6px 4px 10px;
+    display:flex; gap:24px; overflow-x:auto; scroll-snap-type:x mandatory;
+    scrollbar-width:none; -ms-overflow-style:none; padding:6px 4px 10px;
   }
   .n-carousel::-webkit-scrollbar{ display:none; }
   .n-carousel-card{
-    scroll-snap-align:start;
-    flex:0 0 82%;
-    max-width:340px;
-    background:var(--white);
-    border-radius:24px;
-    border:1px solid var(--line);
-    padding:36px 30px;
-    text-align:left;
-    box-shadow:0 18px 40px rgba(44,53,57,0.06);
-    display:flex;
-    flex-direction:column;
-    transition:transform .3s ease, box-shadow .3s ease;
+    scroll-snap-align:start; flex:0 0 82%; max-width:340px;
+    background:var(--white); border-radius:24px; border:1px solid var(--line);
+    padding:36px 30px; text-align:left; box-shadow:0 18px 40px rgba(44,53,57,0.06);
+    display:flex; flex-direction:column; transition:transform .3s ease, box-shadow .3s ease;
   }
   .n-carousel-card:hover{ transform:translateY(-4px); box-shadow:0 22px 46px rgba(44,53,57,0.1); }
   @media (min-width:720px){ .n-carousel-card{ flex:0 0 calc(33.333% - 16px); } }
   .n-carousel-icon{
-    width:52px; height:52px;
-    border-radius:50%;
-    background:var(--sage-light);
-    display:flex; align-items:center; justify-content:center;
-    margin-bottom:22px;
-    flex-shrink:0;
+    width:52px; height:52px; border-radius:50%; background:var(--sage-light);
+    display:flex; align-items:center; justify-content:center; margin-bottom:22px; flex-shrink:0;
   }
   .n-carousel-icon svg{ width:24px; height:24px; stroke:var(--sage-dark); }
   .n-carousel-card h3{ font-size:1.28rem; margin:0 0 10px 0; }
   .n-carousel-card p{ font-size:0.96rem; color:var(--charcoal-soft); margin:0 0 20px 0; flex:1; }
   .n-carousel-link{
-    display:inline-flex; align-items:center; gap:6px;
-    font-family:var(--sans); font-weight:500; font-size:0.92rem;
-    color:var(--sage-dark);
-    border-bottom:1px solid var(--sage-dark);
-    padding-bottom:2px;
-    align-self:flex-start;
+    display:inline-flex; align-items:center; gap:6px; font-family:var(--sans);
+    font-weight:500; font-size:0.92rem; color:var(--sage-dark);
+    border-bottom:1px solid var(--sage-dark); padding-bottom:2px; align-self:flex-start;
   }
   .n-carousel-link svg{ width:14px; height:14px; transition:transform .2s ease; }
   .n-carousel-link:hover svg{ transform:translateX(3px); }
 
-  .n-carousel-controls{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:18px;
-    margin-top:28px;
-  }
+  .n-carousel-controls{ display:flex; align-items:center; justify-content:center; gap:18px; margin-top:28px; }
   .n-carousel-controls.n-controls-hidden{ display:none; }
   .n-carousel-arrow{
-    width:42px; height:42px;
-    border-radius:50%;
-    border:1px solid var(--line);
-    background:var(--white);
-    color:var(--sage-dark);
-    display:flex; align-items:center; justify-content:center;
-    cursor:pointer;
-    transition:background .2s ease, transform .2s ease;
-    flex-shrink:0;
+    width:42px; height:42px; border-radius:50%; border:1px solid var(--line);
+    background:var(--white); color:var(--sage-dark); display:flex;
+    align-items:center; justify-content:center; cursor:pointer;
+    transition:background .2s ease, transform .2s ease; flex-shrink:0;
   }
   .n-carousel-arrow:hover{ background:var(--sage-light); }
   .n-carousel-arrow svg{ width:18px; height:18px; }
   .n-carousel-dots{ display:flex; gap:8px; }
   .n-carousel-dot{
-    width:8px; height:8px; border-radius:50%;
-    background:var(--line);
-    border:none; padding:0; cursor:pointer;
-    transition:background .2s ease, transform .2s ease;
+    width:8px; height:8px; border-radius:50%; background:var(--line);
+    border:none; padding:0; cursor:pointer; transition:background .2s ease, transform .2s ease;
   }
   .n-carousel-dot.active{ background:var(--sage); transform:scale(1.3); }
 
@@ -338,65 +268,29 @@
   .n-protocol-media{ position:relative; display:flex; justify-content:center; overflow:hidden; }
   .n-protocol-blob{ position:absolute; inset:0; z-index:0; }
   .n-protocol-photo{
-    position:relative; z-index:1;
-    width:82%;
-    aspect-ratio:1/1;
-    object-fit:cover;
-    border-radius:42% 58% 61% 39% / 51% 44% 56% 49%;
-    background:var(--white);
-    border:1px solid var(--line);
+    position:relative; z-index:1; width:82%; aspect-ratio:1/1; object-fit:cover;
+    border-radius:42% 58% 61% 39% / 51% 44% 56% 49%; background:var(--white); border:1px solid var(--line);
   }
-  .n-protocol-num{
-    font-family:var(--serif);
-    font-size:2.8rem;
-    color:var(--terracotta);
-    opacity:0.75;
-    line-height:1;
-    margin-bottom:14px;
-  }
+  .n-protocol-num{ font-family:var(--serif); font-size:2.8rem; color:var(--terracotta); opacity:0.75; line-height:1; margin-bottom:14px; }
   .n-protocol-copy h3{ font-size:1.5rem; margin-bottom:16px; }
-  .n-protocol-consultants{
-    background:var(--sand-deep);
-    border-radius:16px;
-    padding:22px 26px;
-    margin-top:20px;
-  }
+  .n-protocol-consultants{ background:var(--sand-deep); border-radius:16px; padding:22px 26px; margin-top:20px; }
   .n-protocol-consultants h4{ font-family:var(--sans); font-weight:600; font-size:0.95rem; color:var(--sage-dark); margin:0 0 12px 0; }
   .n-protocol-consultants ul{ margin:0; padding-left:20px; columns:2; column-gap:20px; font-size:0.92rem; color:var(--charcoal-soft); }
   .n-protocol-consultants li{ margin-bottom:6px; }
 
   /* ---------- Tech / clinical grid ---------- */
   .n-grid-3{ display:grid; grid-template-columns:repeat(3, 1fr); gap:28px; }
-  .n-card{
-    background:var(--white);
-    border:1px solid var(--line);
-    border-radius:20px;
-    padding:34px 28px;
-    box-shadow:0 10px 28px rgba(44,53,57,0.04);
-  }
-  .n-card-icon{
-    width:52px; height:52px;
-    background:var(--sage-light);
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    margin-bottom:20px;
-  }
+  .n-card{ background:var(--white); border:1px solid var(--line); border-radius:20px; padding:34px 28px; box-shadow:0 10px 28px rgba(44,53,57,0.04); }
+  .n-card-icon{ width:52px; height:52px; background:var(--sage-light); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:20px; }
   .n-card-icon svg{ width:24px; height:24px; stroke:var(--sage-dark); }
   .n-card h3{ font-size:1.18rem; margin:0 0 10px 0; }
   .n-card p{ font-size:0.96rem; color:var(--charcoal-soft); margin:0; }
 
   /* ---------- Quiz ---------- */
   .n-quiz{
-    background:var(--white);
-    border:1px solid var(--line);
-    border-radius:24px;
-    box-shadow:0 18px 44px rgba(44,53,57,0.06);
-    padding:48px 40px;
-    max-width:640px;
-    margin:0 auto;
-    text-align:center;
-    position:relative;
-    min-height:280px;
+    background:var(--white); border:1px solid var(--line); border-radius:24px;
+    box-shadow:0 18px 44px rgba(44,53,57,0.06); padding:48px 40px; max-width:640px;
+    margin:0 auto; text-align:center; position:relative; min-height:280px;
     display:flex; align-items:center; justify-content:center;
   }
   .n-quiz-step{ display:none; width:100%; animation:n-slide .3s ease-out forwards; }
@@ -406,91 +300,23 @@
   .n-quiz-step h3{ font-size:1.4rem; margin-bottom:14px; }
   .n-quiz-options{ display:flex; justify-content:center; gap:16px; margin-top:26px; }
   .n-quiz-btn{
-    padding:12px 30px;
-    border:1px solid var(--sage-dark);
-    border-radius:100px;
-    background:transparent;
-    color:var(--sage-dark);
-    font-family:var(--sans);
-    font-weight:500;
-    cursor:pointer;
-    transition:background .2s ease, color .2s ease;
-    font-size:0.96rem;
+    padding:12px 30px; border:1px solid var(--sage-dark); border-radius:100px;
+    background:transparent; color:var(--sage-dark); font-family:var(--sans);
+    font-weight:500; cursor:pointer; transition:background .2s ease, color .2s ease; font-size:0.96rem;
   }
   .n-quiz-btn:hover{ background:var(--sage); color:var(--white); border-color:var(--sage); }
-  .n-quiz-icon{
-    width:52px; height:52px; border-radius:50%;
-    background:var(--sage-light);
-    display:flex; align-items:center; justify-content:center;
-    margin:0 auto 18px auto;
-  }
+  .n-quiz-icon{ width:52px; height:52px; border-radius:50%; background:var(--sage-light); display:flex; align-items:center; justify-content:center; margin:0 auto 18px auto; }
   .n-quiz-icon svg{ width:24px; height:24px; stroke:var(--sage-dark); }
-
-  /* ---------- Clinician team ---------- */
-  .n-team-grid{ display:grid; grid-template-columns:repeat(5, 1fr); gap:32px 22px; }
-  .n-team-card{ text-align:center; }
-  .n-team-photo-wrap{ position:relative; display:flex; justify-content:center; margin-bottom:18px; overflow:hidden; }
-  .n-team-blob{ position:absolute; inset:0; z-index:0; }
-  .n-team-photo{
-    position:relative; z-index:1;
-    width:78%;
-    aspect-ratio:1/1;
-    object-fit:cover;
-    border-radius:42% 58% 61% 39% / 51% 44% 56% 49%;
-    background:var(--white);
-    border:1px solid var(--line);
-  }
-  .n-team-role{
-    font-size:0.72rem;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    color:var(--terracotta);
-    font-weight:500;
-    margin-bottom:4px;
-  }
-  .n-team-name{ font-size:1.12rem; margin:0 0 14px 0; }
-  a.n-team-link{ display:block; }
-  a.n-team-link:hover .n-team-photo{ box-shadow:0 14px 30px rgba(44,53,57,0.14); }
-  .n-team-btn{
-    display:inline-flex; align-items:center; justify-content:center;
-    padding:9px 20px;
-    border:1px solid var(--sage-dark);
-    color:var(--sage-dark) !important;
-    font-size:0.82rem; font-weight:500;
-    border-radius:100px;
-    transition:background .2s ease, color .2s ease;
-  }
-  .n-team-btn:hover{ background:var(--sage-dark); color:var(--white) !important; }
 
   /* ---------- FAQ ---------- */
   .n-faq-list{ max-width:760px; margin:0 auto; }
-  details.n-faq{
-    background:var(--white);
-    border:1px solid var(--line);
-    border-radius:16px;
-    padding:22px 26px;
-    margin-bottom:14px;
-  }
+  details.n-faq{ background:var(--white); border:1px solid var(--line); border-radius:16px; padding:22px 26px; margin-bottom:14px; }
   details.n-faq summary{
-    font-family:var(--serif);
-    font-size:1.1rem;
-    color:var(--charcoal);
-    cursor:pointer;
-    list-style:none;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
+    font-family:var(--serif); font-size:1.1rem; color:var(--charcoal); cursor:pointer;
+    list-style:none; display:flex; align-items:center; justify-content:space-between; gap:16px;
   }
   details.n-faq summary::-webkit-details-marker{ display:none; }
-  details.n-faq summary::after{
-    content:"+";
-    font-family:var(--sans);
-    font-size:1.3rem;
-    color:var(--sage-dark);
-    flex-shrink:0;
-    transition:transform .2s ease;
-  }
+  details.n-faq summary::after{ content:"+"; font-family:var(--sans); font-size:1.3rem; color:var(--sage-dark); flex-shrink:0; transition:transform .2s ease; }
   details.n-faq[open] summary::after{ transform:rotate(45deg); }
   details.n-faq p{ margin-top:14px; }
 
@@ -505,14 +331,11 @@
   /* ---------- Responsive ---------- */
   @media (max-width:960px){
     .n-section{ padding:76px 6%; }
-    .n-protocol-step,
-    .n-protocol-step.n-reverse{ grid-template-columns:1fr; text-align:center; }
-    .n-protocol-step .n-protocol-media,
-    .n-protocol-step.n-reverse .n-protocol-media{ order:-1; }
+    .n-protocol-step, .n-protocol-step.n-reverse{ grid-template-columns:1fr; text-align:center; }
+    .n-protocol-step .n-protocol-media, .n-protocol-step.n-reverse .n-protocol-media{ order:-1; }
     .n-protocol-consultants ul{ columns:1; text-align:left; }
     .n-protocol-photo{ width:56%; }
     .n-grid-3{ grid-template-columns:1fr; gap:22px; }
-    .n-team-grid{ grid-template-columns:repeat(2, 1fr); }
   }
   @media (max-width:600px){
     .n-h1{ font-size:2rem; }
@@ -824,71 +647,6 @@
     </div>
   </section>
 
-  <!-- ================= CLINICIAN TEAM ================= -->
-  <section class="n-section n-section-white" data-wa-message="Hi Nightingale, I'd like to book a consultation with one of your clinicians.">
-    <div class="n-container">
-      <div class="n-head n-reveal">
-        <span class="n-eyebrow" style="justify-content:center; display:flex;">Our Team</span>
-        <h2 class="n-h2 n-center">Our Senior Consultants Are Trusted by Thousand of Families.</h2>
-        <p class="n-p n-lead" style="margin-left:auto; margin-right:auto;">From ADHD to anxiety, our consultants are qualified to guide your family through complex conditions.</p>
-      </div>
-
-      <div class="n-team-grid">
-
-        <div class="n-team-card n-reveal">
-          <div class="n-team-photo-wrap">
-            <svg class="n-team-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="#E8EFE3" d="M48,-55C61,-45,69,-27,71,-8C73,10,70,29,59,44C48,59,29,70,8,73C-13,76,-38,71,-53,57C-68,43,-73,20,-72,-3C-71,-26,-64,-49,-49,-60C-34,-71,-11,-70,7,-73C25,-76,35,-65,48,-55Z" transform="translate(100 100)"/></svg>
-            <img class="n-team-photo" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/Clinician%20Photos/amy.png" alt="Dr. Amy Reale" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/nightingale%20official%20icon%20(1).svg'; this.style.objectFit='contain'; this.style.padding='30px';">
-          </div>
-          <div class="n-team-role">Chief Clinical Officer</div>
-          <h3 class="n-team-name">Dr. Amy Reale</h3>
-          <a href="https://nightingalepediatrics.com/amy-reale" target="_blank" rel="noopener noreferrer" class="n-team-btn">About Dr. Amy</a>
-        </div>
-
-        <div class="n-team-card n-reveal">
-          <div class="n-team-photo-wrap">
-            <svg class="n-team-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="#C97B5A" fill-opacity="0.25" d="M46,-52C58,-42,64,-23,66,-3C68,16,66,35,54,48C42,61,21,69,-2,71C-25,73,-50,69,-63,54C-76,39,-77,14,-73,-9C-69,-32,-60,-53,-45,-63C-29,-73,-15,-72,3,-75C21,-78,34,-62,46,-52Z" transform="translate(100 100)"/></svg>
-            <img class="n-team-photo" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/Clinician%20Photos/jaswyn.png" alt="Dr. Jaswyn Chin" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/nightingale%20official%20icon%20(1).svg'; this.style.objectFit='contain'; this.style.padding='30px';">
-          </div>
-          <div class="n-team-role">Senior Consultant Psychologist</div>
-          <h3 class="n-team-name">Dr. Jaswyn Chin</h3>
-          <a href="https://nightingalepediatrics.com/jaswyn-chin" target="_blank" rel="noopener noreferrer" class="n-team-btn">About Dr. Jaswyn</a>
-        </div>
-
-        <div class="n-team-card n-reveal">
-          <div class="n-team-photo-wrap">
-            <svg class="n-team-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="#E8EFE3" d="M50,-56C64,-45,72,-25,73,-4C74,17,68,38,54,52C40,66,19,74,-3,77C-25,80,-49,78,-63,64C-77,50,-81,24,-79,0C-77,-24,-70,-48,-54,-60C-38,-72,-13,-72,7,-75C27,-78,36,-67,50,-56Z" transform="translate(100 100)"/></svg>
-            <img class="n-team-photo" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/Clinician%20Photos/yeow%20may.png" alt="Dr. Tan Yeow May" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/nightingale%20official%20icon%20(1).svg'; this.style.objectFit='contain'; this.style.padding='30px';">
-          </div>
-          <div class="n-team-role">Consultant Psychologist</div>
-          <h3 class="n-team-name">Dr. Tan Yeow May</h3>
-          <a href="https://nightingalepediatrics.com/yeow-may" target="_blank" rel="noopener noreferrer" class="n-team-btn">About Dr. Tan</a>
-        </div>
-
-        <div class="n-team-card n-reveal">
-          <div class="n-team-photo-wrap">
-            <svg class="n-team-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="#C97B5A" fill-opacity="0.25" d="M48,-55C61,-45,69,-27,71,-8C73,10,70,29,59,44C48,59,29,70,8,73C-13,76,-38,71,-53,57C-68,43,-73,20,-72,-3C-71,-26,-64,-49,-49,-60C-34,-71,-11,-70,7,-73C25,-76,35,-65,48,-55Z" transform="translate(100 100)"/></svg>
-            <img class="n-team-photo" src="https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/Clinician%20Photos/davy.png" alt="Dr. Davy Guo" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/nightingale%20official%20icon%20(1).svg'; this.style.objectFit='contain'; this.style.padding='30px';">
-          </div>
-          <div class="n-team-role">Consultant Psychologist</div>
-          <h3 class="n-team-name">Dr. Davy Guo</h3>
-          <a href="https://nightingalepediatrics.com/davy-guo" target="_blank" rel="noopener noreferrer" class="n-team-btn">About Dr. Davy</a>
-        </div>
-
-        <div class="n-team-card n-reveal">
-          <div class="n-team-photo-wrap">
-            <svg class="n-team-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="#E8EFE3" d="M48,-55C61,-45,69,-27,71,-8C73,10,70,29,59,44C48,59,29,70,8,73C-13,76,-38,71,-53,57C-68,43,-73,20,-72,-3C-71,-26,-64,-49,-49,-60C-34,-71,-11,-70,7,-73C25,-76,35,-65,48,-55Z" transform="translate(100 100)"/></svg>
-            <img class="n-team-photo" src="images/eileen.png" alt="Dr. Eileen Ng" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='https://8605291.fs1.hubspotusercontent-na2.net/hubfs/8605291/nightingale%20official%20icon%20(1).svg'; this.style.objectFit='contain'; this.style.padding='30px';">
-          </div>
-          <div class="n-team-role">Clinical Psychologist</div>
-          <h3 class="n-team-name">Dr. Eileen Ng</h3>
-          <a href="https://nightingalepediatrics.com/eileen-ng" target="_blank" rel="noopener noreferrer" class="n-team-btn">About Dr. Eileen</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
   <!-- ================= FAQ ================= -->
   <section class="n-section n-section-deep">
     <div class="n-container">
@@ -934,7 +692,7 @@
 </div>
 
 <style>
-  /* --- FOOTER: restyled to match the sand/sage system --- */
+  /* --- FOOTER --- */
   #nightingale-footer {
     --f-sage: #4F6B4F;
     --f-sage-dark: #3B5240;
@@ -1136,69 +894,38 @@
 <style>
   /* ---------- Click-to-WhatsApp widget ---------- */
   .wa-widget{
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    z-index: 200;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 12px;
+    position: fixed; right: 22px; bottom: 22px; z-index: 200;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 12px;
     font-family: 'Google Sans Flex', 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     transition: opacity .3s ease, transform .3s ease;
   }
   .wa-widget.wa-hidden{ opacity: 0; transform: translateY(14px); pointer-events: none; }
 
   .wa-bubble{
-    max-width: 232px;
-    background: #FAF9F6;
-    color: #2C3539;
-    border: 1px solid #E5E0D3;
-    border-radius: 16px 16px 4px 16px;
-    padding: 14px 30px 14px 16px;
-    font-size: 0.86rem;
-    line-height: 1.45;
-    box-shadow: 0 12px 32px rgba(44,53,57,0.16);
-    position: relative;
-    opacity: 0;
-    transform: translateY(8px) scale(0.96);
-    transition: opacity .3s ease, transform .3s ease;
-    pointer-events: none;
+    max-width: 232px; background: #FAF9F6; color: #2C3539;
+    border: 1px solid #E5E0D3; border-radius: 16px 16px 4px 16px;
+    padding: 14px 30px 14px 16px; font-size: 0.86rem; line-height: 1.45;
+    box-shadow: 0 12px 32px rgba(44,53,57,0.16); position: relative;
+    opacity: 0; transform: translateY(8px) scale(0.96);
+    transition: opacity .3s ease, transform .3s ease; pointer-events: none;
   }
   .wa-bubble.wa-show{ opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
   .wa-bubble-close{
-    position: absolute;
-    top: 4px; right: 6px;
-    background: none;
-    border: none;
-    font-size: 17px;
-    line-height: 1;
-    color: #48545A;
-    cursor: pointer;
-    padding: 6px;
+    position: absolute; top: 4px; right: 6px; background: none; border: none;
+    font-size: 17px; line-height: 1; color: #48545A; cursor: pointer; padding: 6px;
   }
 
   .wa-button{
-    width: 58px; height: 58px;
-    border-radius: 50%;
-    background: #25D366;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 26px rgba(0,0,0,0.22);
-    position: relative;
-    flex-shrink: 0;
-    transition: transform .2s ease;
+    width: 58px; height: 58px; border-radius: 50%; background: #25D366;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.22); position: relative;
+    flex-shrink: 0; transition: transform .2s ease;
   }
   .wa-button:hover{ transform: scale(1.06); }
   .wa-button svg{ width: 28px; height: 28px; position: relative; z-index: 2; }
   .wa-pulse{
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: #25D366;
-    opacity: 0.55;
-    z-index: 1;
+    position: absolute; inset: 0; border-radius: 50%; background: #25D366;
+    opacity: 0.55; z-index: 1;
   }
   @media (prefers-reduced-motion: no-preference){
     .wa-pulse{ animation: wa-pulse-anim 2.4s ease-out infinite; }
@@ -1228,10 +955,8 @@
 </div>
 
 <script>
-
   (function(){
 
-    // ---------- Nav: Assessments dropdown ----------
     var assessmentsDropdown = document.getElementById('assessmentsDropdown');
     var assessmentsToggle = document.getElementById('assessmentsToggle');
     if(assessmentsDropdown && assessmentsToggle){
@@ -1254,7 +979,6 @@
       });
     }
 
-    // ---------- Nav: mobile menu ----------
     var mobileMenu = document.getElementById('mobileMenu');
     var mobileMenuToggle = document.getElementById('mobileMenuToggle');
     var mobileMenuClose = document.getElementById('mobileMenuClose');
@@ -1276,7 +1000,6 @@
       });
     }
 
-    // ---------- Scroll reveal ----------
     var revealEls = document.querySelectorAll('.n-reveal');
     if('IntersectionObserver' in window){
       var io = new IntersectionObserver(function(entries){
@@ -1289,7 +1012,6 @@
       revealEls.forEach(function(el){ el.classList.add('in-view'); });
     }
 
-    // ---------- Hero focus-area carousel ----------
     var track = document.getElementById('focusCarousel');
     var prevBtn = document.getElementById('carouselPrev');
     var nextBtn = document.getElementById('carouselNext');
@@ -1299,7 +1021,7 @@
       var card = track.querySelector('.n-carousel-card');
       if(!card) return 0;
       var style = window.getComputedStyle(card);
-      return card.offsetWidth + parseFloat(style.marginRight || 0) + 24; /* 24 = gap */
+      return card.offsetWidth + parseFloat(style.marginRight || 0) + 24;
     }
 
     function scrollToIndex(i){
@@ -1334,7 +1056,6 @@
       }, 80);
     });
 
-    // Hide arrows/dots entirely when every card already fits on screen (nothing to scroll)
     var carouselControls = document.querySelector('.n-carousel-controls');
     function updateCarouselControlsVisibility(){
       var hasOverflow = track.scrollWidth > track.clientWidth + 4;
@@ -1347,7 +1068,6 @@
       resizeTimeout = setTimeout(updateCarouselControlsVisibility, 150);
     });
 
-    // ---------- Quiz logic ----------
     var nightingaleYesCount = 0;
 
     window.nightingaleNextQuestion = function(currentId, nextId, isYes){
@@ -1368,7 +1088,6 @@
       }, 100);
     };
 
-    // ---------- Lazy image loading (retained behavior) ----------
     if('IntersectionObserver' in window){
       var imgObserver = new IntersectionObserver(function(entries){
         entries.forEach(function(entry){
@@ -1385,7 +1104,6 @@
       document.querySelectorAll('img[loading="lazy"]').forEach(function(img){ imgObserver.observe(img); });
     }
 
-    // ---------- Click-to-WhatsApp widget: dynamic, context-aware ----------
     var waButton = document.getElementById('waButton');
     var waWidget = document.getElementById('waWidget');
     var waBubble = document.getElementById('waBubble');
@@ -1400,9 +1118,6 @@
     }
     waSetMessage(waDefaultMessage);
 
-    // Track which tagged section is currently in view and update the pre-filled message to match.
-    // Carousel cards are handled separately below (hover/tap) since on wide viewports all 3 are
-    // visible at once, making "which one is in view" ambiguous for scroll-based detection.
     var waTargets = document.querySelectorAll('[data-wa-message]:not(.n-carousel-card)');
     if('IntersectionObserver' in window && waTargets.length){
       var waContextObserver = new IntersectionObserver(function(entries){
@@ -1416,8 +1131,6 @@
       waTargets.forEach(function(el){ waContextObserver.observe(el); });
     }
 
-    // Carousel cards: hover (desktop) or tap (mobile) is a clearer intent signal than scroll
-    // position here, since multiple cards can be on screen together.
     document.querySelectorAll('.n-carousel-card[data-wa-message]').forEach(function(card){
       var setFromCard = function(){ waSetMessage(card.getAttribute('data-wa-message')); };
       card.addEventListener('mouseenter', setFromCard);
@@ -1425,7 +1138,6 @@
       card.addEventListener('focusin', setFromCard);
     });
 
-    // Hide the floating widget once the footer's own WhatsApp links are on screen, to avoid duplicate CTAs
     var waFooter = document.getElementById('nightingale-footer');
     if('IntersectionObserver' in window && waFooter){
       var waFooterObserver = new IntersectionObserver(function(entries){
@@ -1436,7 +1148,6 @@
       waFooterObserver.observe(waFooter);
     }
 
-    // Show a friendly greeting bubble a few seconds after the page loads, once
     setTimeout(function(){
       if(!waBubbleDismissed) waBubble.classList.add('wa-show');
     }, 3500);
