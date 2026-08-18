@@ -48,7 +48,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@300..700&display=swap" rel="stylesheet">
 
 <style>
-
   #gd-page {
     width: 100%;
     margin: 0;
@@ -96,8 +95,6 @@
   }
   #gd-page p, #gd-page li, #gd-page td{ font-size:1.03rem; color:var(--charcoal-soft); line-height:1.75; }
   #gd-page :focus-visible{ outline:2px solid var(--sage-dark); outline-offset:3px; }
-
-  .gd-wrap{ width:100%; max-width:var(--max-w); margin:0 auto; padding:0 5%; }
 
   /* ---------- Top bar ---------- */
   .n-topbar{
@@ -179,7 +176,7 @@
   details.gd-faq-item[open] summary::after{ transform:rotate(45deg); }
   details.gd-faq-item p{ margin-top:14px; margin-bottom:0; font-size:0.96rem; }
 
-  /* ---------- Contact Form replacing consult button ---------- */
+  /* ---------- Contact Form with Captcha ---------- */
   .gd-contact-section{
     margin-top:56px; padding:36px 30px; background:var(--sand-deep);
     border-radius:16px; border:1px solid var(--line); text-align:left;
@@ -423,19 +420,31 @@
     <div class="gd-contact-section gd-reveal">
       <h3>Contact Us</h3>
       <p>Have questions about child assessments? Send us a direct message below.</p>
-      <form action="mailto:keith@bonfire.cc" method="post" enctype="text/plain" class="gd-contact-form">
+      
+      <form id="gdContactForm" class="gd-contact-form" onsubmit="handleFormSubmit(event)">
         <div class="gd-form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" name="Name" required />
+          <input type="text" id="name" name="Name" required autocomplete="name" />
         </div>
+        
         <div class="gd-form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" name="Email" required />
+          <input type="email" id="email" name="Email" required autocomplete="email" />
         </div>
+        
         <div class="gd-form-group">
           <label for="message">Message</label>
           <textarea id="message" name="Message" rows="4" required></textarea>
         </div>
+
+        <!-- CAPTCHA Verification -->
+        <div class="gd-form-group" style="background: var(--white); padding: 14px; border-radius: 8px; border: 1px solid var(--line);">
+          <label for="captchaAnswer" style="font-weight: 600;">Spam Verification</label>
+          <span id="captchaQuestion" style="font-size: 0.95rem; margin-bottom: 6px; display: block;"></span>
+          <input type="number" id="captchaAnswer" required placeholder="Enter number" style="max-width: 160px;" />
+          <span id="captchaError" style="color: #C97B5A; font-size: 0.85rem; display: none; margin-top: 4px;">Incorrect answer. Try again.</span>
+        </div>
+
         <button type="submit" class="gd-btn">Send Message</button>
       </form>
     </div>
@@ -450,6 +459,7 @@
 
 <script>
   (function(){
+    // Scroll reveal logic
     var revealEls = document.querySelectorAll('.gd-reveal');
     if('IntersectionObserver' in window){
       var io = new IntersectionObserver(function(entries){
@@ -461,6 +471,37 @@
     } else {
       revealEls.forEach(function(el){ el.classList.add('in-view'); });
     }
+
+    // Math CAPTCHA initialization
+    var num1 = Math.floor(Math.random() * 9) + 1;
+    var num2 = Math.floor(Math.random() * 9) + 1;
+    var correctAnswer = num1 + num2;
+
+    var questionEl = document.getElementById('captchaQuestion');
+    if(questionEl){
+      questionEl.textContent = 'What is ' + num1 + ' + ' + num2 + '?';
+    }
+
+    // Form submission handler
+    window.handleFormSubmit = function(e){
+      e.preventDefault();
+      var userAnswer = parseInt(document.getElementById('captchaAnswer').value, 10);
+      var errorEl = document.getElementById('captchaError');
+
+      if(userAnswer !== correctAnswer){
+        errorEl.style.display = 'block';
+        return;
+      }
+
+      errorEl.style.display = 'none';
+
+      var name = encodeURIComponent(document.getElementById('name').value);
+      var email = encodeURIComponent(document.getElementById('email').value);
+      var message = encodeURIComponent(document.getElementById('message').value);
+
+      var mailtoUrl = 'mailto:keith@bonfire.cc?subject=Inquiry from ' + name + '&body=Name: ' + name + '%0D%0AEmail: ' + email + '%0D%0AMessage: ' + message;
+      window.location.href = mailtoUrl;
+    };
   })();
 </script>
 
